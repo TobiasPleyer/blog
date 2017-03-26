@@ -3,7 +3,9 @@
 APACHE_PREFIX=/usr/local/apache2
 APACHE_CTRL=$APACHE_PREFIX/bin/apachectl
 APACHE_HTDOCS=$APACHE_PREFIX/htdocs/
-PELICAN_OUTPUT_DIR=/home/tobias/website/blog/output/
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+echo $SCRIPT_DIR
+PELICAN_OUTPUT_DIR=${SCRIPT_DIR}/output/
 
 function usage(){
   echo "usage: $0 start|stop|restart|rsync"
@@ -22,11 +24,11 @@ function usage(){
 [[ ($# -gt 2) ]] && usage
 
 if [[ ($1 == "start") ]]; then
-  $APACHE_CTRL -k stop
-elif [[ $1 == "stop" ]]; then
-  $APACHE_CTRL -k restart
-elif [[ $1 == "restart" ]]; then
   $APACHE_CTRL -k start
+elif [[ $1 == "stop" ]]; then
+  $APACHE_CTRL -k stop
+elif [[ $1 == "restart" ]]; then
+  $APACHE_CTRL -k restart
 elif [[ $1 == "rsync" ]]; then
     rsync -vr $PELICAN_OUTPUT_DIR $APACHE_HTDOCS
 elif [[ $1 == "clean" ]]; then

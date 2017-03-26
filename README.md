@@ -10,9 +10,17 @@ available. This means if you have [_Python_](https://www.python.org),
 _Pelican_ and [_Apache_](https://www.apache.org) installed, the following
 commands should give you a private copy of my blog on _localhost_:
 ```
-git clone https://github.com/TobiasPleyer/blog.git
-cd blog
-make publish
-./apache-develop.sh start
-./apache-develop.sh rsync
+~$ git clone https://github.com/TobiasPleyer/blog.git
+~$ cd blog
+~$ make html
+~$ ./apache_develop.sh rsync
+~$ ./apache_develop.sh start
 ```
+
+Be sure that you have the rights to start the _Apache_ server on your machine.
+
+If you intend to publish the content on a real server run
+```
+~$ make publish
+```
+instead of make html.
