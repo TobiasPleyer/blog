@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+<head>
+        <meta charset="utf-8" />
+        <title>{% block title %}{{ SITENAME }}{%endblock%}</title>
+        <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/{{ CSS_FILE }}" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+{% include 'github.html' %}
+        <header id="banner" class="body">
+                {% block site_header %}
+                <h1><a href="{{ SITEURL }}/">{{ SITENAME }} {% if SITESUBTITLE %} <strong>{{ SITESUBTITLE }}</strong>{% endif %}</a></h1>
+                {% endblock %}                
+                <nav><ul>
+                {% for title, link in MENUITEMS %}
+                    <li><a href="{{ SITEURL }}/{{ link }}">{{ title }}</a></li>
+                {% endfor %}
+                {% if DISPLAY_PAGES_ON_MENU -%}
+                {% for pg in pages %}
+                    <li{% if pg == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ pg.url }}">{{ pg.title }}</a></li>
+                {% endfor %}
+                {% endif %}
+                {% if DISPLAY_CATEGORIES_ON_MENU -%}
+                {% for cat, null in categories %}
+                    <li{% if cat == category %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+                {% endfor %}
+                {% endif %}
+                </ul></nav>
+        </header><!-- /#banner -->
+        {% block content %}
+        {% endblock %}
+        <section id="extras" class="body">
+
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                &copy; 2017 Tobias Pleyer
+                </address><!-- /#about -->
+
+                <p><i>This blog has been generated with <a href="http://getpelican.com/">Pelican</a></i></p>
+        </footer><!-- /#contentinfo -->
+
+{% include 'analytics.html' %}
+{% include 'disqus_script.html' %}
+</body>
+</html>
