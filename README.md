@@ -17,7 +17,8 @@ commands should give you a private copy of my blog on _localhost_:
 ~$ ./apache_develop.sh start
 ```
 
-Be sure that you have the rights to start the _Apache_ server on your machine.
+Be sure that you have the rights to start the _Apache_ server on your
+machine (use _sudo_ if necessary).
 
 If you intend to publish the content on a real server run
 ```
