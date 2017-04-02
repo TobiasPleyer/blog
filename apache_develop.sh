@@ -32,8 +32,8 @@ elif [[ $1 == "restart" ]]; then
 elif [[ $1 == "rsync" ]]; then
     rsync -vr $PELICAN_OUTPUT_DIR $APACHE_HTDOCS
 elif [[ $1 == "clean" ]]; then
-    rm -r $(PELICAN_OUTPUT_DIR).*
-    rsync -vr $PELICAN_OUTPUT_DIR $APACHE_HTDOCS
+    rm -r ${PELICAN_OUTPUT_DIR}.*
+    rm -r $APACHE_HTDOCS
 else
   usage
 fi
