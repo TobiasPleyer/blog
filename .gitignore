@@ -1,6 +1,5 @@
 *.pyc
 output/*
 !output/README
-upload.sh
-upload.sh.in
 upload_all.sh
+Makefile.private

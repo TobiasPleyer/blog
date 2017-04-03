@@ -23,6 +23,8 @@ ifeq ($(RELATIVE), 1)
 	PELICANOPTS += --relative-urls
 endif
 
+-include Makefile.private
+
 help:
 	@echo 'Makefile for a pelican Web site                                           '
 	@echo '                                                                          '
@@ -73,11 +75,11 @@ apache_upload:
 	rsync -vr $(OUTPUTDIR)/* $(APACHE_HTDOCS)
 
 ftp:
-	$(PY3) render_upload.py
+	$(PY3) render_upload.py --user $(USER) --host $(HOST)
 
 ftp_upload:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
-	$(PY3) render_upload.py
+	$(PY3) render_upload.py --user $(USER) --host $(HOST)
 	./upload_all.sh
 
 .PHONY: help draft publish clean regenerate apache_rsync apache_serve apache_stop apache_clean ftp ftp_upload
