@@ -16,3 +16,7 @@ wood).
 
 I graduated in physics, but came to realize very fast that programming was what I wanted to do.
 
+If you like the blog and like to get in touch, contribute or just be inspired feel free to checkout my `GitHub`_. This repository is the configuration I use to generate this blog and it will change with the blog, giving a nice extra history feature to the blog.
+
+.. _GitHub: https://github.com/TobiasPleyer/blog
+
