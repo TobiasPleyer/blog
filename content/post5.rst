@@ -12,8 +12,8 @@ Motivation
 
 I use Git at work a lot. The problem is that naturally the same commands come again and again. After a while I got really tired to type the same stuff over and over.
 
-The Scripts
-===========
+The Files
+=========
 
 In the following I want to show my current configuration files for Git and my MinGW bash shipping with it that really save me a lot of typing and increase my efficiency. I will first show all needed files and then speack about it.
 
@@ -104,7 +104,7 @@ In the following I want to show my current configuration files for Git and my Mi
 
     alias only_modified='grep '"'"' M '"'"' | cut -d '"'"' '"'"' -f3'  #noprint
     alias do_add='xargs -n1 git add'  #noprint
-    alias filter='grep -v HMI/StateMachine/Logic/ | egrep -v "criteria1|criteria2|..."  #noprint
+    alias filter='egrep -v "criteria1|criteria2|..."'  #noprint
     alias add_modified='gsp | only_modified | do_add'  #noprint
     alias filter_add_modified='gsp | only_modified | filter | do_add'  #noprint
     # Execute git status but clear screen first
