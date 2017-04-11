@@ -1,0 +1,14 @@
+digraph G {
+    node [shape=box label="import module\n(Python Level)"] import;
+    node [shape=box label="compile\n(Byte Code)"] byte_code;
+	node [shape=box label="import_name\n(ceval.c)"] import_name;
+    node [shape=box label="__import__\n(hook)"] __import__;
+    node [shape=box label="builtin___import__\n(default)"] builtin___import__;
+    node [shape=box label="PyImport_ImportModuleLevelObject\n(and more nested calls into import.c)"] PyImport_ImportModuleLevelObject;
+    import -> byte_code;
+    byte_code -> import_name;
+    import_name -> __import__;
+    __import__ -> builtin___import__;
+    builtin___import__ -> PyImport_ImportModuleLevelObject;
+}
+

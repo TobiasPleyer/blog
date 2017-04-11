@@ -1,0 +1,49 @@
+digraph G {
+
+	subgraph cluster_Userland {
+        label = "Userland"
+        color = black
+		node [style=filled]
+		bs   [label="_boostrap.py"]
+        bs_e [label="_boostrap_external.py"]
+        importlib -> bs
+        importlib -> bs_e
+        bs -> bs_e
+	}
+
+	subgraph cluster_Kernel {
+        label = "Kernel"
+        color = blue
+		node [style=filled]
+		import    [label="import.c"]
+        lifecycle [label="pylifecycle.c"]
+        bltin     [label="bltinmodule.c"]
+        importdl  [label="importdl.c"]
+        frozen    [label="frozen.c"]
+        lifecycle -> import
+        import -> importdl
+        bltin -> import
+        lifecycle -> bltin
+        import -> frozen
+	}
+
+    subgraph cluster_OS {
+        label = "OS-Level"
+        labelloc = "b"
+        color = green
+        node [style=filled]
+		win_dl [label="dynload_win.c"]
+        shlib_dl [label="dynload_shlib.c"]
+        io [label="io"]
+    }
+    bs -> import [color=red]
+    import -> bs [color=red]
+    importdl -> win_dl
+    importdl -> shlib_dl
+    lifecycle -> bs
+    lifecycle -> frozen
+    frozen -> bs
+    frozen -> bs_e
+    bs -> io
+    bs_e -> io
+}
