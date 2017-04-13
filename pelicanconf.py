@@ -38,5 +38,7 @@ DEFAULT_PAGINATION = 5
 MONTH_ARCHIVE_SAVE_AS = 'posts/{date:%Y}/{date:%b}/index.html'
 ARCHIVES_SAVE_AS = 'archives.html'
 
+STATIC_PATHS = ['images']
+
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True

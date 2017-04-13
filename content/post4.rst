@@ -13,7 +13,7 @@ Outline of the Series
 =====================
 
 #. `What is a module? <{filename}/post4.rst>`_
-#. The low level import interface
+#. `The low level import interface <{filename}/post7.rst>`_
 #. Bootstrapping and the importlib module
 #. How to customize Python's import behaviour
 
