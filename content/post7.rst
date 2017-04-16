@@ -7,20 +7,18 @@ A closer look at Python's import mechanism - Part 2
 :authors: Tobias Pleyer
 :summary: Part 2 of "A closer look at Python's import mechanism"
 
-This is the second part in a series of articles about Python's import mechanism. I am planning to give a detailed look on the entire call stack, from the very low level interface to the very high level interface and its manipulation facilities.
-
 Outline of the Series
 =====================
 
 #. `What is a module? <{filename}/post4.rst>`_
 #. `The low level import interface <{filename}/post7.rst>`_
-#. Bootstrapping and the importlib module
+#. `Bootstrapping and the importlib module <{filename}/post8.rst>`_
 #. How to customize Python's import behaviour
 
 The low level import interface
 ------------------------------
 
-This is part 2 of my series about Python's import mechanism. You can start at the beginning `here <{filename}/post4.rst>`_.
+This is the second part in a series of articles about Python's import mechanism. I am planning to give a detailed look on the entire call stack, from the very low level interface to the very high level interface and its manipulation facilities. You can start at the beginning `here <{filename}/post4.rst>`_.
 
 **Remark:** All my findings, references and source code depictions are based on the
 `CPython GitHub repository`_ checked out at tag *v3.6.1rc1*.
