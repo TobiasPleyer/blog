@@ -29,10 +29,15 @@ if __name__ == '__main__':
     template = env.get_template('upload.sh.in')
 
     find_output = check_output(['find', 'output/', '-type', 'f'])  # use find to search
-    lfile_list = find_output.decode('utf-8').split('\n')           # local file list
+    lfile_list = find_output.decode('utf-8').strip().split('\n')           # local file list
     lfile_list = list(filter(filter_func, lfile_list))             # filter unwanted stuff
     rfile_list = list(map(replace_root_dir, lfile_list))           # remote file list on server
     sync_map = list(zip(lfile_list, rfile_list))                   # zip it for jinja
+
+    find_output = check_output(['find', 'output/images/', '-type', 'f'])  # use find to search
+    lfile_list = list(find_output.decode('utf-8').strip().split('\n'))
+    rfile_list = list(map(replace_root_dir, lfile_list))
+    sync_map += list(zip(lfile_list, rfile_list))
 
     with open('upload_all.sh', 'w') as fout:
         fout.write(template.render(ftp_host=host,
