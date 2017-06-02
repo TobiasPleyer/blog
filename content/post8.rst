@@ -357,6 +357,42 @@ Line 267 is the step where the importlib of the current interpreter is set. A fe
     ############################################################################
     # more below...
 
+_bootstrap.py
+.............
+
+As I have mentioned above, *_boostrap.py* is the file that holds most of the Python side implementation of import. Importing a module or package in Python means making it available in the modules dictionary of the builtin *sys* module. This means *_boostrap.py* has to do manipulations of *sys.modules*. As a pure Python file the possibilities available are very limited without additional imports, especially accessing the *sys* module! Looking into the file, we see not a single import statment. We can't write
+
+.. code-block:: python
+
+    import sys
+
+because at this point the import statement is not available yet! We, the module, are the import statement! That is the revolving point of the boostrap process. Instead *_boostrap.py* has to be "installed". The *_install* function is defined within *_bootstrap.py*. Here is the source code
+
+.. code-block:: python
+    :linenos: inline
+    :linenostart: 1136
+
+    def _install(sys_module, _imp_module):
+        """Install importlib as the implementation of import."""
+        _setup(sys_module, _imp_module)
+
+        sys.meta_path.append(BuiltinImporter)
+        sys.meta_path.append(FrozenImporter)
+
+        global _bootstrap_external
+        import _frozen_importlib_external
+        _bootstrap_external = _frozen_importlib_external
+        _frozen_importlib_external._install(sys.modules[__name__])
+
+As is visible in the code segement above, we explicitly hand over the *sys* and the *_imp* module. These modules are enough to implement import. The *_install* function does the following
+
+#. Set itself up, by calling its private setup function
+#. Adding importers to sys.meta_path (more on this in Part 4). At this point we can already import builtin and frozen modules.
+#. Now we can actually already use the import statement to import _frozen_importlib_external (external means outside of the Python source tree, i.e. neither frozen nor builtin)
+#. _frozen_importlib_external is installed. At this point we are able to import arbitrary modules from the file system and import is fully functional.
+
+At this point we are done. Import is available and fully functional. All the low level code will call into the above mentioned Python files. Importing importlib within a Python file will make these functions accessible for custom use.
+
 Summary
 -------
 

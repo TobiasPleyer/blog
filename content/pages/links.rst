@@ -17,12 +17,18 @@ Blogs
 * `Fredrik Lundh's blog`_
 * `Russ Cox's blog`_
 * `David Beazley's website`_
+* `Miles Alan's blog`_
+* `Joel Spolsky's blog`_
+* `Raymond Chen's blog`_
 
 .. _Eli Bendersky's blog: http://eli.thegreenplace.net
 .. _Armin Ronacher's blog: http://lucumr.pocoo.org
 .. _Fredrik Lundh's blog: http://effbot.org
 .. _Russ Cox's blog: https://research.swtch.com/
 .. _David Beazley's website: http://www.dabeaz.com/
+.. _Miles Alan's blog: http://userbound.com/blog/
+.. _Joel Spolsky's blog: https://www.joelonsoftware.com/
+.. _Raymond Chen's blog: https://blogs.msdn.microsoft.com/oldnewthing
 
 Tutorials
 ---------
@@ -37,8 +43,10 @@ Informational
 -------------
 
 * Python's `PEP index`_
+* `David Beazley's website`_
 
 .. _PEP index: https://www.python.org/dev/peps/
+.. _David Beazley's website: http://www.dabeaz.com/
 
 Useful
 ------
