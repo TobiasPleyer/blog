@@ -39,6 +39,8 @@ MONTH_ARCHIVE_SAVE_AS = 'posts/{date:%Y}/{date:%b}/index.html'
 ARCHIVES_SAVE_AS = 'archives.html'
 
 STATIC_PATHS = ['images']
+PLUGIN_PATHS = ['plugins']
+PLUGINS = ['code_include']
 
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
