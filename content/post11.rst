@@ -68,8 +68,8 @@ The code snippets shown above should not be directly compared. The focus was on 
 The maturity of the different versions is not identical. Differences can be found in argument handling,
 output and most significantly error handling. Many things are hard-coded.
 
-Error handling wise the *Rust* version is the most complete. All kinds of things that could possibly go wrong are taken care of and the program will finish gracefully with a meaningfull erro message.
-Thus the lengths of the programming snippets shouldn't be taken to serious.
+Error handling wise the *Rust* version is the most complete. All kinds of things that could possibly go wrong are taken care of and the program will finish gracefully with a meaningfull error message.
+Thus the lengths of the programming snippets shouldn't be taken too serious.
 
 Yet it is obvious that different languages require a different level of detail from the programmer.
 As an example, *Rust* exposes all the possibilities of failure to the programmer due to the need of
