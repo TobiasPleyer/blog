@@ -254,7 +254,7 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
 #content {
 	background: #fff;
 	margin-bottom: 2em;
-	overflow: hidden;
+	overflow: auto;
 	padding: 20px 20px;
 	width: 760px;
 	
@@ -450,3 +450,9 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
 	
 	#add-comment input[type='submit'] {float: right; margin: 0 .5em;}
 	#add-comment * {margin-bottom: .5em;}
+
+    #entry-content {
+        overflow: auto;
+        width: auto;
+        height: auto;
+    }
