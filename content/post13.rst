@@ -14,7 +14,7 @@ Error messages thrown by Jenkins when an exception happens are absolutely unintu
 
 .. image:: images/jenkins_exception.png
     :alt: error output of a Jenkins exception
-    :class: big-image
+    :scrollable:
 
 This concrete output was spit on me a couple of weeks ago. The short version of it could have been written:
 

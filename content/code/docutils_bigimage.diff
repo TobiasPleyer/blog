@@ -1,0 +1,41 @@
+diff --git a/docutils_0-13-1_bkp/parsers/rst/directives/images.py b/docutils_0-13-1_mod/parsers/rst/directives/images.py
+index c813fa3..f6da1bd 100644
+--- a/docutils_0-13-1_bkp/parsers/rst/directives/images.py
++++ b/docutils_0-13-1_mod/parsers/rst/directives/images.py
+@@ -48,7 +48,8 @@ class Image(Directive):
+                    'align': align,
+                    'name': directives.unchanged,
+                    'target': directives.unchanged_required,
+-                   'class': directives.class_option}
++                   'class': directives.class_option,
++                   'scrollable': directives.flag }
+ 
+     def run(self):
+         if 'align' in self.options:
+diff --git a/docutils_0-13-1_bkp/writers/_html_base.py b/docutils_0-13-1_mod/writers/_html_base.py
+index a03231c..2a74132 100644
+--- a/docutils_0-13-1_bkp/writers/_html_base.py
++++ b/docutils_0-13-1_mod/writers/_html_base.py
+@@ -892,6 +892,10 @@ class HTMLTranslator(nodes.NodeVisitor):
+             suffix = '\n'
+         if 'align' in node:
+             atts['class'] = 'align-%s' % node['align']
++        if 'scrollable' in node:
++            # Scrollable flag was given - embed the image tag in a `div` tag
++            # that allows for overflow
++            self.body.append('<div style="overflow: auto; width: auto; height: auto;">\n')
+         if ext in self.object_image_types:
+             # do NOT use an empty tag: incorrect rendering in browsers
+             self.body.append(self.starttag(node, 'object', suffix, **atts) +
+@@ -900,8 +904,9 @@ class HTMLTranslator(nodes.NodeVisitor):
+             self.body.append(self.emptytag(node, 'img', suffix, **atts))
+ 
+     def depart_image(self, node):
+-        # self.body.append(self.context.pop())
+-        pass
++        # close the `div` tag if we opened one
++        if 'scrollable' in node:
++            self.body.append('</div>\n')
+ 
+     def visit_inline(self, node):
+         self.body.append(self.starttag(node, 'span', ''))
