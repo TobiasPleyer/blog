@@ -9,6 +9,7 @@ MENUITEMS = [
     ('HOME', ''),    
     ('ABOUT', 'pages/about.html'),
     ('CATEGORIES', 'categories.html'),
+    ('TODO', 'pages/todo.html'),
     ('LINKS', 'pages/links.html'),
     ('ARCHIVE', 'archives.html')
 ]

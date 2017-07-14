@@ -21,6 +21,7 @@ Blogs
 * `Joel Spolsky's blog`_
 * `Raymond Chen's blog`_
 * `Jakub Arnold's blog`_
+* `Coding Horror`_
 
 .. _Eli Bendersky's blog: http://eli.thegreenplace.net
 .. _Armin Ronacher's blog: http://lucumr.pocoo.org
@@ -31,15 +32,18 @@ Blogs
 .. _Joel Spolsky's blog: https://www.joelonsoftware.com/
 .. _Raymond Chen's blog: https://blogs.msdn.microsoft.com/oldnewthing
 .. _Jakub Arnold's blog: https://blog.jakuba.net/
+.. _Coding Horror: https://blog.codinghorror.com
 
 Tutorials
 ---------
 
 * `AVR Tutorial`_ on mikrocontroller.net (German)
 * Russ Cox's `regular expression tutorial`_
+* `Top Down Operator Precedence`_ by Douglas Crockford
 
 .. _AVR Tutorial: https://www.mikrocontroller.net/articles/AVR-Tutorial
 .. _regular expression tutorial: https://swtch.com/~rsc/regexp/
+.. _Top Down Operator Precedence: http://javascript.crockford.com/tdop/tdop.html
 
 Informational
 -------------
@@ -62,3 +66,20 @@ Useful
 .. _Vim spf13: http://vim.spf13.com/
 .. _Open Wikibook for Haskell: https://en.wikibooks.org/wiki/Haskell
 .. _The Rust Programming Language: https://doc.rust-lang.org/stable/book/first-edition/
+
+Interesting Projects
+--------------------
+
+* The `Meson`_ build system
+* The `CMake`_ build system
+* The `Ninja`_ build system
+
+.. _Meson: http://mesonbuild.com/
+.. _CMake: https://cmake.org/
+.. _Ninja: https://ninja-build.org/
+
+Book Wishlist
+-------------
+
+* *Structure and Interpretation of Computer Programs*
+* *Blink: The Power of Thinking without Thinking*
