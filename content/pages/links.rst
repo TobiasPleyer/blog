@@ -61,11 +61,12 @@ Useful
 
 * The `Vim spf13`_ collection of Vim plugins
 * The `Open Wikibook for Haskell`_
-* `The Rust Programming Language`_
+* The Rust Programming Language - `1st edition`_, `2nd edition`_
 
 .. _Vim spf13: http://vim.spf13.com/
 .. _Open Wikibook for Haskell: https://en.wikibooks.org/wiki/Haskell
-.. _The Rust Programming Language: https://doc.rust-lang.org/stable/book/first-edition/
+.. _1st edition: https://doc.rust-lang.org/stable/book/first-edition/
+.. _2nd edition: https://doc.rust-lang.org/stable/book/second-edition/
 
 Interesting Projects
 --------------------
@@ -73,10 +74,14 @@ Interesting Projects
 * The `Meson`_ build system
 * The `CMake`_ build system
 * The `Ninja`_ build system
+* `xmonad`_ - a tiling window manager written in Haskell
+* `Hakyll`_ - static site generator written in Haskell
 
 .. _Meson: http://mesonbuild.com/
 .. _CMake: https://cmake.org/
 .. _Ninja: https://ninja-build.org/
+.. _xmonad: http://xmonad.org/
+.. _Hakyll: https://jaspervdj.be/hakyll/
 
 Book Wishlist
 -------------
