@@ -22,6 +22,7 @@ Blogs
 * `Raymond Chen's blog`_
 * `Jakub Arnold's blog`_
 * `Coding Horror`_
+* `Baby Steps`_, a blog by Nicholas Matsakis
 
 .. _Eli Bendersky's blog: http://eli.thegreenplace.net
 .. _Armin Ronacher's blog: http://lucumr.pocoo.org
@@ -33,6 +34,7 @@ Blogs
 .. _Raymond Chen's blog: https://blogs.msdn.microsoft.com/oldnewthing
 .. _Jakub Arnold's blog: https://blog.jakuba.net/
 .. _Coding Horror: https://blog.codinghorror.com
+.. _Baby Steps: http://smallcultfollowing.com/babysteps/
 
 Tutorials
 ---------
@@ -52,11 +54,15 @@ Informational
 * `David Beazley's website`_
 * The `i3 docs`_
 * `unixporn`_ on reddit
+* `Rust in Detail`_ by Nikita Baksalyar
+* `Write you a Haskell`_ by Stephen Diehl
 
 .. _PEP index: https://www.python.org/dev/peps/
 .. _David Beazley's website: http://www.dabeaz.com/
 .. _i3 docs: http://i3wm.org/docs/
 .. _unixporn: https://www.reddit.com/r/unixporn/
+.. _Rust in Detail: http://nbaksalyar.github.io/
+.. _Write you a Haskell: http://dev.stephendiehl.com/fun/index.html
 
 Useful
 ------
@@ -84,12 +90,16 @@ Interesting Projects
 * The `Ninja`_ build system
 * `xmonad`_ - a tiling window manager written in Haskell
 * `Hakyll`_ - static site generator written in Haskell
+* `suckless.org`_, an initiative for better software
+* `ohmyzsh`_, a framework around the z-shell (zsh)
 
 .. _Meson: http://mesonbuild.com/
 .. _CMake: https://cmake.org/
 .. _Ninja: https://ninja-build.org/
 .. _xmonad: http://xmonad.org/
 .. _Hakyll: https://jaspervdj.be/hakyll/
+.. _suckless.org: http://suckless.org/
+.. _ohmyzsh: http://ohmyz.sh/
 
 Book Wishlist
 -------------
