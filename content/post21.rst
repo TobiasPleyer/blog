@@ -2,7 +2,7 @@ Mapping CAPS to ESC
 ###################
 
 :date: 2017-08-09
-:tags: linux xkb
+:tags: linux xkb vim
 :category: Programming
 :authors: Tobias Pleyer
 :summary: Binding the caps lock key to the escape key increases productivity
