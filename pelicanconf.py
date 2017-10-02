@@ -6,7 +6,7 @@ AUTHOR = u'Tobias Pleyer'
 SITENAME = u'My blog about programming and other stuff'
 SITEURL = 'http://blog.tpleyer.de'
 MENUITEMS = [
-    ('HOME', ''),    
+    ('HOME', ''),
     ('ABOUT', 'pages/about.html'),
     ('CATEGORIES', 'categories.html'),
     ('TODO', 'pages/todo.html'),
@@ -39,7 +39,7 @@ DEFAULT_PAGINATION = 5
 MONTH_ARCHIVE_SAVE_AS = 'posts/{date:%Y}/{date:%b}/index.html'
 ARCHIVES_SAVE_AS = 'archives.html'
 
-STATIC_PATHS = ['images']
+STATIC_PATHS = ['images', 'static']
 PLUGIN_PATHS = ['plugins']
 PLUGINS = ['code_include']
 

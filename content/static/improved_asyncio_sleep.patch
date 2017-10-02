@@ -1,0 +1,66 @@
+From 9f827f99bc0168e9264d6fe02f40241ec90cf6b5 Mon Sep 17 00:00:00 2001
+From: TobiasPleyer <tobi.pleyer@gmail.com>
+Date: Mon, 25 Sep 2017 23:41:27 +0200
+Subject: [PATCH] Add an iterations argument to asyncio.sleep
+
+The new iterations argument allows to specify how many iterations of the
+event loop should be waited until the callback is called.
+
+How it works
+    We make use of the implementation of `_run_once`.
+
+    If a callback is scheduled via `call_soon` while processing the
+    already scheduled tasks, this callback's execution will happen in
+    the next iteration of the event loop.
+
+    Thus all we need to do is define a function that schedules itself
+    depending on the value of a counter that is decremented each time
+    this function schedules itself, until it reaches 0.
+---
+ Lib/asyncio/tasks.py | 24 ++++++++++++++++++------
+ 1 file changed, 18 insertions(+), 6 deletions(-)
+
+diff --git a/Lib/asyncio/tasks.py b/Lib/asyncio/tasks.py
+index 4d79367..9873370 100644
+--- a/Lib/asyncio/tasks.py
++++ b/Lib/asyncio/tasks.py
+@@ -460,18 +460,30 @@ def as_completed(fs, *, loop=None, timeout=None):
+ 
+ 
+ @coroutine
+-def sleep(delay, result=None, *, loop=None):
+-    """Coroutine that completes after a given time (in seconds)."""
+-    if delay == 0:
++def sleep(delay=0, result=None, *, iterations=None, loop=None):
++    """Coroutine that completes after a given time (in seconds), or after
++    `iterations` event loop iterations. If `iterations` is given it takes priority over
++    `delay`."""
++    if delay == 0 and not iterations:
+         yield
+         return result
+ 
+     if loop is None:
+         loop = events.get_event_loop()
+     future = loop.create_future()
+-    h = future._loop.call_later(delay,
+-                                futures._set_result_unless_cancelled,
+-                                future, result)
++    if iterations:
++        iterations = abs(iterations)
++        def cycle_counter(future, iterations, result):
++            if iterations <= 0:
++                futures._set_result_unless_cancelled(future, result)
++            else:
++                iterations -= 1
++                future._loop.call_soon(cycle_counter, future, iterations, result)
++        h = future._loop.call_soon(cycle_counter, future, iterations, result)
++    else:
++        h = future._loop.call_later(delay,
++                                    futures._set_result_unless_cancelled,
++                                    future, result)
+     try:
+         return (yield from future)
+     finally:
+-- 
+2.7.4
+
