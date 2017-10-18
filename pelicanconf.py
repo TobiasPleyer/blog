@@ -39,7 +39,7 @@ DEFAULT_PAGINATION = 5
 MONTH_ARCHIVE_SAVE_AS = 'posts/{date:%Y}/{date:%b}/index.html'
 ARCHIVES_SAVE_AS = 'archives.html'
 
-STATIC_PATHS = ['images', 'static']
+STATIC_PATHS = ['images', 'static', 'code']
 PLUGIN_PATHS = ['plugins']
 PLUGINS = ['code_include']
 
