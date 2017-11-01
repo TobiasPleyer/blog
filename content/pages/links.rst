@@ -58,6 +58,7 @@ Informational
 * `unixporn`_ on reddit
 * `Rust in Detail`_ by Nikita Baksalyar
 * `Write you a Haskell`_ by Stephen Diehl
+* `IO inside`_ post about Haskell IO
 
 .. _PEP index: https://www.python.org/dev/peps/
 .. _David Beazley's website: http://www.dabeaz.com/
@@ -65,6 +66,7 @@ Informational
 .. _unixporn: https://www.reddit.com/r/unixporn/
 .. _Rust in Detail: http://nbaksalyar.github.io/
 .. _Write you a Haskell: http://dev.stephendiehl.com/fun/index.html
+.. _IO inside: https://wiki.haskell.org/IO_inside
 
 Useful
 ------
