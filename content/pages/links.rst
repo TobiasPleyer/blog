@@ -14,6 +14,7 @@ Blogs
 
 * `Eli Bendersky's blog`_
 * `Armin Ronacher's blog`_
+* `Michael Snoyman's blog`_
 * `Fredrik Lundh's blog`_
 * `Russ Cox's blog`_
 * `David Beazley's website`_
@@ -35,6 +36,7 @@ Blogs
 .. _Jakub Arnold's blog: https://blog.jakuba.net/
 .. _Coding Horror: https://blog.codinghorror.com
 .. _Baby Steps: http://smallcultfollowing.com/babysteps/
+.. _Michael Snoyman's blog: https://www.snoyman.com/blog
 
 Tutorials
 ---------
@@ -72,6 +74,7 @@ Useful
 * The Rust Programming Language - `1st edition`_, `2nd edition`_
 * `The TTY demystified`_
 * How X Window Managers Work, And How To Write One, `pt1`_, `pt2`_, `pt3`_
+* Evan Wallace's `Finite State Machine Designer`_
 
 .. _Vim spf13: http://vim.spf13.com/
 .. _Open Wikibook for Haskell: https://en.wikibooks.org/wiki/Haskell
@@ -81,6 +84,7 @@ Useful
 .. _pt1: https://seasonofcode.com/posts/how-x-window-managers-work-and-how-to-write-one-part-i.html
 .. _pt2: https://seasonofcode.com/posts/how-x-window-managers-work-and-how-to-write-one-part-ii.html
 .. _pt3: https://seasonofcode.com/posts/how-x-window-managers-work-and-how-to-write-one-part-iii.html
+.. _Finite State Machine Designer: http://www.madebyevan.com/fsm/
 
 Interesting Projects
 --------------------
