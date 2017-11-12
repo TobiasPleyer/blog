@@ -48,7 +48,7 @@ Tutorials
 * `AVR Tutorial`_ on mikrocontroller.net (German)
 * Russ Cox's `regular expression tutorial`_
 * `Top Down Operator Precedence`_ by Douglas Crockford
-* `Arduino with the LoRa shield`_
+* `Arduino with the LoRa shield`_ (German)
 
 .. _AVR Tutorial: https://www.mikrocontroller.net/articles/AVR-Tutorial
 .. _regular expression tutorial: https://swtch.com/~rsc/regexp/
