@@ -24,6 +24,8 @@ Blogs
 * `Jakub Arnold's blog`_
 * `Coding Horror`_
 * `Baby Steps`_, a blog by Nicholas Matsakis
+* `Don Stewart's blog`_
+* `FPComplete's blog`_
 
 .. _Eli Bendersky's blog: http://eli.thegreenplace.net
 .. _Armin Ronacher's blog: http://lucumr.pocoo.org
@@ -37,6 +39,8 @@ Blogs
 .. _Coding Horror: https://blog.codinghorror.com
 .. _Baby Steps: http://smallcultfollowing.com/babysteps/
 .. _Michael Snoyman's blog: https://www.snoyman.com/blog
+.. _Don Stewart's blog: https://donsbot.wordpress.com/
+.. _FPComplete's blog: https://www.fpcomplete.com/blog
 
 Tutorials
 ---------
@@ -44,10 +48,12 @@ Tutorials
 * `AVR Tutorial`_ on mikrocontroller.net (German)
 * Russ Cox's `regular expression tutorial`_
 * `Top Down Operator Precedence`_ by Douglas Crockford
+* `Arduino with the LoRa shield`_
 
 .. _AVR Tutorial: https://www.mikrocontroller.net/articles/AVR-Tutorial
 .. _regular expression tutorial: https://swtch.com/~rsc/regexp/
 .. _Top Down Operator Precedence: http://javascript.crockford.com/tdop/tdop.html
+.. _Arduino with the LoRa shield: https://stefan.schultheis.at/2017/lora-sensor-arduino-lora-shield/
 
 Informational
 -------------
