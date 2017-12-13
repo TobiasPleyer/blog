@@ -26,6 +26,7 @@ Blogs
 * `Baby Steps`_, a blog by Nicholas Matsakis
 * `Don Stewart's blog`_
 * `FPComplete's blog`_
+* `Roman Cheplyaka's blog`_
 
 .. _Eli Bendersky's blog: http://eli.thegreenplace.net
 .. _Armin Ronacher's blog: http://lucumr.pocoo.org
@@ -41,6 +42,7 @@ Blogs
 .. _Michael Snoyman's blog: https://www.snoyman.com/blog
 .. _Don Stewart's blog: https://donsbot.wordpress.com/
 .. _FPComplete's blog: https://www.fpcomplete.com/blog
+.. _Roman Cheplyaka's blog: https://ro-che.info/articles/
 
 Tutorials
 ---------
