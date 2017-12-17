@@ -85,6 +85,7 @@ Useful
 * `The TTY demystified`_
 * How X Window Managers Work, And How To Write One, `pt1`_, `pt2`_, `pt3`_
 * Evan Wallace's `Finite State Machine Designer`_
+* `List of Python package qualifiers`_
 
 .. _Vim spf13: http://vim.spf13.com/
 .. _Open Wikibook for Haskell: https://en.wikibooks.org/wiki/Haskell
@@ -95,6 +96,7 @@ Useful
 .. _pt2: https://seasonofcode.com/posts/how-x-window-managers-work-and-how-to-write-one-part-ii.html
 .. _pt3: https://seasonofcode.com/posts/how-x-window-managers-work-and-how-to-write-one-part-iii.html
 .. _Finite State Machine Designer: http://www.madebyevan.com/fsm/
+.. _List of Python package qualifiers: https://pypi.python.org/pypi?%3Aaction=list_classifiers
 
 Interesting Projects
 --------------------
