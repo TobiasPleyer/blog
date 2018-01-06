@@ -67,6 +67,7 @@ Informational
 * `Rust in Detail`_ by Nikita Baksalyar
 * `Write you a Haskell`_ by Stephen Diehl
 * `IO inside`_ post about Haskell IO
+* `The Computer Language Benchmarks Game`
 
 .. _PEP index: https://www.python.org/dev/peps/
 .. _David Beazley's website: http://www.dabeaz.com/
@@ -75,6 +76,7 @@ Informational
 .. _Rust in Detail: http://nbaksalyar.github.io/
 .. _Write you a Haskell: http://dev.stephendiehl.com/fun/index.html
 .. _IO inside: https://wiki.haskell.org/IO_inside
+.. _The Computer Language Benchmarks Game: https://benchmarksgame.alioth.debian.org/
 
 Useful
 ------
