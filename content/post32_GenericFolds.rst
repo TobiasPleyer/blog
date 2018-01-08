@@ -25,7 +25,7 @@ ended up going a simpler route.
 
 I began to interest myself for the topic and started to investigate it a bit
 further. There exists the package `Data.Fix`_ on hackage and much of the code
-in this article is taken from there. Coincidentally I read Mark P. Jones'
+in this article is taken from there. Coincidentally I read Mark P. Jones' (MPJ)
 paper **Functional Programming with Overloading and Higher-Order Polymorphism**
 a few days after I saw Erics' solution for day 7 and to my surprise discovered
 that this paper also devotes a full sub-section to this topic. A few examples
@@ -238,4 +238,206 @@ type and then deconstructs (folds) it again.
 Handson - Taking apart the AOC Day 7 solution
 =============================================
 
-TBD
+In this section I will try to give a detailed look of Eric Merten's solution.
+Since the original input for day 7 is to much to type it by hand, I will
+content myself with the example input. Thusly we start with the following table
+
+.. code-block:: python
+
+    pbga (66)
+    xhth (57)
+    ebii (61)
+    havc (66)
+    ktlj (57)
+    fwft (72) -> ktlj, cntj, xhth
+    qoyq (66)
+    padx (45) -> pbga, havc, qoyq
+    tknk (41) -> ugml, padx, fwft
+    jptl (61)
+    ugml (68) -> gyxo, ebii, jptl
+    gyxo (61)
+    cntj (57)
+
+Which will result in the following tree structure
+
+.. code-block:: python
+
+    # Resulting tree
+                    gyxo
+                  /
+             ugml - ebii
+           /      \
+          |         jptl
+          |
+          |         pbga
+         /        /
+    tknk --- padx - havc
+         \        \
+          |         qoyq
+          |
+          |         ktlj
+           \      /
+             fwft - cntj
+                  \
+                    xhth
+
+Next we need a suitable data type to represent the tree. Every node has a name
+(for lookup purposes), a weight and zero to more children. As I learned in the
+paper of MPJ these kind of trees are called `rose trees`_.
+
+.. _rose trees: https://en.wikipedia.org/wiki/Rose_tree
+
+.. code-block:: haskell
+
+    data Node a = Node !Int [a]
+        deriving (Show, Functor, Foldable, Traversable)
+
+Note the automagic deriving of *Show*, *Functor*, *Foldable* and *Traversable*.
+This will lead to the following implementation of e.g. `fmap`
+
+.. code-block:: haskell
+
+    instance Functor Node
+      where
+        fmap f (Node n xs) = Node n (map f xs)
+
+Now we can construct our tree
+
+.. code-block:: haskell
+
+    import Data.Map as Map
+
+    let input :: Map String (Node String)
+        input = Map.fromList
+          [ ("pbga", Node 66 [])
+          , ("xhth", Node 57 [])
+          , ("ebii", Node 61 [])
+          , ("havc", Node 66 [])
+          , ("ktlj", Node 57 [])
+          , ("fwft", Node 72 ["ktlj","cntj","xhth"])
+          , ("qoyq", Node 66 [])
+          , ("padx", Node 45 ["pbga","havc","qoyq"])
+          , ("tknk", Node 41 ["ugml","padx","fwft"])
+          , ("jptl", Node 61 [])
+          , ("ugml", Node 68 ["gyxo","ebii","jptl"])
+          , ("gyxo", Node 61 [])
+          , ("cntj", Node 57 [])]
+
+    let root_node = "tknk"
+
+    let tree = (ana (input Map.!)) root_node
+
+The last line is the most interesting, so let's see the steps taken to
+construct the tree.
+
+**Note:** `Map.!` is the lookup function maps, e.g.
+
+.. code-block:: haskell
+
+    input Map.! "havc" = Node 66 []
+
+So...
+
+.. code-block:: haskell
+
+    (ana (input Map.!)) root_node =
+    -- apply definition of ana
+    (Fix . fmap (ana (input Map.!)) . (input Map.!)) "tknk" =
+    -- perform a Map lookup
+    (Fix . fmap (ana (input Map.!))) (Node 41 ["ugml","padx","fwft"]) =
+    -- apply fmap
+    Fix (Node 41 (map (ana (input Map.!)) ["ugml","padx","fwft"])) =
+    -- apply map
+    Fix (Node 41 [(ana (input Map.!)) "ugml"
+                 ,(ana (input Map.!)) "padx"
+                 ,(ana (input Map.!)) "fwft"]) =
+    -- apply definition of ana
+    Fix (Node 41 [(Fix . fmap (ana (input Map.!)) . (input Map.!)) "ugml"
+                 ,(Fix . fmap (ana (input Map.!)) . (input Map.!)) "padx"
+                 ,(Fix . fmap (ana (input Map.!)) . (input Map.!)) "fwft"]) =
+    -- perform a Map lookup
+    Fix (Node 41 [(Fix . fmap (ana (input Map.!))) (Node 68 ["gyxo","ebii","jptl"])
+                 ,(Fix . fmap (ana (input Map.!))) (Node 45 ["pbga","havc","qoyq"])
+                 ,(Fix . fmap (ana (input Map.!))) (Node 72 ["ktlj","cntj","xhth"])]) =
+    -- apply fmap
+    Fix (Node 41 [Fix (Node 68 (map (ana (input Map.!)) ["gyxo","ebii","jptl"]))
+                 ,Fix (Node 45 (map (ana (input Map.!)) ["pbga","havc","qoyq"]))
+                 ,Fix (Node 72 (map (ana (input Map.!)) ["ktlj","cntj","xhth"]))]) =
+    -- apply map
+    Fix (Node 41 [Fix (Node 68 [(ana (input Map.!)) "gyxo"
+                               ,(ana (input Map.!)) "ebii"
+                               ,(ana (input Map.!)) "jptl"])
+                 ,Fix (Node 45 [(ana (input Map.!)) "pbga"
+                               ,(ana (input Map.!)) "havc"
+                               ,(ana (input Map.!)) "qoyq"])
+                 ,Fix (Node 72 [(ana (input Map.!)) "ktlj"
+                               ,(ana (input Map.!)) "cntj"
+                               ,(ana (input Map.!)) "xhth"])]) =
+    -- apply definition of ana
+    Fix (Node 41 [Fix (Node 68 [(Fix . fmap (ana (input Map.!)) . (input Map.!)) "gyxo"
+                               ,(Fix . fmap (ana (input Map.!)) . (input Map.!)) "ebii"
+                               ,(Fix . fmap (ana (input Map.!)) . (input Map.!)) "jptl"])
+                 ,Fix (Node 45 [(Fix . fmap (ana (input Map.!)) . (input Map.!)) "pbga"
+                               ,(Fix . fmap (ana (input Map.!)) . (input Map.!)) "havc"
+                               ,(Fix . fmap (ana (input Map.!)) . (input Map.!)) "qoyq"])
+                 ,Fix (Node 72 [(Fix . fmap (ana (input Map.!)) . (input Map.!)) "ktlj"
+                               ,(Fix . fmap (ana (input Map.!)) . (input Map.!)) "cntj"
+                               ,(Fix . fmap (ana (input Map.!)) . (input Map.!)) "xhth"])]) =
+    -- perform a Map lookup
+    Fix (Node 41 [Fix (Node 68 [(Fix . fmap (ana (input Map.!))) (Node 61 [])
+                               ,(Fix . fmap (ana (input Map.!))) (Node 61 [])
+                               ,(Fix . fmap (ana (input Map.!))) (Node 61 [])])
+                 ,Fix (Node 45 [(Fix . fmap (ana (input Map.!))) (Node 66 [])
+                               ,(Fix . fmap (ana (input Map.!))) (Node 66 [])
+                               ,(Fix . fmap (ana (input Map.!))) (Node 66 [])])
+                 ,Fix (Node 72 [(Fix . fmap (ana (input Map.!))) (Node 57 [])
+                               ,(Fix . fmap (ana (input Map.!))) (Node 57 [])
+                               ,(Fix . fmap (ana (input Map.!))) (Node 57 [])])]) =
+    -- apply fmap
+    Fix (Node 41 [Fix (Node 68 [Fix (Node 61 (map (ana (input Map.!)) []))
+                               ,Fix (Node 61 (map (ana (input Map.!)) []))
+                               ,Fix (Node 61 (map (ana (input Map.!)) []))])
+                 ,Fix (Node 45 [Fix (Node 66 (map (ana (input Map.!)) []))
+                               ,Fix (Node 66 (map (ana (input Map.!)) []))
+                               ,Fix (Node 66 (map (ana (input Map.!)) []))])
+                 ,Fix (Node 72 [Fix (Node 57 (map (ana (input Map.!)) []))
+                               ,Fix (Node 57 (map (ana (input Map.!)) []))
+                               ,Fix (Node 57 (map (ana (input Map.!)) []))])]) =
+    -- apply map
+    Fix (Node 41 [Fix (Node 68 [Fix (Node 61 [])
+                               ,Fix (Node 61 [])
+                               ,Fix (Node 61 [])])
+                 ,Fix (Node 45 [Fix (Node 66 [])
+                               ,Fix (Node 66 [])
+                               ,Fix (Node 66 [])])
+                 ,Fix (Node 72 [Fix (Node 57 [])
+                               ,Fix (Node 57 [])
+                               ,Fix (Node 57 [])])]) =
+
+As one can see this is the same tree as drawn above. Also note how the empty
+list serves as base case which prevents `fmap (ana (input Map.!))` to recurse
+forever.
+
+Now we can have a look at the catamorphism
+
+.. code-block:: haskell
+
+    cataM :: (Applicative m, Monad m, Traversable t)
+        => (t a -> m a) -> Fix t -> m a
+    cataM f = (f =<<) . traverse (cataM f) . unFix
+
+    data Summary = Summary !Int !Int -- ^ top node weight, total weight
+      deriving Show
+
+    summarize :: Fix Node -> OneChangeT Int [] Summary
+    summarize = cataM $ \(Node n xs) ->
+
+      if same [ w | Summary _ w <- xs ]
+
+        then -- all children matched, no changes needed
+          pure (Summary n (n + sum [ w | Summary _ w <- xs ]))
+
+        else -- not all children matched, consider ways to fix this
+          asum
+             [ Summary n (n + length xs * newTree) <$ change newNode
+             | Summary newNode newTree <- corrections xs ]
