@@ -208,8 +208,15 @@ to derive the special case of folding on lists from the generic case.
 
 The dual of a catamorphism is called anamorphism, or generic unfold. It does
 exactly the opposite of a catamorphism, i.e. constructing a fix-point type with
-the help of a provided function. Here is the example of an anamorphism
-generating the infinite list of positive integers
+the help of a provided function.
+
+.. code-block:: haskell
+
+    ana :: Functor f => (a -> f a) -> (a -> Fix f)
+    ana f = Fix . fmap (ana f) . f
+
+Here is the example of an anamorphism generating the infinite list of positive
+integers
 
 .. code-block:: haskell
 
@@ -340,6 +347,7 @@ So...
 
 .. code-block:: haskell
 
+    tree =
     (ana (input Map.!)) root_node =
     -- apply definition of ana
     (Fix . fmap (ana (input Map.!)) . (input Map.!)) "tknk" =
@@ -418,26 +426,171 @@ As one can see this is the same tree as drawn above. Also note how the empty
 list serves as base case which prevents `fmap (ana (input Map.!))` to recurse
 forever.
 
-Now we can have a look at the catamorphism
+Now we can have a look at the catamorphism. I use a simpler *phi* function (the
+argument of `cata`) than in the original solution of Eric Mertens, because it
+would be really tedious to write all the intermediate steps down in this blog
+post. However the solution is identical in spirit.
 
 .. code-block:: haskell
 
-    cataM :: (Applicative m, Monad m, Traversable t)
-        => (t a -> m a) -> Fix t -> m a
-    cataM f = (f =<<) . traverse (cataM f) . unFix
+    data Summary = Summary
+        { weight ::!Int         -- ^ total node weight
+        , children :: [Summary] -- ^ the children summaries
+        } deriving Show
 
-    data Summary = Summary !Int !Int -- ^ top node weight, total weight
-      deriving Show
+    phi :: Node Summary -> Summary
+    phi (Node n xs) =
+      if (null xs)
+      then
+        Summary n []
+      else
+        Summary (n + (sum . (map weight)) xs) xs
 
-    summarize :: Fix Node -> OneChangeT Int [] Summary
-    summarize = cataM $ \(Node n xs) ->
+    summarize = cata phi
 
-      if same [ w | Summary _ w <- xs ]
+With these definitions at hand let's `run` the code
 
-        then -- all children matched, no changes needed
-          pure (Summary n (n + sum [ w | Summary _ w <- xs ]))
+.. code-block:: haskell
 
-        else -- not all children matched, consider ways to fix this
-          asum
-             [ Summary n (n + length xs * newTree) <$ change newNode
-             | Summary newNode newTree <- corrections xs ]
+    summary =
+    summarize tree =
+    -- value of tree
+    summarize (Fix (Node 41 [Fix (Node 68 [Fix (Node 61 [])
+                                          ,Fix (Node 61 [])
+                                          ,Fix (Node 61 [])])
+                            ,Fix (Node 45 [Fix (Node 66 [])
+                                          ,Fix (Node 66 [])
+                                          ,Fix (Node 66 [])])
+                            ,Fix (Node 72 [Fix (Node 57 [])
+                                          ,Fix (Node 57 [])
+                                          ,Fix (Node 57 [])])])) =
+    -- definition of summarize
+    (cata phi) (Fix (Node 41 [Fix (Node 68 [Fix (Node 61 [])
+                                           ,Fix (Node 61 [])
+                                           ,Fix (Node 61 [])])
+                             ,Fix (Node 45 [Fix (Node 66 [])
+                                           ,Fix (Node 66 [])
+                                           ,Fix (Node 66 [])])
+                             ,Fix (Node 72 [Fix (Node 57 [])
+                                           ,Fix (Node 57 [])
+                                           ,Fix (Node 57 [])])])) =
+    -- definition of cata
+    (phi . fmap (cata phi) . unFix) (Fix (Node 41 [Fix (Node 68 [Fix (Node 61 [])
+                                                                ,Fix (Node 61 [])
+                                                                ,Fix (Node 61 [])])
+                                                  ,Fix (Node 45 [Fix (Node 66 [])
+                                                                ,Fix (Node 66 [])
+                                                                ,Fix (Node 66 [])])
+                                                  ,Fix (Node 72 [Fix (Node 57 [])
+                                                                ,Fix (Node 57 [])
+                                                                ,Fix (Node 57 [])])])) =
+    -- function application
+    (phi . fmap (cata phi)) (Node 41 [Fix (Node 68 [Fix (Node 61 [])
+                                                   ,Fix (Node 61 [])
+                                                   ,Fix (Node 61 [])])
+                                     ,Fix (Node 45 [Fix (Node 66 [])
+                                                   ,Fix (Node 66 [])
+                                                   ,Fix (Node 66 [])])
+                                     ,Fix (Node 72 [Fix (Node 57 [])
+                                                   ,Fix (Node 57 [])
+                                                   ,Fix (Node 57 [])])]) =
+    -- definition of fmap
+    phi (Node 41 (map (cata phi) [Fix (Node 68 [Fix (Node 61 [])
+                                               ,Fix (Node 61 [])
+                                               ,Fix (Node 61 [])])
+                                 ,Fix (Node 45 [Fix (Node 66 [])
+                                               ,Fix (Node 66 [])
+                                               ,Fix (Node 66 [])])
+                                 ,Fix (Node 72 [Fix (Node 57 [])
+                                               ,Fix (Node 57 [])
+                                               ,Fix (Node 57 [])])])) =
+    -- definition of fmap
+    phi (Node 41 [(cata phi) (Fix (Node 68 [Fix (Node 61 [])
+                                           ,Fix (Node 61 [])
+                                           ,Fix (Node 61 [])]))
+                 ,(cata phi) (Fix (Node 45 [Fix (Node 66 [])
+                                           ,Fix (Node 66 [])
+                                           ,Fix (Node 66 [])]))
+                 ,(cata phi) (Fix (Node 72 [Fix (Node 57 [])
+                                           ,Fix (Node 57 [])
+                                           ,Fix (Node 57 [])]))])) =
+    -- definition of cata + unwrap Fix + apply fmap + map
+    phi (Node 41 [phi (Node 68 [(cata phi) Fix (Node 61 [])
+                               ,(cata phi) Fix (Node 61 [])
+                               ,(cata phi) Fix (Node 61 [])])
+                 ,phi (Node 45 [(cata phi) Fix (Node 66 [])
+                               ,(cata phi) Fix (Node 66 [])
+                               ,(cata phi) Fix (Node 66 [])])
+                 ,phi (Node 72 [(cata phi) Fix (Node 57 [])
+                               ,(cata phi) Fix (Node 57 [])
+                               ,(cata phi) Fix (Node 57 [])])]) =
+    -- definition of cata + unwrap Fix + apply fmap + map
+    phi (Node 41 [phi (Node 68 [phi (Node 61 [])
+                               ,phi (Node 61 [])
+                               ,phi (Node 61 [])])
+                 ,phi (Node 45 [phi (Node 66 [])
+                               ,phi (Node 66 [])
+                               ,phi (Node 66 [])])
+                 ,phi (Node 72 [phi (Node 57 [])
+                               ,phi (Node 57 [])
+                               ,phi (Node 57 [])])]) =
+    -- definition of phi
+    phi (Node 41 [phi (Node 68 [ Summary 61 []
+                               , Summary 61 []
+                               , Summary 61 []])
+                 ,phi (Node 45 [ Summary 66 []
+                               , Summary 66 []
+                               , Summary 66 []])
+                 ,phi (Node 72 [ Summary 57 []
+                               , Summary 57 []
+                               , Summary 57 []])]) =
+    -- definition of phi
+    phi (Node 41 [Summary (68 + (sum . (map weight)) [ Summary 61 []
+                                                     , Summary 61 []
+                                                     , Summary 61 []]) ([ Summary 61 []
+                                                                        , Summary 61 []
+                                                                        , Summary 61 []])
+                 ,Summary (45 + (sum . (map weight)) [ Summary 66 []
+                                                     , Summary 66 []
+                                                     , Summary 66 []]) ([ Summary 66 []
+                                                                        , Summary 66 []
+                                                                        , Summary 66 []])
+                 ,Summary (72 + (sum . (map weight)) [ Summary 57 []
+                                                     , Summary 57 []
+                                                     , Summary 57 []]) ([ Summary 57 []
+                                                                        , Summary 57 []
+                                                                        , Summary 57 []])]) =
+    -- apply map and sum
+    phi (Node 41 [Summary (68 + 183) [ Summary 61 []
+                                     , Summary 61 []
+                                     , Summary 61 []]
+                 ,Summary (45 + 198) [ Summary 66 []
+                                     , Summary 66 []
+                                     , Summary 66 []]
+                 ,Summary (72 + 171) [ Summary 57 []
+                                     , Summary 57 []
+                                     , Summary 57 []]]) =
+    -- apply addition
+    phi (Node 41 [Summary 251 [ Summary 61 []
+                              , Summary 61 []
+                              , Summary 61 []]
+                 ,Summary 243 [ Summary 66 []
+                              , Summary 66 []
+                              , Summary 66 []]
+                 ,Summary 243 [ Summary 57 []
+                              , Summary 57 []
+                              , Summary 57 []]]) =
+    -- definition of phi + apply map and sum
+    Summary 778 [Summary 251 [ Summary 61 []
+                             , Summary 61 []
+                             , Summary 61 []]
+                ,Summary 243 [ Summary 66 []
+                             , Summary 66 []
+                             , Summary 66 []]
+                ,Summary 243 [ Summary 57 []
+                             , Summary 57 []
+                             , Summary 57 []]]
+
+The complete script is `here <{filename}/code/GenericFolds.hs>`_. Note that the
+above `Summary` data type is not the final solution to day 7, but it nicely
+shows how we use generic folding to tackle problems with trees involved.
