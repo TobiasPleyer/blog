@@ -1,12 +1,12 @@
-A new repository from an existing
-#################################
+A new Git repository from an existing one
+#########################################
 
 :date: 2018-01-20
 :tags: git
 :category: Programming
 :authors: Tobias Pleyer
-:summary: Command set to create a new repository from parts of an existing
-          repository
+:summary: Command set to create a new Git repository from parts of an existing
+          Git repository
 
 
 I have a git repository called *Playground* in which I push all kinds of ideas
