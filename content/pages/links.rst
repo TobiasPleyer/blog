@@ -27,6 +27,7 @@ Blogs
 * `Don Stewart's blog`_
 * `FPComplete's blog`_
 * `Roman Cheplyaka's blog`_
+* `Two-Wrongs`_
 
 .. _Eli Bendersky's blog: http://eli.thegreenplace.net
 .. _Armin Ronacher's blog: http://lucumr.pocoo.org
@@ -43,6 +44,7 @@ Blogs
 .. _Don Stewart's blog: https://donsbot.wordpress.com/
 .. _FPComplete's blog: https://www.fpcomplete.com/blog
 .. _Roman Cheplyaka's blog: https://ro-che.info/articles/
+.. _Two-Wrongs: https://two-wrongs.com/
 
 Tutorials
 ---------
@@ -51,11 +53,13 @@ Tutorials
 * Russ Cox's `regular expression tutorial`_
 * `Top Down Operator Precedence`_ by Douglas Crockford
 * `Arduino with the LoRa shield`_ (German)
+* `How to write a Haskell program`_
 
 .. _AVR Tutorial: https://www.mikrocontroller.net/articles/AVR-Tutorial
 .. _regular expression tutorial: https://swtch.com/~rsc/regexp/
 .. _Top Down Operator Precedence: http://javascript.crockford.com/tdop/tdop.html
 .. _Arduino with the LoRa shield: https://stefan.schultheis.at/2017/lora-sensor-arduino-lora-shield/
+.. _How to write a Haskell program: https://wiki.haskell.org/How_to_write_a_Haskell_program
 
 Informational
 -------------
@@ -68,6 +72,8 @@ Informational
 * `Write you a Haskell`_ by Stephen Diehl
 * `IO inside`_ post about Haskell IO
 * `The Computer Language Benchmarks Game`_
+* `A gentle introduction to Haskell numbers`_
+* `To void or not to void`_
 
 .. _PEP index: https://www.python.org/dev/peps/
 .. _David Beazley's website: http://www.dabeaz.com/
@@ -77,6 +83,8 @@ Informational
 .. _Write you a Haskell: http://dev.stephendiehl.com/fun/index.html
 .. _IO inside: https://wiki.haskell.org/IO_inside
 .. _The Computer Language Benchmarks Game: https://benchmarksgame.alioth.debian.org/
+.. _A gentle introduction to Haskell numbers: https://www.haskell.org/tutorial/numbers.html
+.. _To void or not to void: https://www.fpcomplete.com/blog/2017/07/to-void-or-to-void
 
 Useful
 ------
