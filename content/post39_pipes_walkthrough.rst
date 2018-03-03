@@ -35,160 +35,160 @@ project on top of it in which I explicitly export these definitions.
 Evaluation in 32 steps
 ======================
 
-.. code-include:: code/pipes_evaluation1.hs
+.. code-include:: code/pipes_evaluation/pipes_evaluation1.hs
     :lexer: haskell
 
 equals...
 
-.. code-include:: code/pipes_evaluation2.hs
+.. code-include:: code/pipes_evaluation/pipes_evaluation2.hs
     :lexer: haskell
 
 equals...
 
-.. code-include:: code/pipes_evaluation3.hs
+.. code-include:: code/pipes_evaluation/pipes_evaluation3.hs
     :lexer: haskell
 
 equals...
 
-.. code-include:: code/pipes_evaluation4.hs
+.. code-include:: code/pipes_evaluation/pipes_evaluation4.hs
     :lexer: haskell
 
 equals...
 
-.. code-include:: code/pipes_evaluation5.hs
+.. code-include:: code/pipes_evaluation/pipes_evaluation5.hs
     :lexer: haskell
 
 equals...
 
-.. code-include:: code/pipes_evaluation6.hs
+.. code-include:: code/pipes_evaluation/pipes_evaluation6.hs
     :lexer: haskell
 
 equals...
 
-.. code-include:: code/pipes_evaluation7.hs
+.. code-include:: code/pipes_evaluation/pipes_evaluation7.hs
     :lexer: haskell
 
 equals...
 
-.. code-include:: code/pipes_evaluation8.hs
+.. code-include:: code/pipes_evaluation/pipes_evaluation8.hs
     :lexer: haskell
 
 equals...
 
-.. code-include:: code/pipes_evaluation9.hs
+.. code-include:: code/pipes_evaluation/pipes_evaluation9.hs
     :lexer: haskell
 
 equals...
 
-.. code-include:: code/pipes_evaluation10.hs
+.. code-include:: code/pipes_evaluation/pipes_evaluation10.hs
     :lexer: haskell
 
 equals...
 
-.. code-include:: code/pipes_evaluation11.hs
+.. code-include:: code/pipes_evaluation/pipes_evaluation11.hs
     :lexer: haskell
 
 equals...
 
-.. code-include:: code/pipes_evaluation12.hs
+.. code-include:: code/pipes_evaluation/pipes_evaluation12.hs
     :lexer: haskell
 
 equals...
 
-.. code-include:: code/pipes_evaluation13.hs
+.. code-include:: code/pipes_evaluation/pipes_evaluation13.hs
     :lexer: haskell
 
 equals...
 
-.. code-include:: code/pipes_evaluation14.hs
+.. code-include:: code/pipes_evaluation/pipes_evaluation14.hs
     :lexer: haskell
 
 equals...
 
-.. code-include:: code/pipes_evaluation15.hs
+.. code-include:: code/pipes_evaluation/pipes_evaluation15.hs
     :lexer: haskell
 
 equals...
 
-.. code-include:: code/pipes_evaluation16.hs
+.. code-include:: code/pipes_evaluation/pipes_evaluation16.hs
     :lexer: haskell
 
 equals...
 
-.. code-include:: code/pipes_evaluation17.hs
+.. code-include:: code/pipes_evaluation/pipes_evaluation17.hs
     :lexer: haskell
 
 equals...
 
-.. code-include:: code/pipes_evaluation18.hs
+.. code-include:: code/pipes_evaluation/pipes_evaluation18.hs
     :lexer: haskell
 
 equals...
 
-.. code-include:: code/pipes_evaluation19.hs
+.. code-include:: code/pipes_evaluation/pipes_evaluation19.hs
     :lexer: haskell
 
 equals...
 
-.. code-include:: code/pipes_evaluation20.hs
+.. code-include:: code/pipes_evaluation/pipes_evaluation20.hs
     :lexer: haskell
 
 equals...
 
-.. code-include:: code/pipes_evaluation21.hs
+.. code-include:: code/pipes_evaluation/pipes_evaluation21.hs
     :lexer: haskell
 
 equals...
 
-.. code-include:: code/pipes_evaluation22.hs
+.. code-include:: code/pipes_evaluation/pipes_evaluation22.hs
     :lexer: haskell
 
 equals...
 
-.. code-include:: code/pipes_evaluation23.hs
+.. code-include:: code/pipes_evaluation/pipes_evaluation23.hs
     :lexer: haskell
 
 equals...
 
-.. code-include:: code/pipes_evaluation24.hs
+.. code-include:: code/pipes_evaluation/pipes_evaluation24.hs
     :lexer: haskell
 
 equals...
 
-.. code-include:: code/pipes_evaluation25.hs
+.. code-include:: code/pipes_evaluation/pipes_evaluation25.hs
     :lexer: haskell
 
 equals...
 
-.. code-include:: code/pipes_evaluation26.hs
+.. code-include:: code/pipes_evaluation/pipes_evaluation26.hs
     :lexer: haskell
 
 equals...
 
-.. code-include:: code/pipes_evaluation27.hs
+.. code-include:: code/pipes_evaluation/pipes_evaluation27.hs
     :lexer: haskell
 
 equals...
 
-.. code-include:: code/pipes_evaluation28.hs
+.. code-include:: code/pipes_evaluation/pipes_evaluation28.hs
     :lexer: haskell
 
 equals...
 
-.. code-include:: code/pipes_evaluation29.hs
+.. code-include:: code/pipes_evaluation/pipes_evaluation29.hs
     :lexer: haskell
 
 equals...
 
-.. code-include:: code/pipes_evaluation30.hs
+.. code-include:: code/pipes_evaluation/pipes_evaluation30.hs
     :lexer: haskell
 
 equals...
 
-.. code-include:: code/pipes_evaluation31.hs
+.. code-include:: code/pipes_evaluation/pipes_evaluation31.hs
     :lexer: haskell
 
 equals...
 
-.. code-include:: code/pipes_evaluation32.hs
+.. code-include:: code/pipes_evaluation/pipes_evaluation32.hs
     :lexer: haskell
