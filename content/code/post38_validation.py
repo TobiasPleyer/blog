@@ -51,3 +51,8 @@ data2_packages = (list
                        (map
                          (lambda z: valid_rows[z[0]:z[1]],
                           data2_bounds)))))
+
+print("Data1")
+print(data1_packages)
+print("Data2")
+print(data2_packages)

@@ -19,3 +19,8 @@ data2_bounds = package_bounds[1::2]
 # Finally extract the slices and only take the data row entries
 data1_packages = [[a[1] for a in z] for z in [y for y in [valid_rows[x[0]:x[1]] for x in data1_bounds]]]
 data2_packages = [[a[2] for a in z] for z in [y for y in [valid_rows[x[0]:x[1]] for x in data2_bounds]]]
+
+print("Data1")
+print(data1_packages)
+print("Data2")
+print(data2_packages)
