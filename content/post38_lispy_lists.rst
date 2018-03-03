@@ -66,68 +66,8 @@ optimise the hell out of it.
 That said we will make heavy use of lists and generators, generating new lists
 out of existing ones in the process.
 
-.. code:: python
-
-    def cons(x, xs):
-        return [x] + xs
-    # Let filename be the right path
-    with open('post38_example.csv', 'r') as fp:
-        header = fp.readline()
-        lines = fp.readlines()
-    rows = (list
-             (map
-               (lambda x: (float(x[0]), int(x[1]), int(x[2]), int(x[3])),
-                (map
-                  (lambda x: x.split(','),
-                   lines)))))
-    # Remove those rows with invalid data
-    valid_rows = (list
-                   (filter
-                     (lambda x: x[3]==1,
-                      rows)))
-    # Extract the timestamps from the measurement series
-    times = (list
-              (map
-                (lambda x: x[0],
-                 valid_rows)))
-    # Calculate the time differences to find the starts and ends of packages
-    time_diffs = (list
-                   (enumerate
-                     (map
-                       (lambda x: x[1]-x[0],
-                        zip(times[:-1], times[1:])))))
-    # Find those indices where the time differnce is greater than the inhibit time
-    package_idxs = (cons
-                     (0,
-                      (list
-                        (map
-                          (lambda x: x[0]+1,
-                           (filter
-                             (lambda x: x[1] > 1e-4,
-                              time_diffs)))))))
-    # Zip those bounds into (start, end) pairs
-    package_bounds = (list
-                       (zip
-                         (package_idxs[:-1],
-                          package_idxs[1:])))
-    # Just take every other bounds pair (alternating data constraint)
-    data1_bounds = package_bounds[::2]
-    data2_bounds = package_bounds[1::2]
-    # Finally extract the slices and only take the data row entries
-    data1_packages = (list
-                       (map
-                          (lambda x: list
-                                       (map(lambda y: y[1], x)),
-                           (map
-                             (lambda z: valid_rows[z[0]:z[1]],
-                              data1_bounds)))))
-    data2_packages = (list
-                       (map
-                          (lambda x: list
-                                       (map(lambda y: y[2], x)),
-                           (map
-                             (lambda z: valid_rows[z[0]:z[1]],
-                              data2_bounds)))))
+.. code-include:: code/post38_version1.py
+    :lexer: python
 
 Each step reduces the list of available indices. The most critical point is the
 `enumerate` in the calculation in *time_diffs*. This enables us to keep track
@@ -151,26 +91,5 @@ Instead Python offers list comprehension which come with a bunch of advantages
 
 Below is the same program as above, but with list comprehensions instead
 
-.. code:: python
-
-    # Let filename be the right path
-    with open('post38_example.csv', 'r') as fp:
-        header = fp.readline()
-        lines = fp.readlines()
-    rows = [(float(x[0]), int(x[1]), int(x[2]), int(x[3])) for x in [line.split(',') for line in lines]]
-    # Remove those rows with invalid data
-    valid_rows = [row for row in rows if row[3]==1]
-    # Extract the timestamps from the measurement series
-    times = [x[0] for x in valid_rows]
-    # Calculate the time differences to find the starts and ends of packages
-    time_diffs = enumerate([x[1]-x[0] for x in zip(times[:-1], times[1:])])
-    # Find those indices where the time differnce is greater than the inhibit time
-    package_idxs = [0] + [x[0]+1 for x in time_diffs if x[1]>1e-4]
-    # Zip those bounds into (start, end) pairs
-    package_bounds = list(zip(package_idxs[:-1], package_idxs[1:]))
-    # Just take every other bounds pair (alternating data constraint)
-    data1_bounds = package_bounds[::2]
-    data2_bounds = package_bounds[1::2]
-    # Finally extract the slices and only take the data row entries
-    data1_packages = [[a[1] for a in z] for z in [y for y in [valid_rows[x[0]:x[1]] for x in data1_bounds]]]
-    data2_packages = [[a[2] for a in z] for z in [y for y in [valid_rows[x[0]:x[1]] for x in data2_bounds]]]
+.. code-include:: code/post38_version2.py
+    :lexer: python
