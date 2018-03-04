@@ -56,7 +56,7 @@ Tutorials
 * `Top Down Operator Precedence`_ by Douglas Crockford
 * `Arduino with the LoRa shield`_ (German)
 * `How to write a Haskell program`_
-* The `OSDev wiki` about developing operating systems
+* The `OSDev wiki`_ about developing operating systems
 
 .. _AVR Tutorial: https://www.mikrocontroller.net/articles/AVR-Tutorial
 .. _regular expression tutorial: https://swtch.com/~rsc/regexp/
