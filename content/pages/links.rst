@@ -28,6 +28,7 @@ Blogs
 * `FPComplete's blog`_
 * `Roman Cheplyaka's blog`_
 * `Two-Wrongs`_
+* `Gabriel Gonzalez' blog`_
 
 .. _Eli Bendersky's blog: http://eli.thegreenplace.net
 .. _Armin Ronacher's blog: http://lucumr.pocoo.org
@@ -45,6 +46,7 @@ Blogs
 .. _FPComplete's blog: https://www.fpcomplete.com/blog
 .. _Roman Cheplyaka's blog: https://ro-che.info/articles/
 .. _Two-Wrongs: https://two-wrongs.com/
+.. _Gabriel Gonzalez' blog: http://www.haskellforall.com/
 
 Tutorials
 ---------
