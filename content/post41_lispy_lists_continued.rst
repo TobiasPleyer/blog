@@ -39,3 +39,9 @@ demo task. The whole data evaluation logic is way to fragile regarding the
 floating point values of the data. Just changing the threshold from `1e-4` to
 `1.1e-4` totally changes the results. This, however, does not change the
 general ideas presented in this and the previous post.
+
+Clojure
+=======
+
+.. code-include:: code/post41/post41-clojure/src/post41_clojure/core.clj
+    :lexer: clojure
