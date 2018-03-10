@@ -28,6 +28,10 @@
       (map #(str/split % #",")
            (str/split-lines (slurp filename))))))
 
+(defn valid?
+  [row]
+  (> (get row 3) 0))
+
 (defn make-time-diffs
   "Create a new vector from a vector of time values where the previous time is
   subtracted from the successor, thus leading a time difference vector."
@@ -51,28 +55,32 @@
   [pkg_idxs]
   (map vector (subvec pkg_idxs 0 (- (count pkg_idxs) 1)) (subvec pkg_idxs 1)))
 
-(defn extract-data
-  "Extract the data from the given data vectors based on the given bounds and a
+(defn extract-relevant-data
+  "Extract the relevant package boundary values based on the given bounds and a
   predicate to filter the bounds"
-  [pred bounds data]
+  [data pred bounds]
   (let [data_bounds (keep-indexed #(if (pred %1) %2) bounds)]
     (for [[start end] data_bounds]
       (for [idx (range start end)]
         (get data idx)))))
 
+(defn extract-data
+  "Extract the data from the given data rows"
+  [idx pred rows]
+  (let [times (get-col 0 rows)
+        data (get-col idx rows)]
+    ((comp
+      #(extract-relevant-data data pred %)
+      make-package-bounds
+      make-package-indices
+      make-time-diffs) times)))
+
 (defn -main
   "Main program for the demo project."
   [& args]
   (let [filename (first args)
-        values (read-data filename)
-        times (get-col 0 values)
-        raw_data1 (get-col 1 values)
-        raw_data2 (get-col 2 values)
-        valid (get-col 3 values)
-        time_diffs (make-time-diffs times)
-        pkg_idxs (make-package-indices time_diffs)
-        pkg_bounds (make-package-bounds pkg_idxs)
-        data1 (extract-data even? pkg_bounds raw_data1)
-        data2 (extract-data odd? pkg_bounds raw_data2)]
+        rows (keep #(if (valid? %) %) (read-data filename))
+        data1 (extract-data 1 even? rows)
+        data2 (extract-data 2 odd? rows)]
     (doseq [string ["Data1" data1 "Data2" data2]]
       (println string))))
