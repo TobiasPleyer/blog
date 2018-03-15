@@ -101,6 +101,7 @@ Useful
 * Evan Wallace's `Finite State Machine Designer`_
 * `List of Python package qualifiers`_
 * `choosealicense.com`_
+* `Tagsoup meets Parsec`_ by Magnus Therning
 
 .. _Vim spf13: http://vim.spf13.com/
 .. _Open Wikibook for Haskell: https://en.wikibooks.org/wiki/Haskell
@@ -113,6 +114,7 @@ Useful
 .. _Finite State Machine Designer: http://www.madebyevan.com/fsm/
 .. _List of Python package qualifiers: https://pypi.python.org/pypi?%3Aaction=list_classifiers
 .. _choosealicense.com: https://choosealicense.com/licenses/
+.. _Tagsoup meets Parsec: http://therning.org/magnus/posts/2008-08-08-367-tagsoup-meet-parsec.html
 
 Interesting Projects
 --------------------
