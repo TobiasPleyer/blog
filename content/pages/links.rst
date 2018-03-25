@@ -29,6 +29,8 @@ Blogs
 * `Roman Cheplyaka's blog`_
 * `Two-Wrongs`_
 * `Gabriel Gonzalez' blog`_
+* `Jean Niklas L’orange's blog`_
+* `Paolo Capriotti's blog`_
 
 .. _Eli Bendersky's blog: http://eli.thegreenplace.net
 .. _Armin Ronacher's blog: http://lucumr.pocoo.org
@@ -47,6 +49,8 @@ Blogs
 .. _Roman Cheplyaka's blog: https://ro-che.info/articles/
 .. _Two-Wrongs: https://two-wrongs.com/
 .. _Gabriel Gonzalez' blog: http://www.haskellforall.com/
+.. _Jean Niklas L’orange's blog: https://hypirion.com/
+.. _Paolo Capriotti's blog: https://paolocapriotti.com/
 
 Tutorials
 ---------
@@ -78,6 +82,8 @@ Informational
 * `The Computer Language Benchmarks Game`_
 * `A gentle introduction to Haskell numbers`_
 * `To void or not to void`_
+* The `Real World Haskell`_ book
+* Jean Niklas L’orange's series "Understanding Clojure's Persistent Vectors" (UCPV), `UCPV pt1`_, `UCPV pt2`_, `UCPV pt3`_
 
 .. _PEP index: https://www.python.org/dev/peps/
 .. _David Beazley's website: http://www.dabeaz.com/
@@ -89,6 +95,10 @@ Informational
 .. _The Computer Language Benchmarks Game: https://benchmarksgame.alioth.debian.org/
 .. _A gentle introduction to Haskell numbers: https://www.haskell.org/tutorial/numbers.html
 .. _To void or not to void: https://www.fpcomplete.com/blog/2017/07/to-void-or-to-void
+.. _UCPV pt1: https://hypirion.com/musings/understanding-persistent-vector-pt-1
+.. _UCPV pt2: https://hypirion.com/musings/understanding-persistent-vector-pt-2
+.. _UCPV pt3: https://hypirion.com/musings/understanding-persistent-vector-pt-3
+.. _Real World Haskell: http://book.realworldhaskell.org/
 
 Useful
 ------
@@ -102,6 +112,9 @@ Useful
 * `List of Python package qualifiers`_
 * `choosealicense.com`_
 * `Tagsoup meets Parsec`_ by Magnus Therning
+* `Github Basic writing and formatting syntax`_
+* `Clojure's Quickref`_
+* `draw.io`_ flowchart maker
 
 .. _Vim spf13: http://vim.spf13.com/
 .. _Open Wikibook for Haskell: https://en.wikibooks.org/wiki/Haskell
@@ -115,6 +128,9 @@ Useful
 .. _List of Python package qualifiers: https://pypi.python.org/pypi?%3Aaction=list_classifiers
 .. _choosealicense.com: https://choosealicense.com/licenses/
 .. _Tagsoup meets Parsec: http://therning.org/magnus/posts/2008-08-08-367-tagsoup-meet-parsec.html
+.. _Github Basic writing and formatting syntax: https://help.github.com/articles/basic-writing-and-formatting-syntax/
+.. _Clojure's Quickref: http://clojuredocs.org/quickref
+.. _draw.io: https://www.draw.io/
 
 Interesting Projects
 --------------------
@@ -126,6 +142,7 @@ Interesting Projects
 * `Hakyll`_ - static site generator written in Haskell
 * `suckless.org`_, an initiative for better software
 * `ohmyzsh`_, a framework around the z-shell (zsh)
+* `Workflow`_
 
 .. _Meson: http://mesonbuild.com/
 .. _CMake: https://cmake.org/
@@ -134,9 +151,17 @@ Interesting Projects
 .. _Hakyll: https://jaspervdj.be/hakyll/
 .. _suckless.org: http://suckless.org/
 .. _ohmyzsh: http://ohmyz.sh/
+.. _Workflow: https://github.com/agocorona/Workflow
 
 Book Wishlist
 -------------
 
 * *Structure and Interpretation of Computer Programs*
 * *Blink: The Power of Thinking without Thinking*
+
+Bonsai
+------
+
+* `Bonsai Empire`_
+
+.. _Bonsai Empire: http://www.bonsaiempire.de/
