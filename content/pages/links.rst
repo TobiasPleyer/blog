@@ -143,6 +143,7 @@ Interesting Projects
 * `suckless.org`_, an initiative for better software
 * `ohmyzsh`_, a framework around the z-shell (zsh)
 * `Workflow`_
+* `Haxl`_
 
 .. _Meson: http://mesonbuild.com/
 .. _CMake: https://cmake.org/
@@ -152,6 +153,7 @@ Interesting Projects
 .. _suckless.org: http://suckless.org/
 .. _ohmyzsh: http://ohmyz.sh/
 .. _Workflow: https://github.com/agocorona/Workflow
+.. _Haxl: https://github.com/facebook/Haxl
 
 Book Wishlist
 -------------
