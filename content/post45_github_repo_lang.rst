@@ -17,7 +17,7 @@ version 1.0 of my Haskell application *chefkoch* `on github`_.
 
 .. _on github: https://github.com/TobiasPleyer/chefkoch
 
-The only problem I had: gihub thought its HTML, or at least that was the
+The only problem I had: gihub thought it's HTML, or at least that was the
 language displayed in the repository overview.
 
 Solution
