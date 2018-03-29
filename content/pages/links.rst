@@ -60,6 +60,7 @@ Tutorials
 * `Top Down Operator Precedence`_ by Douglas Crockford
 * `Arduino with the LoRa shield`_ (German)
 * `How to write a Haskell program`_
+* `Parsing Log Files in Haskell`_
 * The `OSDev wiki`_ about developing operating systems
 
 .. _AVR Tutorial: https://www.mikrocontroller.net/articles/AVR-Tutorial
@@ -68,6 +69,7 @@ Tutorials
 .. _Arduino with the LoRa shield: https://stefan.schultheis.at/2017/lora-sensor-arduino-lora-shield/
 .. _How to write a Haskell program: https://wiki.haskell.org/How_to_write_a_Haskell_program
 .. _OSDev wiki: https://wiki.osdev.org/Main_Page
+.. _Parsing Log Files in Haskell: https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/text-manipulation/attoparsec
 
 Informational
 -------------
