@@ -41,6 +41,7 @@ the code slightly:
     * The main method has been altered a bit. The parser result is now printed
       more readable, with one parsed log per line
 
+.. _schoolofhaskell: https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/text-manipulation/attoparsec
 .. _stack script: https://docs.haskellstack.org/en/stable/GUIDE/#script-interpreter
 
 .. code-include:: code/post46/log_parser.hs
@@ -56,8 +57,36 @@ the code slightly:
     LogEntry {entryTime = 2013-06-29 12:51:50, entryIP = IP 101 40 50 62, entryProduct = Keyboard}
     LogEntry {entryTime = 2013-06-29 13:10:45, entryIP = IP 103 29 60 13, entryProduct = Mouse}
 
-
 Python
 ------
 
-.. _schoolofhaskell: https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/text-manipulation/attoparsec
+
+.. code-include:: code/post46/log_parser.py
+    :lexer: python
+
+.. code::
+
+    $ python3 log_parser.py
+    [datetime.datetime(2013, 6, 29, 11, 16, 23), IP(124.67.34.60), Product(keyboard)]
+    [datetime.datetime(2013, 6, 29, 11, 32, 12), IP(212.141.23.67), Product(mouse)]
+    [datetime.datetime(2013, 6, 29, 11, 33, 8), IP(212.141.23.67), Product(monitor)]
+    [datetime.datetime(2013, 6, 29, 12, 12, 34), IP(125.80.32.31), Product(speakers)]
+    [datetime.datetime(2013, 6, 29, 12, 51, 50), IP(101.40.50.62), Product(keyboard)]
+    [datetime.datetime(2013, 6, 29, 13, 10, 45), IP(103.29.60.13), Product(mouse)]
+
+**Note:** The parser *parseIP* could be written much shorter with the help of
+*delimitedList*:
+
+.. code:: python
+
+    parseIP = delimitedList(Word(nums), ".").setResultsName("IP")
+
+Conclusion
+----------
+
+I really like both parser libraries. At least in this usecase it is amazing how
+easy and automatic it was to translate the original Haskell parser to Python.
+
+I used enclosing parenthesis as a small trick to be able to write the Python
+parser as close to the Haskell parser in do-notation. I think both parser
+implementations are comprehensible and easy to grasp.
