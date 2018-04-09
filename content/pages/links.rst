@@ -163,6 +163,25 @@ Interesting Projects
 .. _Haxl: https://github.com/facebook/Haxl
 .. _rio library: https://github.com/commercialhaskell/rio
 
+My youtube favourites
+---------------------
+
+* `Beautiful Parallelism - Harnessing Multicores with Haskell`_
+* `Why Functional Programming Matters`_
+* `Haxl A Big Hammer for Concurrency`_
+* `Lexical Scanning in Go`_
+* `Low-level Haskell - An Interactive Tour Through the STG`_
+* `Python 3 Metaprogramming`_
+* `Haskell Amuse-Bouche`_
+
+.. _Beautiful Parallelism - Harnessing Multicores with Haskell: https://www.youtube.com/watch?v=MOv71gAOP6M
+.. _Why Functional Programming Matters: https://www.youtube.com/watch?v=XrNdvWqxBvA
+.. _Haxl A Big Hammer for Concurrency: https://www.youtube.com/watch?v=sT6VJkkhy0o
+.. _Lexical Scanning in Go: https://www.youtube.com/watch?v=HxaD_trXwRE
+.. _Low-level Haskell - An Interactive Tour Through the STG: https://www.youtube.com/watch?v=-MFk7PIKYsg
+.. _Python 3 Metaprogramming: https://www.youtube.com/watch?v=sPiWg5jSoZI
+.. _Haskell Amuse-Bouche: https://www.youtube.com/watch?v=b9FagOVqxmI
+
 Book Wishlist
 -------------
 
