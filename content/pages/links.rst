@@ -84,8 +84,8 @@ Informational
 * `The Computer Language Benchmarks Game`_
 * `A gentle introduction to Haskell numbers`_
 * `To void or not to void`_
-* The `Real World Haskell`_ book
 * Jean Niklas L’orange's series "Understanding Clojure's Persistent Vectors" (UCPV), `UCPV pt1`_, `UCPV pt2`_, `UCPV pt3`_
+* Don Stewart's blog series about the development of Xmonad: `Xm_pt1`_, `Xm_pt2`_, `Xm_pt3`_
 
 .. _PEP index: https://www.python.org/dev/peps/
 .. _David Beazley's website: http://www.dabeaz.com/
@@ -100,7 +100,9 @@ Informational
 .. _UCPV pt1: https://hypirion.com/musings/understanding-persistent-vector-pt-1
 .. _UCPV pt2: https://hypirion.com/musings/understanding-persistent-vector-pt-2
 .. _UCPV pt3: https://hypirion.com/musings/understanding-persistent-vector-pt-3
-.. _Real World Haskell: http://book.realworldhaskell.org/
+.. _Xm_pt1: https://donsbot.wordpress.com/2007/05/01/roll-your-own-window-manager-part-1-defining-and-testing-a-model/
+.. _Xm_pt2: https://donsbot.wordpress.com/2007/05/17/roll-your-own-window-manager-tracking-focus-with-a-zipper/
+.. _Xm_pt3: https://donsbot.wordpress.com/2007/06/02/xmonad-a-success-for-pure-functional-data-and-quickcheck/
 
 Useful
 ------
@@ -116,6 +118,7 @@ Useful
 * `Tagsoup meets Parsec`_ by Magnus Therning
 * `Github Basic writing and formatting syntax`_
 * `Clojure's Quickref`_
+* The `Real World Haskell`_ book
 * `draw.io`_ flowchart maker
 
 .. _Vim spf13: http://vim.spf13.com/
@@ -132,6 +135,7 @@ Useful
 .. _Tagsoup meets Parsec: http://therning.org/magnus/posts/2008-08-08-367-tagsoup-meet-parsec.html
 .. _Github Basic writing and formatting syntax: https://help.github.com/articles/basic-writing-and-formatting-syntax/
 .. _Clojure's Quickref: http://clojuredocs.org/quickref
+.. _Real World Haskell: http://book.realworldhaskell.org/
 .. _draw.io: https://www.draw.io/
 
 Interesting Projects
