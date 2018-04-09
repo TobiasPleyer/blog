@@ -86,6 +86,7 @@ Informational
 * `To void or not to void`_
 * Jean Niklas L’orange's series "Understanding Clojure's Persistent Vectors" (UCPV), `UCPV pt1`_, `UCPV pt2`_, `UCPV pt3`_
 * Don Stewart's blog series about the development of Xmonad: `Xm_pt1`_, `Xm_pt2`_, `Xm_pt3`_
+* `Dynamic linker tricks - Using LD_PRELOAD to cheat, inject features and investigate programs`_ by Rafał Cieślak
 
 .. _PEP index: https://www.python.org/dev/peps/
 .. _David Beazley's website: http://www.dabeaz.com/
@@ -103,6 +104,7 @@ Informational
 .. _Xm_pt1: https://donsbot.wordpress.com/2007/05/01/roll-your-own-window-manager-part-1-defining-and-testing-a-model/
 .. _Xm_pt2: https://donsbot.wordpress.com/2007/05/17/roll-your-own-window-manager-tracking-focus-with-a-zipper/
 .. _Xm_pt3: https://donsbot.wordpress.com/2007/06/02/xmonad-a-success-for-pure-functional-data-and-quickcheck/
+.. _Dynamic linker tricks - Using LD_PRELOAD to cheat, inject features and investigate programs: https://rafalcieslak.wordpress.com/2013/04/02/dynamic-linker-tricks-using-ld_preload-to-cheat-inject-features-and-investigate-programs/
 
 Useful
 ------
