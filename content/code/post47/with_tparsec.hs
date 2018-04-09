@@ -17,20 +17,13 @@ notTag :: TagRep rep => rep -> TagParser String () (Tag String)
 notTag t = satisfy (~/= t) <?> ("not (" ++ show(toTagRep t :: Tag String) ++ ")")
 
 
-notEmpty :: Tag String -> Bool
-notEmpty tag
-  | Just "" <- maybeTagText tag = False
-  | otherwise = True
-
-
-strip :: Tag String -> Tag String
-strip = fmap (unwords . words)
+strip = unwords . words
 
 
 main :: IO ()
 main = do
   exampleHtml <- readFile "example.html"
-  let tags = (filter notEmpty . map strip) (parseTags exampleHtml)
+  let tags = parseTags exampleHtml
       parseResults = parse getTableRows "demo" tags
   printParseResults parseResults
 
@@ -43,14 +36,15 @@ printParseResults (Right results) = forM_ results print
 getTableRows = do
   skipMany (notTag (TagOpen "table" [("class","interesting things")]))
   tagP (TagOpen "table" []) (\_ ->
-          many (tagP (TagOpen "tr" []) (\_ -> do
-                                              tagOpen "td"
-                                              (txt1,_) <- parseCol
-                                              tagClose "td"
-                                              tagOpen "td"
-                                              (txt2,lnk) <- parseCol
-                                              tagClose "td"
-                                              return (txt1,txt2,lnk))))
+    many (tagP (TagOpen "tr" []) (\_ ->
+      do
+        tagOpen "td"
+        (txt1,_) <- parseCol
+        tagClose "td"
+        tagOpen "td"
+        (txt2,lnk) <- parseCol
+        tagClose "td"
+        return (strip txt1,strip txt2,lnk))))
 
 
 parseCol = do
