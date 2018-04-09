@@ -150,6 +150,7 @@ Interesting Projects
 * `ohmyzsh`_, a framework around the z-shell (zsh)
 * `Workflow`_
 * `Haxl`_
+* The `rio library`_ for Haskell
 
 .. _Meson: http://mesonbuild.com/
 .. _CMake: https://cmake.org/
@@ -160,6 +161,7 @@ Interesting Projects
 .. _ohmyzsh: http://ohmyz.sh/
 .. _Workflow: https://github.com/agocorona/Workflow
 .. _Haxl: https://github.com/facebook/Haxl
+.. _rio library: https://github.com/commercialhaskell/rio
 
 Book Wishlist
 -------------
