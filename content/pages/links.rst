@@ -31,6 +31,7 @@ Blogs
 * `Gabriel Gonzalez' blog`_
 * `Jean Niklas L’orange's blog`_
 * `Paolo Capriotti's blog`_
+* `Daniel Higginbotham's website`_
 
 .. _Eli Bendersky's blog: http://eli.thegreenplace.net
 .. _Armin Ronacher's blog: http://lucumr.pocoo.org
@@ -51,6 +52,7 @@ Blogs
 .. _Gabriel Gonzalez' blog: http://www.haskellforall.com/
 .. _Jean Niklas L’orange's blog: https://hypirion.com/
 .. _Paolo Capriotti's blog: https://paolocapriotti.com/
+.. _Daniel Higginbotham's website: http://www.flyingmachinestudios.com/
 
 Tutorials
 ---------
