@@ -175,6 +175,7 @@ My youtube favourites
 * `Low-level Haskell - An Interactive Tour Through the STG`_
 * `Python 3 Metaprogramming`_
 * `Haskell Amuse-Bouche`_
+* `Stewardship the Sobering Parts`_
 
 .. _Beautiful Parallelism - Harnessing Multicores with Haskell: https://www.youtube.com/watch?v=MOv71gAOP6M
 .. _Why Functional Programming Matters: https://www.youtube.com/watch?v=XrNdvWqxBvA
@@ -183,6 +184,7 @@ My youtube favourites
 .. _Low-level Haskell - An Interactive Tour Through the STG: https://www.youtube.com/watch?v=-MFk7PIKYsg
 .. _Python 3 Metaprogramming: https://www.youtube.com/watch?v=sPiWg5jSoZI
 .. _Haskell Amuse-Bouche: https://www.youtube.com/watch?v=b9FagOVqxmI
+.. _Stewardship the Sobering Parts: https://www.youtube.com/watch?v=2y5Pv4yN0b0
 
 Book Wishlist
 -------------
