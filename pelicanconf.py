@@ -17,7 +17,7 @@ MENUITEMS = [
 DISPLAY_PAGES_ON_MENU = False
 DISPLAY_CATEGORIES_ON_MENU = False
 
-THEME = '/home/tobias/website/blog/themes/my'
+THEME = 'themes/my'
 
 PATH = 'content'
 
