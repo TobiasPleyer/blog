@@ -1,1 +1,6 @@
-/home/tobias/.vimrc.bundles.local
+Bundle 'jlanzarotta/bufexplorer'
+Bundle 'vim-scripts/a.vim'
+Bundle 'l04m33/vlime', {'rtp': 'vim/'}
+Bundle 'bhurlow/vim-parinfer'
+Bundle 'kovisoft/paredit'
+Bundle 'tpope/vim-fireplace'

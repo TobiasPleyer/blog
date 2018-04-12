@@ -1,1 +1,7 @@
-/home/tobias/.vimrc.local
+nnoremap <silent> <S-F11> :bp<CR>   "next buffer
+nnoremap <silent> <S-F12> :bn<CR>   "previous buffer
+nnoremap <silent> <C-F11> :tabp<CR> "next tab
+nnoremap <silent> <C-F12> :tabn<CR> "previous tab
+
+"Highlights the column at 80 chars deep
+set colorcolumn=80
