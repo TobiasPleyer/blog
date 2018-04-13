@@ -77,7 +77,7 @@ apache_upload:
 ftp:
 	$(PY3) render_upload.py --user $(USER) --host $(HOST)
 
-ftp_upload:
+ftp_upload: ftp
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
 	$(PY3) render_upload.py --user $(USER) --host $(HOST)
 	./upload_all.sh
