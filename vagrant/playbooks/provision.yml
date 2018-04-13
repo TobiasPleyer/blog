@@ -1,0 +1,38 @@
+---
+- hosts: all
+  become: true
+  become_method: sudo
+
+  tasks:
+  - name: Install git
+    apt:
+      pkg: git
+      state: present
+      update-cache: yes
+  - name: Install python pip
+    apt:
+      pkg: python-pip
+      state: present
+      update-cache: yes
+  - name: Install python docutils
+    pip:
+      name: docutils
+      version: 0.13.1
+      state: present
+  - name: Install python pelican
+    pip:
+      name: pelican
+      version: 3.7.1
+      state: present
+  - name: Install apache2
+    apt:
+      pkg: apache2
+      state: present
+  - name: Copy docutils patch file
+    copy:
+        src: ../docutils.patch
+        dest: /usr/local/lib/python2.7/dist-packages
+  - name: Patch docutils
+    shell: patch -s -p0 < docutils.patch
+    args:
+        chdir: /usr/local/lib/python2.7/dist-packages

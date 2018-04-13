@@ -1,0 +1,16 @@
+---
+- hosts: all
+  become: true
+  become_method: sudo
+
+  tasks:
+  - name: Copy blog folder
+    synchronize:
+        src: ../../..
+        dest: /home/vagrant
+  - name: make draft
+    command: make draft
+    args:
+        chdir: /home/vagrant/blog
+  - name: Move files to /var/www/html
+    command: rsync -rem /home/vagrant/blog/output/ /var/www/html

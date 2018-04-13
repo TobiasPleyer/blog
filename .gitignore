@@ -4,3 +4,5 @@ output/*
 upload_all.sh
 Makefile.private
 sources/pyimport/*.png
+vagrant/.vagrant
+vagrant/playbooks/*.retry
