@@ -64,6 +64,7 @@ Tutorials
 * `How to write a Haskell program`_
 * `Parsing Log Files in Haskell`_
 * The `OSDev wiki`_ about developing operating systems
+* `Modern ClojureScript`_
 
 .. _AVR Tutorial: https://www.mikrocontroller.net/articles/AVR-Tutorial
 .. _regular expression tutorial: https://swtch.com/~rsc/regexp/
@@ -72,6 +73,7 @@ Tutorials
 .. _How to write a Haskell program: https://wiki.haskell.org/How_to_write_a_Haskell_program
 .. _OSDev wiki: https://wiki.osdev.org/Main_Page
 .. _Parsing Log Files in Haskell: https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/text-manipulation/attoparsec
+.. _Modern ClojureScript: https://github.com/magomimmo/modern-cljs
 
 Informational
 -------------
@@ -89,6 +91,7 @@ Informational
 * Jean Niklas L’orange's series "Understanding Clojure's Persistent Vectors" (UCPV), `UCPV pt1`_, `UCPV pt2`_, `UCPV pt3`_
 * Don Stewart's blog series about the development of Xmonad: `Xm_pt1`_, `Xm_pt2`_, `Xm_pt3`_
 * `Dynamic linker tricks - Using LD_PRELOAD to cheat, inject features and investigate programs`_ by Rafał Cieślak
+* `Ansible best practices`_
 
 .. _PEP index: https://www.python.org/dev/peps/
 .. _David Beazley's website: http://www.dabeaz.com/
@@ -107,6 +110,7 @@ Informational
 .. _Xm_pt2: https://donsbot.wordpress.com/2007/05/17/roll-your-own-window-manager-tracking-focus-with-a-zipper/
 .. _Xm_pt3: https://donsbot.wordpress.com/2007/06/02/xmonad-a-success-for-pure-functional-data-and-quickcheck/
 .. _Dynamic linker tricks - Using LD_PRELOAD to cheat, inject features and investigate programs: https://rafalcieslak.wordpress.com/2013/04/02/dynamic-linker-tricks-using-ld_preload-to-cheat-inject-features-and-investigate-programs/
+.. _Ansible best practices: http://docs.ansible.com/ansible/latest/user_guide/playbooks_best_practices.html
 
 Useful
 ------
@@ -124,6 +128,7 @@ Useful
 * `Clojure's Quickref`_
 * The `Real World Haskell`_ book
 * `draw.io`_ flowchart maker
+* `Ansible module index`_
 
 .. _Vim spf13: http://vim.spf13.com/
 .. _Open Wikibook for Haskell: https://en.wikibooks.org/wiki/Haskell
@@ -141,6 +146,7 @@ Useful
 .. _Clojure's Quickref: http://clojuredocs.org/quickref
 .. _Real World Haskell: http://book.realworldhaskell.org/
 .. _draw.io: https://www.draw.io/
+.. _Ansible module index: http://docs.ansible.com/ansible/latest/modules/modules_by_category.html
 
 Interesting Projects
 --------------------
@@ -155,6 +161,7 @@ Interesting Projects
 * `Workflow`_
 * `Haxl`_
 * The `rio library`_ for Haskell
+* `Ansible`_
 
 .. _Meson: http://mesonbuild.com/
 .. _CMake: https://cmake.org/
@@ -166,6 +173,7 @@ Interesting Projects
 .. _Workflow: https://github.com/agocorona/Workflow
 .. _Haxl: https://github.com/facebook/Haxl
 .. _rio library: https://github.com/commercialhaskell/rio
+.. _Ansible: https://github.com/ansible/ansible
 
 My youtube favourites
 ---------------------
