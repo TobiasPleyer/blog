@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Export envirronment variables understood by Ansible
+# Export Ansible specific environment variables
 export PYTHONUNBUFFERED=1
 export ANSIBLE_FORCE_COLOR=true
 export ANSIBLE_HOST_KEY_CHECKING=false
