@@ -34,14 +34,14 @@ the folder **output** and the site should be served under localhost:8080.
 
 This won't be the case right out of the box, because
 
-    1. You need to have [_Python_](https://www.python.org) installed on your system
+    1. You need to have [Python](https://www.python.org) installed on your system
     2. You need to have Pelican installed on your system
-    3. You need to have [_Apache_](https://www.apache.org) installed on your system
+    3. You need to have [Apache](https://www.apache.org) installed on your system
     4. I have patched my Python's docutils, see
        [here](http://blog.tpleyer.de/patching-the-docutils-rst-parser.html)
     5. I have a non standard Apache location on my system
 
-Because of these points I have also included an environment to run a virtual
+Because of these points I have also included an configuration to run a virtual
 machine via Vagrant. In order to deploy the blog to the virtual machine do the
 following:
 
