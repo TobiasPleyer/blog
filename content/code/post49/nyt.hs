@@ -26,7 +26,6 @@ articleSelector = ("div" @: [hasClass "collection",
 headlineSelector = "h2" @: [hasClass "story-heading"]
 authorSelector = "p" @: [hasClass "byline"]
 urlSelector = "h2" // "a"
-summarySelector = "p" @: [hasClass "summary"]
 
 -- Utility functions
 

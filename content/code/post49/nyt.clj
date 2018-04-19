@@ -16,7 +16,6 @@
 (def headline-selector [:h2.story-heading])
 (def author-selector   [:p.byline])
 (def url-selector      [:h2 :> :a])
-(def summary-selector  [:p.summary html/text-node])
 
 ;; Utility functions
 
