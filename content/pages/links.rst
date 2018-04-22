@@ -94,6 +94,7 @@ Informational
 * Don Stewart's blog series about the development of Xmonad: `Xm_pt1`_, `Xm_pt2`_, `Xm_pt3`_
 * `Dynamic linker tricks - Using LD_PRELOAD to cheat, inject features and investigate programs`_ by Rafał Cieślak
 * `Ansible best practices`_
+* `The Architecture of Open Source Applications`_
 
 .. _PEP index: https://www.python.org/dev/peps/
 .. _David Beazley's website: http://www.dabeaz.com/
@@ -113,6 +114,7 @@ Informational
 .. _Xm_pt3: https://donsbot.wordpress.com/2007/06/02/xmonad-a-success-for-pure-functional-data-and-quickcheck/
 .. _Dynamic linker tricks - Using LD_PRELOAD to cheat, inject features and investigate programs: https://rafalcieslak.wordpress.com/2013/04/02/dynamic-linker-tricks-using-ld_preload-to-cheat-inject-features-and-investigate-programs/
 .. _Ansible best practices: http://docs.ansible.com/ansible/latest/user_guide/playbooks_best_practices.html
+.. _The Architecture of Open Source Applications: http://www.aosabook.org/en/index.html
 
 Useful
 ------
