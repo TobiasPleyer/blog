@@ -33,6 +33,8 @@ Blogs
 * `Paolo Capriotti's blog`_
 * `Daniel Higginbotham's website`_
 * `Oliver Charles' blog`_
+* `The HFT Guy`_
+* `Philipp Hauer's blog`_
 
 .. _Eli Bendersky's blog: http://eli.thegreenplace.net
 .. _Armin Ronacher's blog: http://lucumr.pocoo.org
@@ -55,6 +57,8 @@ Blogs
 .. _Paolo Capriotti's blog: https://paolocapriotti.com/
 .. _Daniel Higginbotham's website: http://www.flyingmachinestudios.com/
 .. _Oliver Charles' blog: https://ocharles.org.uk/blog/
+.. _The HFT Guy: https://thehftguy.com/
+.. _Philipp Hauer's blog: https://blog.philipphauer.de/
 
 Tutorials
 ---------
@@ -95,6 +99,7 @@ Informational
 * `Dynamic linker tricks - Using LD_PRELOAD to cheat, inject features and investigate programs`_ by Rafał Cieślak
 * `Ansible best practices`_
 * `The Architecture of Open Source Applications`_
+* `jaxenter`_ (German)
 
 .. _PEP index: https://www.python.org/dev/peps/
 .. _David Beazley's website: http://www.dabeaz.com/
@@ -115,6 +120,7 @@ Informational
 .. _Dynamic linker tricks - Using LD_PRELOAD to cheat, inject features and investigate programs: https://rafalcieslak.wordpress.com/2013/04/02/dynamic-linker-tricks-using-ld_preload-to-cheat-inject-features-and-investigate-programs/
 .. _Ansible best practices: http://docs.ansible.com/ansible/latest/user_guide/playbooks_best_practices.html
 .. _The Architecture of Open Source Applications: http://www.aosabook.org/en/index.html
+.. _jaxenter: https://jaxenter.de/
 
 Useful
 ------
@@ -166,6 +172,7 @@ Interesting Projects
 * `Haxl`_
 * The `rio library`_ for Haskell
 * `Ansible`_
+* `Auto Hot Key`_
 
 .. _Meson: http://mesonbuild.com/
 .. _CMake: https://cmake.org/
@@ -178,6 +185,7 @@ Interesting Projects
 .. _Haxl: https://github.com/facebook/Haxl
 .. _rio library: https://github.com/commercialhaskell/rio
 .. _Ansible: https://github.com/ansible/ansible
+.. _Auto Hot Key: https://autohotkey.com
 
 My youtube favourites
 ---------------------
