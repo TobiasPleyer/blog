@@ -139,6 +139,8 @@ Useful
 * The `Real World Haskell`_ book
 * `draw.io`_ flowchart maker
 * `Ansible module index`_
+* `The Linux Documentation Project`_
+* `YoLinux Linux Tutorials`_
 
 .. _Vim spf13: http://vim.spf13.com/
 .. _Open Wikibook for Haskell: https://en.wikibooks.org/wiki/Haskell
@@ -157,6 +159,8 @@ Useful
 .. _Real World Haskell: http://book.realworldhaskell.org/
 .. _draw.io: https://www.draw.io/
 .. _Ansible module index: http://docs.ansible.com/ansible/latest/modules/modules_by_category.html
+.. _The Linux Documentation Project: http://tldp.org/
+.. _YoLinux Linux Tutorials: http://www.yolinux.com/TUTORIALS/
 
 Interesting Projects
 --------------------

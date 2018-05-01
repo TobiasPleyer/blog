@@ -27,25 +27,25 @@ article. If author name or URL can't be extracted we skip this article.
 Haskell
 -------
 
-.. code-include:: code/post49/nyt.hs
+.. code-include:: code/post50/nyt.hs
     :lexer: haskell
 
 Clojure
 -------
 
-.. code-include:: code/post49/nyt.clj
+.. code-include:: code/post50/nyt.clj
     :lexer: clojure
 
 Python
 ------
 
-.. code-include:: code/post49/nyt.py
+.. code-include:: code/post50/nyt.py
     :lexer: python
 
 Go
 --
 
-.. code-include:: code/post49/nyt.go
+.. code-include:: code/post50/nyt.go
     :lexer: go
 
 Remarks
