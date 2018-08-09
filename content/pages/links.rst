@@ -35,6 +35,11 @@ Blogs
 * `Oliver Charles' blog`_
 * `The HFT Guy`_
 * `Philipp Hauer's blog`_
+* `Jonathan Boccara's blog`_
+* `F# for fun and profig`_
+* `Hubert Ikkink's blog`_
+* `Simplify C++`_
+* `Quentin Duval's blog`_
 
 .. _Eli Bendersky's blog: http://eli.thegreenplace.net
 .. _Armin Ronacher's blog: http://lucumr.pocoo.org
@@ -59,6 +64,11 @@ Blogs
 .. _Oliver Charles' blog: https://ocharles.org.uk/blog/
 .. _The HFT Guy: https://thehftguy.com/
 .. _Philipp Hauer's blog: https://blog.philipphauer.de/
+.. _Jonathan Boccara's blog: http://www.fluentcpp.com/
+.. _F# for fun and profig: https://fsharpforfunandprofit.com/
+.. _Hubert Ikkink's blog: http://mrhaki.blogspot.com/
+.. _Simplify C++: https://arne-mertz.de/
+.. _Quentin Duval's blog: https://deque.blog/
 
 Tutorials
 ---------
@@ -100,6 +110,8 @@ Informational
 * `Ansible best practices`_
 * `The Architecture of Open Source Applications`_
 * `jaxenter`_ (German)
+* `How Qt Signals and Slots Work`_
+* `ISO Cpp template wiki`_
 
 .. _PEP index: https://www.python.org/dev/peps/
 .. _David Beazley's website: http://www.dabeaz.com/
@@ -121,6 +133,8 @@ Informational
 .. _Ansible best practices: http://docs.ansible.com/ansible/latest/user_guide/playbooks_best_practices.html
 .. _The Architecture of Open Source Applications: http://www.aosabook.org/en/index.html
 .. _jaxenter: https://jaxenter.de/
+.. _How Qt Signals and Slots Work: https://woboq.com/blog/how-qt-signals-slots-work.html
+.. _ISO Cpp template wiki: isocpp.org/wiki/faq/templates
 
 Useful
 ------
@@ -177,6 +191,8 @@ Interesting Projects
 * The `rio library`_ for Haskell
 * `Ansible`_
 * `Auto Hot Key`_
+* `VsVim`_
+* `sharpkeys`_
 
 .. _Meson: http://mesonbuild.com/
 .. _CMake: https://cmake.org/
@@ -190,6 +206,8 @@ Interesting Projects
 .. _rio library: https://github.com/commercialhaskell/rio
 .. _Ansible: https://github.com/ansible/ansible
 .. _Auto Hot Key: https://autohotkey.com
+.. _VsVim: https://github.com/jaredpar/VsVim
+.. _sharpkeys: https://github.com/randyrants/sharpkeys
 
 My youtube favourites
 ---------------------
