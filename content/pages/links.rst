@@ -40,6 +40,7 @@ Blogs
 * `Hubert Ikkink's blog`_
 * `Simplify C++`_
 * `Quentin Duval's blog`_
+* `Olivier Goffart's and Markus Goetz's blog`_
 
 .. _Eli Bendersky's blog: http://eli.thegreenplace.net
 .. _Armin Ronacher's blog: http://lucumr.pocoo.org
@@ -69,6 +70,7 @@ Blogs
 .. _Hubert Ikkink's blog: http://mrhaki.blogspot.com/
 .. _Simplify C++: https://arne-mertz.de/
 .. _Quentin Duval's blog: https://deque.blog/
+.. _Olivier Goffart's and Markus Goetz's blog: https://woboq.com/
 
 Tutorials
 ---------
@@ -81,6 +83,7 @@ Tutorials
 * `Parsing Log Files in Haskell`_
 * The `OSDev wiki`_ about developing operating systems
 * `Modern ClojureScript`_
+* `The Modern JavaScript Tutorial`_
 
 .. _AVR Tutorial: https://www.mikrocontroller.net/articles/AVR-Tutorial
 .. _regular expression tutorial: https://swtch.com/~rsc/regexp/
@@ -90,6 +93,7 @@ Tutorials
 .. _OSDev wiki: https://wiki.osdev.org/Main_Page
 .. _Parsing Log Files in Haskell: https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/text-manipulation/attoparsec
 .. _Modern ClojureScript: https://github.com/magomimmo/modern-cljs
+.. _The Modern JavaScript Tutorial: http://javascript.info/
 
 Informational
 -------------
@@ -112,6 +116,7 @@ Informational
 * `jaxenter`_ (German)
 * `How Qt Signals and Slots Work`_
 * `ISO Cpp template wiki`_
+* `How Qt Signals and Slots Work`_
 
 .. _PEP index: https://www.python.org/dev/peps/
 .. _David Beazley's website: http://www.dabeaz.com/
@@ -135,6 +140,7 @@ Informational
 .. _jaxenter: https://jaxenter.de/
 .. _How Qt Signals and Slots Work: https://woboq.com/blog/how-qt-signals-slots-work.html
 .. _ISO Cpp template wiki: isocpp.org/wiki/faq/templates
+.. _How Qt Signals and Slots Work: https://woboq.com/blog/how-qt-signals-slots-work.html
 
 Useful
 ------
