@@ -226,6 +226,7 @@ My youtube favourites
 * `Python 3 Metaprogramming`_
 * `Haskell Amuse-Bouche`_
 * `Stewardship the Sobering Parts`_
+* `Build your own Excel 365 in an hour with F# - Tomas Petricek`_
 
 .. _Beautiful Parallelism - Harnessing Multicores with Haskell: https://www.youtube.com/watch?v=MOv71gAOP6M
 .. _Why Functional Programming Matters: https://www.youtube.com/watch?v=XrNdvWqxBvA
@@ -235,6 +236,7 @@ My youtube favourites
 .. _Python 3 Metaprogramming: https://www.youtube.com/watch?v=sPiWg5jSoZI
 .. _Haskell Amuse-Bouche: https://www.youtube.com/watch?v=b9FagOVqxmI
 .. _Stewardship the Sobering Parts: https://www.youtube.com/watch?v=2y5Pv4yN0b0
+.. _Build your own Excel 365 in an hour with F# - Tomas Petricek: https://www.youtube.com/watch?v=Bnm71YEt_lI
 
 Book Wishlist
 -------------
