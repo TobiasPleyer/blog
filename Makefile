@@ -34,7 +34,7 @@ help:
 	@echo '   make clean                          remove the generated files         '
 	@echo '   make regenerate                     regenerate files upon modification '
 	@echo '   make apache_rsync                   upload the web site via rsync+ssh  '
-	@echo '   make apache_serve                   start/restart local apache server  '
+	@echo '   make apache_start                   start/restart local apache server  '
 	@echo '   make apache_stop                    stop local apache server           '
 	@echo '   make apache_clean                   clears all files on the server     '
 	@echo '   make apache_upload                  start server and upload files      '
@@ -60,7 +60,7 @@ regenerate:
 apache_rsync:
 	rsync -vr $(OUTPUTDIR)/* $(APACHE_HTDOCS)
 
-apache_serve:
+apache_start:
 	$(APACHE_CTRL) -k start
 
 apache_stop:
@@ -82,4 +82,4 @@ ftp_upload: ftp
 	$(PY3) render_upload.py --user $(USER) --host $(HOST)
 	./upload_all.sh
 
-.PHONY: help draft publish clean regenerate apache_rsync apache_serve apache_stop apache_clean ftp ftp_upload
+.PHONY: help draft publish clean regenerate apache_rsync apache_start apache_stop apache_clean ftp ftp_upload
