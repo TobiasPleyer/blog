@@ -227,6 +227,7 @@ My youtube favourites
 * `Haskell Amuse-Bouche`_
 * `Stewardship the Sobering Parts`_
 * `Build your own Excel 365 in an hour with F# - Tomas Petricek`_
+* `Let’s Get Lazy—The Real Power of Functional Programming`_
 
 .. _Beautiful Parallelism - Harnessing Multicores with Haskell: https://www.youtube.com/watch?v=MOv71gAOP6M
 .. _Why Functional Programming Matters: https://www.youtube.com/watch?v=XrNdvWqxBvA
@@ -237,6 +238,7 @@ My youtube favourites
 .. _Haskell Amuse-Bouche: https://www.youtube.com/watch?v=b9FagOVqxmI
 .. _Stewardship the Sobering Parts: https://www.youtube.com/watch?v=2y5Pv4yN0b0
 .. _Build your own Excel 365 in an hour with F# - Tomas Petricek: https://www.youtube.com/watch?v=Bnm71YEt_lI
+.. _Let’s Get Lazy—The Real Power of Functional Programming: https://www.youtube.com/watch?v=ntWdmlrCheY
 
 Book Wishlist
 -------------
