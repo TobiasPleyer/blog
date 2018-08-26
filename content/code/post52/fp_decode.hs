@@ -21,112 +21,82 @@ type MessageStatus = Int
 newtype Interpreter = Interpreter { getInterpreter :: MessageID -> MessageStatus -> InterpreterResult }
 
 
-createMotorInterpreter :: Int -> String -> Interpreter
-createMotorInterpreter motorID motorName =
+create_group_interpreter :: Int            -- range start
+                         -> Int            -- range end (exclusive)
+                         -> IntMap String  -- the status map for the group
+                         -> String         -- the name of the group
+                         -> Interpreter
+create_group_interpreter range_start range_end status_map group_name =
   let
-    motorNetworkID = motorID + 20
-    statusMap = fromList [ (0, "Not moving")
-                         , (1, "Moving")
-                         , (2, "Hardware defect") ]
-    interpreter mID mStatus =
-      if (mID == motorNetworkID)
+    interpreter id status =
+      if (range_start <= id) && (id < range_end)
       then
-        case (statusMap !? mStatus) of
-          Nothing -> InterpreterError ("Unknown status " ++ (show mStatus) ++ " for motor " ++ motorName)
-          Just s -> InterpreterOk ("Motor " ++ motorName ++ ": " ++ s)
+        let device_nr = id - range_start in
+        case (status_map !? status) of
+          Nothing -> InterpreterError ("Unknown status " ++ (show status) ++
+                                       " for " ++ group_name ++ " #" ++ (show device_nr))
+          Just s -> InterpreterOk (group_name ++ " #" ++ (show device_nr) ++ ": " ++ s)
       else
         NotInterpreted
   in
     Interpreter interpreter
 
 
-createSensorInterpreter :: Int -> String -> Interpreter
-createSensorInterpreter sensorID sensorName =
-  let
-    sensorNetworkID = sensorID + 40
-    statusMap = fromList [ (0, "Ok")
-                         , (1, "Above threshold")
-                         , (2, "Below threshold") ]
-    interpreter sID sStatus =
-      if (sID == sensorNetworkID)
-      then
-        case (statusMap !? sStatus) of
-          Nothing -> InterpreterError ("Unknown status " ++ (show sStatus) ++ " for sensor " ++ sensorName)
-          Just s -> InterpreterOk ("Sensor " ++ sensorName ++ ": " ++ s)
-      else
-        NotInterpreted
-  in
-    Interpreter interpreter
+motor_status_map = fromList [ (0, "Not moving")
+                            , (1, "Moving")
+                            , (2, "Hardware defect") ]
+motor_interpreter = create_group_interpreter 20 30 motor_status_map "Motor"
+
+sensor_status_map = fromList [ (0, "Ok")
+                             , (1, "Above threshold")
+                             , (2, "Below threshold") ]
+sensor_interpreter = create_group_interpreter 40 50 sensor_status_map "Sensor"
+
+gpio_status_map = fromList [ (0, "Off")
+                           , (1, "On") ]
+gpio_interpreter = create_group_interpreter 50 58 gpio_status_map "GPIO"
 
 
-createGpioInterpreter :: Int -> String -> Interpreter
-createGpioInterpreter gpioID gpioName =
-  let
-    gpioNetworkID = gpioID + 50
-    statusMap = fromList [ (0, "Off")
-                         , (1, "On") ]
-    interpreter gID gStatus =
-      if (gID == gpioNetworkID)
-      then
-        case (statusMap !? gStatus) of
-          Nothing -> InterpreterError ("Unknown status " ++ (show gStatus) ++ " for gpio " ++ gpioName)
-          Just s -> InterpreterOk ("GPIO " ++ gpioName ++ ": " ++ s)
-      else
-        NotInterpreted
-  in
-    Interpreter interpreter
-
-
-deviceAInterpreterFunc deviceID deviceStatus =
+device_a_interpreter_func id status =
   let
     statusMap = fromList [ (0, "Idle")
                          , (1, "Processing")
                          , (2, "Sending") ]
   in
-    if (deviceID == 2)
+    if (id == 2)
     then
-      case (statusMap !? deviceStatus) of
-        Nothing -> InterpreterError ("Unknown status " ++ (show deviceStatus) ++ " for Device_A")
+      case (statusMap !? status) of
+        Nothing -> InterpreterError ("Unknown status " ++ (show status) ++ " for Device_A")
         Just s -> InterpreterOk ("Device_A: " ++ s)
     else
       NotInterpreted
 
-deviceAInterpreter = Interpreter deviceAInterpreterFunc
+device_a_interpreter = Interpreter device_a_interpreter_func
 
 
-deviceBInterpreterFunc deviceID deviceStatus =
+device_b_interpreter_func id status =
   let
     statusMap = fromList [ (0, "Idle")
                          , (1, "Calculating") ]
   in
-    if (deviceID == 4)
+    if (id == 4)
     then
-      case (statusMap !? deviceStatus) of
-        Nothing -> InterpreterError ("Unknown status " ++ (show deviceStatus) ++ " for Device_B")
+      case (statusMap !? status) of
+        Nothing -> InterpreterError ("Unknown status " ++ (show status) ++ " for Device_B")
         Just s -> InterpreterOk ("Device_B: " ++ s)
     else
       NotInterpreted
 
-deviceBInterpreter = Interpreter deviceBInterpreterFunc
+device_b_interpreter = Interpreter device_b_interpreter_func
 
+-- main application logic starts here
 
-motors = [ (1, "Motor_A")
-         , (2, "Motor_B")
-         , (3, "Motor_C")]
-
-
-sensors = [ (1, "Sensor_A")
-          , (2, "Sensor_B")]
-
-
-gpios = [ (1, "GPIO_A")
-        , (2, "GPIO_B")]
-
-
-interpreters = [createMotorInterpreter  i n | (i,n) <- motors ] ++
-               [createSensorInterpreter i n | (i,n) <- sensors] ++
-               [createGpioInterpreter   i n | (i,n) <- gpios  ] ++
-               [deviceAInterpreter, deviceBInterpreter]
+interpreters = [ motor_interpreter
+               , sensor_interpreter
+               , gpio_interpreter
+               , device_a_interpreter
+               , device_b_interpreter
+               ]
 
 
 decodeWithInterpreters :: [Interpreter] -> MessageID -> MessageStatus -> InterpreterResult

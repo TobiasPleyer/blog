@@ -89,22 +89,28 @@ start at ID 20, all sensors at ID 40, and so on.
 Implementation
 --------------
 
-The concept is very simple. For every device ID that we are interested in we
-provide an interpreter. An interpreter is nothing more than a function which
-either returns *None* or a string. An interpreter receives a protocol message
-as its input and decides if it knows how to interpret this message. If it
-doesn't it returns *None*. If it does it extracts the information and returns a
-nicely formatted string of the message's content.
+The concept is very simple: We are using a list of functions, so called
+interpreters, to handle the input. We only provide an interpreter for the
+things we are interested in. An interpreter is nothing more than a function
+which either returns *None* or a string. An interpreter receives a protocol
+message as its input and decides if it knows how to interpret (handle) this
+message. If it doesn't it returns *None*. If it does it extracts the
+information and returns a nicely formatted string of the message's content.
 
-Now the main decoding function does nothing more than looping through all
-available interpreters. The return value of the first interpreter not returning
-*None* will be used as the decoding result. If no interpreter matches some
-default behavior is invoked.
+Now comes the core idea of the implementation. The main decoding function does
+nothing more than looping through all available interpreters. The return value
+of the first interpreter not returning *None* will be used as the decoding
+result. If no interpreter matches some default behavior is invoked.
 
 Here is a possible implementation:
 
 .. code-include:: code/post52/fp_decode.py
     :lexer: python
+
+**Note:** In order to execute this code Python3.6 or higher is required
+because I use `literal string interpolation`_.
+
+.. _literal string interpolation: https://www.python.org/dev/peps/pep-0498/
 
 Given the following input
 
@@ -113,27 +119,27 @@ Given the following input
 
 this yields the following output
 
-.. code:: bash
+.. code:: text
 
     $ python3.6 fp_decode.py input.txt
-    Motor Motor_A: Not moving
-    Motor Motor_B: Moving
+    Motor #1: Not moving
+    Motor #2: Moving
     Device_A: Idle
     Unknown ID 37 with status 5
-    Motor Motor_C: Not moving
+    Motor #3: Not moving
     Device_A: Processing
     Device_B: Idle
-    Sensor Sensor_A: Ok
+    Sensor #1: Ok
     Unknown ID 6 with status 2
-    Motor Motor_A: Hardware defect
-    Sensor Sensor_B: Above threshold
-    GPIO GPIO_A: Off
-    GPIO GPIO_B: On
+    Motor #1: Hardware defect
+    Sensor #2: Above threshold
+    GPIO #1: Off
+    GPIO #2: On
 
 As the above code shows we are using interpreter creator functions to create
-multiple interpreters of a group (motors, sensors and gpios). This allows for
-maximum code reuse. The interpreter creators make use of closures to provide
-the status map and device name to the generated interpreter function.
+multiple interpreters for every group (motors, sensors and gpios). This allows
+for maximum code reuse. The interpreter creators make use of closures to
+provide the status map and device name to the generated interpreter function.
 
 Discussion
 ----------
@@ -152,36 +158,35 @@ scenario it will be way more complex, e.g. an HTTP header. If this is the case
 every interpreter can have custom code to decide if it is able to handle the
 attached payload. Same applies for the *status* field.
 
-Likewise if one day we decide we are not interested in *Motor_B* anymore we
-just remove it from the interpreter list. If one day *Motor_X* is added, then
-we just add an interpreter for it. Simple as that. The main application logic
-remains untouched.
+Likewise if one day we decide we are no longer interested in sensor data, then
+we just remove the sensor interpreter from the interpreter list. That is a one
+line code change. Simple as that. The main application logic remains untouched.
 
 What are the disadvantages of this implementation? First of all it is not type
-safe, as usual for Python. That is we are only using a convention, nothing
+safe, as usual for Python. We are only using a convention, nothing
 enforced by a type system. If an interpreter breaks this convention and for
 example returns an integer instead of *None* or string this would break our
 code. In the above implementation we are also not guarding against unknown
-status codes. The program will throw an exception when we fail to look it up.
+status codes. If a status code is unknown this is treated as "not interpreted".
 
-.. code:: bash
+.. code:: text
 
     $ python3.6 fp_decode.py bad_input.txt
-    Motor Motor_A: Not moving
-    Motor Motor_B: Moving
+    Motor #1: Not moving
+    Motor #2: Moving
     Device_A: Idle
     Unknown ID 37 with status 5
-    Motor Motor_C: Not moving
+    Motor #3: Not moving
     Device_A: Processing
     Device_B: Idle
-    Traceback (most recent call last):
-      File "fp_decode.py", line 121, in <module>
-        decode_result = decode(ID, status)
-      File "fp_decode.py", line 99, in decode
-        interpretation = interpreter(ID, status)
-      File "fp_decode.py", line 52, in device_a_interpreter
-        status_string = status_map[status]
-    KeyError: 4
+    Unknown ID 2 with status 4
+    Sensor #1: Ok
+    Unknown ID 6 with status 2
+    Motor #1: Hardware defect
+    Sensor #2: Above threshold
+    GPIO #1: Off
+    GPIO #2: On
+    Unknown ID 41 with status 6
 
 With the following "bad input":
 
@@ -207,35 +212,35 @@ less copy/paste the Python version, all we need is a bunch of type definitions.
 The Haskell version provides the same output as the Python version.
 Additionally it also handles the case of status lookup failure:
 
-.. code:: bash
+.. code:: text
 
     $ stack fp_decode.hs input.txt 
-    Motor Motor_A: Not moving
-    Motor Motor_B: Moving
+    Motor #1: Not moving
+    Motor #2: Moving
     Device_A: Idle
-    Motor Motor_C: Not moving
+    Motor #3: Not moving
     Device_A: Processing
     Device_B: Idle
-    Sensor Sensor_A: Ok
-    Motor Motor_A: Hardware defect
-    Sensor Sensor_B: Above threshold
-    GPIO GPIO_A: Off
-    GPIO GPIO_B: On
+    Sensor #1: Ok
+    Motor #1: Hardware defect
+    Sensor #2: Above threshold
+    GPIO #1: Off
+    GPIO #2: On
     $
     $ stack fp_decode.hs bad_input.txt
-    Motor Motor_A: Not moving
-    Motor Motor_B: Moving
+    Motor #1: Not moving
+    Motor #2: Moving
     Device_A: Idle
-    Motor Motor_C: Not moving
+    Motor #3: Not moving
     Device_A: Processing
     Device_B: Idle
     Error! Unknown status 4 for Device_A
-    Sensor Sensor_A: Ok
-    Motor Motor_A: Hardware defect
-    Sensor Sensor_B: Above threshold
-    GPIO GPIO_A: Off
-    GPIO GPIO_B: On
-    Error! Unknown status 6 for sensor Sensor_A
+    Sensor #1: Ok
+    Motor #1: Hardware defect
+    Sensor #2: Above threshold
+    GPIO #1: Off
+    GPIO #2: On
+    Error! Unknown status 6 for Sensor #1
 
 **Note:** The code in the `decodeWithInterpreters` function uses foldr to
 achieve the same "loop until the first hit" as in the Python version. If all

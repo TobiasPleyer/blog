@@ -1,97 +1,72 @@
-def create_motor_interpreter(motor_id, motor_name):
-    motor_network_id = motor_id + 20
-    status_map = {
-        0: "Not moving",
-        1: "Moving",
-        2: "Hardware defect",
-    }
+def create_group_interpreter(range_start, range_end, status_map, group_name):
     def interpreter(ID, status):
-        if ID == motor_network_id:
-            status_string = status_map[status]
-            return (f"Motor {motor_name}: {status_string}")
+        if range_start <= ID < range_end:
+            device_nr = ID - range_start
+            status_string = status_map.get(status, None)
+            if status_string is None:
+                return None
+            else:
+                return (f"{group_name} #{device_nr}: {status_string}")
         return None
     return interpreter
 
 
-def create_sensor_interpreter(sensor_id, sensor_name):
-    sensor_network_id = sensor_id + 40
-    status_map = {
-        0: "Ok",
-        1: "Above threshold",
-        2: "Below threshold",
-    }
-    def interpreter(ID, status):
-        if ID == sensor_network_id:
-            status_string = status_map[status]
-            return (f"Sensor {sensor_name}: {status_string}")
-        return None
-    return interpreter
+motor_status_map = {
+    0: "Not moving",
+    1: "Moving",
+    2: "Hardware defect",
+}
+
+sensor_status_map = {
+    0: "Ok",
+    1: "Above threshold",
+    2: "Below threshold",
+}
+
+gpio_status_map = {
+    0: "Off",
+    1: "On",
+}
 
 
-def create_gpio_interpreter(gpio_id, gpio_name):
-    gpio_network_id = gpio_id + 50
-    status_map = {
-        0: "Off",
-        1: "On",
-    }
-    def interpreter(ID, status):
-        if ID == gpio_network_id:
-            status_string = status_map[status]
-            return (f"GPIO {gpio_name}: {status_string}")
-        return None
-    return interpreter
+motor_interpreter = create_group_interpreter(20, 30, motor_status_map, "Motor")
+sensor_interpreter = create_group_interpreter(40, 50, sensor_status_map, "Sensor")
+gpio_interpreter = create_group_interpreter(50, 58, gpio_status_map, "GPIO")
 
 
 def device_a_interpreter(ID, status):
-    status_map = {
-        0: "Idle",
-        1: "Processing",
-        2: "Sending",
-    }
     if ID == 2:
-        status_string = status_map[status]
+        status_map = {
+            0: "Idle",
+            1: "Processing",
+            2: "Sending",
+        }
+        status_string = status_map.get(status, None)
+        if status_string is None:
+            return None
         return (f"Device_A: {status_string}")
     return None
 
 
 def device_b_interpreter(ID, status):
-    status_map = {
-        0: "Idle",
-        1: "Calculating",
-    }
     if ID == 4:
-        status_string = status_map[status]
+        status_map = {
+            0: "Idle",
+            1: "Calculating",
+        }
+        status_string = status_map.get(status, None)
+        if status_string is None:
+            return None
         return (f"Device_B: {status_string}")
     return None
 
+# Main application code starts here
 
-motors = [
-    (1, "Motor_A"),
-    (2, "Motor_B"),
-    (3, "Motor_C"),
-]
-
-
-sensors = [
-    (1, "Sensor_A"),
-    (2, "Sensor_B"),
-]
-
-
-gpios = [
-    (1, "GPIO_A"),
-    (2, "GPIO_B"),
-]
-
-
-interpreters = [create_motor_interpreter(motor_id, motor_name)
-                for motor_id, motor_name in motors]
-interpreters += [create_sensor_interpreter(sensor_id, sensor_name)
-                 for sensor_id, sensor_name in sensors]
-interpreters += [create_gpio_interpreter(gpio_id, gpio_name)
-                 for gpio_id, gpio_name in gpios]
-interpreters += [device_a_interpreter,
-                 device_b_interpreter]
+interpreters = [motor_interpreter,
+                sensor_interpreter,
+                gpio_interpreter,
+                device_a_interpreter,
+                device_b_interpreter]
 
 
 def decode(ID, status):
