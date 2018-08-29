@@ -41,6 +41,7 @@ Blogs
 * `Simplify C++`_
 * `Quentin Duval's blog`_
 * `Olivier Goffart's and Markus Goetz's blog`_
+* `Neil Mitchell's blog`_
 
 .. _Eli Bendersky's blog: http://eli.thegreenplace.net
 .. _Armin Ronacher's blog: http://lucumr.pocoo.org
@@ -71,6 +72,7 @@ Blogs
 .. _Simplify C++: https://arne-mertz.de/
 .. _Quentin Duval's blog: https://deque.blog/
 .. _Olivier Goffart's and Markus Goetz's blog: https://woboq.com/
+.. _Neil Mitchell's blog: https://neilmitchell.blogspot.com/
 
 Tutorials
 ---------
@@ -117,6 +119,7 @@ Informational
 * `How Qt Signals and Slots Work`_
 * `ISO Cpp template wiki`_
 * `How Qt Signals and Slots Work`_
+* `Neil Mitchell's website`_
 
 .. _PEP index: https://www.python.org/dev/peps/
 .. _David Beazley's website: http://www.dabeaz.com/
@@ -141,6 +144,7 @@ Informational
 .. _How Qt Signals and Slots Work: https://woboq.com/blog/how-qt-signals-slots-work.html
 .. _ISO Cpp template wiki: isocpp.org/wiki/faq/templates
 .. _How Qt Signals and Slots Work: https://woboq.com/blog/how-qt-signals-slots-work.html
+.. _Neil Mitchell's website: https://ndmitchell.com/
 
 Useful
 ------
