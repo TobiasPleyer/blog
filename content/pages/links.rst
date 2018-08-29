@@ -142,7 +142,7 @@ Informational
 .. _The Architecture of Open Source Applications: http://www.aosabook.org/en/index.html
 .. _jaxenter: https://jaxenter.de/
 .. _How Qt Signals and Slots Work: https://woboq.com/blog/how-qt-signals-slots-work.html
-.. _ISO Cpp template wiki: isocpp.org/wiki/faq/templates
+.. _ISO Cpp template wiki: https://isocpp.org/wiki/faq/templates
 .. _How Qt Signals and Slots Work: https://woboq.com/blog/how-qt-signals-slots-work.html
 .. _Neil Mitchell's website: https://ndmitchell.com/
 
