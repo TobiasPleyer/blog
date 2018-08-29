@@ -246,3 +246,10 @@ Additionally it also handles the case of status lookup failure:
 achieve the same "loop until the first hit" as in the Python version. If all
 interpreters have been tried without success then the "default value"
 *NotInterpreted* is returned.
+
+Using folds to look through a choice of available handlers is a very common
+pattern in Haskell. As a real world example the `Scotty Webframework`_ uses
+such a pattern `for routing`_. I will detail this in an upcoming post.
+
+.. _Scotty Webframework: https://hackage.haskell.org/package/scotty
+.. _for routing: https://github.com/scotty-web/scotty/blob/0.11.2/Web/Scotty/Trans.hs#L106
