@@ -231,4 +231,87 @@ created (constructed) it is simple prepended to a list within the
 *ScottyState*. This list of routes corresponds to the *routes* list of our
 entry example. In line 13 we can see how this list of routes is extracted and
 used with a left fold. This left fold performs the "routing interpreter lookup"
-as mentioned earlier in this post.
+as mentioned earlier in this post. To see how we have to understand the
+**route** function first.
+
+The type signature of **route** is a bit tricky. It takes an error handler, a
+method specifier, a route pattern and an action to execute and then returns a
+middleware, i.e. a function that modifies an application. So in total route
+requires 4 arguments. But in its definition (line 35) we can see it takes
+actually 6! The additional 2 arguments are the arguments of the resulting
+middleware, i.e. an application (*app*) and a request (*req*). If we jump over
+the let definitions and directly start at line 42, then we can almost read it
+out loud and understand what it does:
+
+    If the method of the request matches the method that I know how to handle
+    and the pattern of the request matches my own pattern, then I create the
+    necessary environment, run my action over it and save the result. If the
+    result contains meaningful data I return it to my calling context. In all
+    other cases I forward the request to the application I was given.
+
+Now we are ready. In the following I will collect the first 4 arguments in 1
+pseudo arguments *r*, just to keep the code shorter. Just remember that *r*
+actually stands for *h*, *method*, *pat* and *action* in line 35.
+
+Let's say we have 3 routes *r1*, *r2* and *r3*. Then
+
+.. code-block:: haskell
+    :linenos: inline
+
+    -- The resulting middlewares
+    let m1 = route r1
+    let m2 = route r2
+    let m3 = route r3
+    let d  = notFoundApp
+
+    let app = foldl (flip ($)) notFoundApp (routes s) =
+    foldl (flip ($)) d [m1,m2,m3] req =
+    -- definition foldl
+    ((d `(flip ($))` m1) `(flip ($))` m2) `(flip ($))` m3 =
+    -- definition of (flip ($))
+    m3 (m2 (m1 d))
+
+The above code, a few corners cut, shows a possible application of the Scotty
+code shown above. As we can see this code simply results in the middlewares
+being applied one after another to the default application **notFoundApp**.
+Since the result of applying a middleware to an application is another
+application we can rewrite the last line like so
+
+.. code-block:: haskell
+    :linenos: inline
+
+    app = app'''
+      where
+        app' = m1 d
+        app'' = m2 app'
+        app''' = m3 app''
+
+These intermediate applications end up as the *app* argument of the **route**
+function in line 35. So for example if we give a request *req* to this
+application that can be routed by *r1*, then this will evaluate to
+
+.. code-block:: haskell
+    :linenos: inline
+
+    app req =
+    app''' req =
+    m3 app'' req =
+    -- definition of mX
+    route r3 app'' req =
+    -- because r3 doesn't handle this request, so it returns tryNext, which
+    -- binds to (app'' req) (see line 36)
+    = app'' req
+    = m2 app' req
+    = route r2 app' req
+    -- because r2 doesn't handle this request, so it returns tryNext, which
+    -- binds to (app' req) (see line 36)
+    = app' req
+    = m1 d req
+    = route r1 d req
+    -- r1 can handle req, so we return its result
+    = return result_of_r1_handling_req
+
+Remember that *rX* was a place holder for the 4 arguments *h*, *method*, *pat*
+and *action*. As you can see the *foldl* code in this example turns out to
+perform the equivalent purpose as the *foldr* of the entry example: try one
+possible interpreter of an incoming request until one is found.
