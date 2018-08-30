@@ -249,7 +249,8 @@ interpreters have been tried without success then the "default value"
 
 Using folds to look through a choice of available handlers is a very common
 pattern in Haskell. As a real world example the `Scotty Webframework`_ uses
-such a pattern `for routing`_. I will detail this in an upcoming post.
+such a pattern `for routing`_. `But this deserves a post on its own
+<{filename}/post53_how_routing_works_in_scotty.rst>`_.
 
 .. _Scotty Webframework: https://hackage.haskell.org/package/scotty
 .. _for routing: https://github.com/scotty-web/scotty/blob/0.11.2/Web/Scotty/Trans.hs#L106
