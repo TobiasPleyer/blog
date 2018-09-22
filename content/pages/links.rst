@@ -203,6 +203,7 @@ Interesting Projects
 * `Auto Hot Key`_
 * `VsVim`_
 * `sharpkeys`_
+* The `Mu editor`_
 
 .. _Meson: http://mesonbuild.com/
 .. _CMake: https://cmake.org/
@@ -218,6 +219,7 @@ Interesting Projects
 .. _Auto Hot Key: https://autohotkey.com
 .. _VsVim: https://github.com/jaredpar/VsVim
 .. _sharpkeys: https://github.com/randyrants/sharpkeys
+.. _Mu editor: https://codewith.mu/
 
 My youtube favourites
 ---------------------
