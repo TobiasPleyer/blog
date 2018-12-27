@@ -42,6 +42,7 @@ Blogs
 * `Quentin Duval's blog`_
 * `Olivier Goffart's and Markus Goetz's blog`_
 * `Neil Mitchell's blog`_
+* `Avery Pennarun's blog`_
 
 .. _Eli Bendersky's blog: http://eli.thegreenplace.net
 .. _Armin Ronacher's blog: http://lucumr.pocoo.org
@@ -73,6 +74,7 @@ Blogs
 .. _Quentin Duval's blog: https://deque.blog/
 .. _Olivier Goffart's and Markus Goetz's blog: https://woboq.com/
 .. _Neil Mitchell's blog: https://neilmitchell.blogspot.com/
+.. _Avery Pennarun's blog: https://apenwarr.ca/log/
 
 Tutorials
 ---------
@@ -120,6 +122,9 @@ Informational
 * `ISO Cpp template wiki`_
 * `How Qt Signals and Slots Work`_
 * `Neil Mitchell's website`_
+* `GHC Commentary - The Compiler`_
+* `An epic treatise on scheduling, bug tracking, and triage`_
+* `Mastering Git subtrees`_
 
 .. _PEP index: https://www.python.org/dev/peps/
 .. _David Beazley's website: http://www.dabeaz.com/
@@ -145,6 +150,9 @@ Informational
 .. _ISO Cpp template wiki: https://isocpp.org/wiki/faq/templates
 .. _How Qt Signals and Slots Work: https://woboq.com/blog/how-qt-signals-slots-work.html
 .. _Neil Mitchell's website: https://ndmitchell.com/
+.. _GHC Commentary - The Compiler: https://ghc.haskell.org/trac/ghc/wiki/Commentary/Compiler
+.. _An epic treatise on scheduling, bug tracking, and triage: https://apenwarr.ca/log/20171213
+.. _Mastering Git subtrees: https://medium.com/@porteneuve/mastering-git-subtrees-943d29a798ec
 
 Useful
 ------
@@ -165,6 +173,9 @@ Useful
 * `Ansible module index`_
 * `The Linux Documentation Project`_
 * `YoLinux Linux Tutorials`_
+* `PlantText UML Editor`_
+* `Coding Dojo Katas`_
+* `Patat - Presentations Atop The ANSI Terminal`_
 
 .. _Vim spf13: http://vim.spf13.com/
 .. _Open Wikibook for Haskell: https://en.wikibooks.org/wiki/Haskell
@@ -185,6 +196,9 @@ Useful
 .. _Ansible module index: http://docs.ansible.com/ansible/latest/modules/modules_by_category.html
 .. _The Linux Documentation Project: http://tldp.org/
 .. _YoLinux Linux Tutorials: http://www.yolinux.com/TUTORIALS/
+.. _Coding Dojo Katas: http://codingdojo.org/KataCatalogue/
+.. _PlantText UML Editor: https://www.planttext.com/
+.. _Patat - Presentations Atop The ANSI Terminal: https://github.com/jaspervdj/patat
 
 Interesting Projects
 --------------------
@@ -204,6 +218,9 @@ Interesting Projects
 * `VsVim`_
 * `sharpkeys`_
 * The `Mu editor`_
+* `overloading.py`_ - Function overloading for Python
+* `Git subrepo`_
+* The `redo build system`_
 
 .. _Meson: http://mesonbuild.com/
 .. _CMake: https://cmake.org/
@@ -220,6 +237,9 @@ Interesting Projects
 .. _VsVim: https://github.com/jaredpar/VsVim
 .. _sharpkeys: https://github.com/randyrants/sharpkeys
 .. _Mu editor: https://codewith.mu/
+.. _overloading.py: https://github.com/bintoro/overloading.py
+.. _Git subrepo: https://github.com/ingydotnet/git-subrepo
+.. _redo build system: https://github.com/apenwarr/redo
 
 My youtube favourites
 ---------------------
@@ -234,6 +254,10 @@ My youtube favourites
 * `Stewardship the Sobering Parts`_
 * `Build your own Excel 365 in an hour with F# - Tomas Petricek`_
 * `Let’s Get Lazy—The Real Power of Functional Programming`_
+* `Fear and Awaiting in Async - A Savage Journey to the Heart of the Coroutine Dream`_
+* `Party REPL — A multi-player REPL built for pair-programming`_
+* `Functional Programming Patterns for Mere Mortals`_
+* `Functional Design Patterns`_
 
 .. _Beautiful Parallelism - Harnessing Multicores with Haskell: https://www.youtube.com/watch?v=MOv71gAOP6M
 .. _Why Functional Programming Matters: https://www.youtube.com/watch?v=XrNdvWqxBvA
@@ -245,6 +269,10 @@ My youtube favourites
 .. _Stewardship the Sobering Parts: https://www.youtube.com/watch?v=2y5Pv4yN0b0
 .. _Build your own Excel 365 in an hour with F# - Tomas Petricek: https://www.youtube.com/watch?v=Bnm71YEt_lI
 .. _Let’s Get Lazy—The Real Power of Functional Programming: https://www.youtube.com/watch?v=ntWdmlrCheY
+.. _Fear and Awaiting in Async - A Savage Journey to the Heart of the Coroutine Dream: https://www.youtube.com/watch?v=E-1Y4kSsAFc
+.. _Party REPL — A multi-player REPL built for pair-programming: https://www.youtube.com/watch?v=AJING0Vigpg
+.. _Functional Programming Patterns for Mere Mortals: https://www.youtube.com/watch?v=v9QGWbGppis
+.. _Functional Design Patterns: https://www.youtube.com/watch?v=srQt1NAHYC0
 
 Book Wishlist
 -------------
