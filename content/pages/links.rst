@@ -176,6 +176,8 @@ Useful
 * `PlantText UML Editor`_
 * `Coding Dojo Katas`_
 * `Patat - Presentations Atop The ANSI Terminal`_
+* `I want hue`_
+* `Solarized by Ethan Shoonover`_
 
 .. _Vim spf13: http://vim.spf13.com/
 .. _Open Wikibook for Haskell: https://en.wikibooks.org/wiki/Haskell
@@ -199,6 +201,8 @@ Useful
 .. _Coding Dojo Katas: http://codingdojo.org/KataCatalogue/
 .. _PlantText UML Editor: https://www.planttext.com/
 .. _Patat - Presentations Atop The ANSI Terminal: https://github.com/jaspervdj/patat
+.. _I want hue: http://tools.medialab.sciences-po.fr/iwanthue/
+.. _Solarized by Ethan Shoonover: https://ethanschoonover.com/solarized/
 
 Interesting Projects
 --------------------
