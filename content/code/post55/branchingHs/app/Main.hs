@@ -34,6 +34,7 @@ main = do
   (res,info) <- runWriterT $ runEitherT $ do
     bOut <- get_branch
     let branch = last $ words bOut
+    act_on_branch branch
     shell "echo 'command independent of previous commands'"
     shell $ "echo " ++ branch
     cnt <- strip <$> get_tag_count
