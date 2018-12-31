@@ -115,10 +115,17 @@ This solution will serve as the reference solution. Of course there are many
 ways to fulfill the above requirements but I think the solution I give is
 rather realistic and pythonic.
 
-Naive Solution
---------------
+Brute Force Solution
+--------------------
 
-.. code-include:: code/post55/naive.py
+The `run` function of the `subprocess`_ module takes a `check` parameter. If
+this is set to `True` the return value of the process is checked and an
+exception is thrown in case it signals error. Thus the probably simplest
+method is to simply put everything in a try/except block.
+
+.. _subprocess: https://docs.python.org/3.6/library/subprocess.html
+
+.. code-include:: code/post55/brute_force.py
     :lexer: python
 
 .. code::
@@ -131,9 +138,22 @@ Naive Solution
     Again OK
 
     Now running: echo 'Problem!'; exit 1
-    Problem!
-
     An error occurred. Aborting
+
+However raising exceptions is definitely not a good programming praxis and you
+have to make sure to catch them, because exceptions will bubble up! This is
+maybe ok if the users are programmers, but it is very ugly if an end user is
+confronted with a bunch of exception and stack trace outputs instead of a
+comprehensible error messages.
+
+Naive Solution
+--------------
+
+As the next iteration to the problem the shell function will return a boolean
+signaling sucess/failure and the main code will check every single invocation.
+
+.. code-include:: code/post55/naive.py
+    :lexer: python
 
 Notice how repetitive this feels and looks. What's even worse: It's hard to see
 what is the program actually trying to do! Sometimes you also see something
@@ -288,7 +308,9 @@ Rebuilding Monads in Python
 for Functor, Applicative and Monad called `OSlash`_. I was not fully convinced
 by their implementation. It felt a tiny bit to *OO* for my taste and and I had
 the impression that it is very hard to implement monad transformers on top of
-IO with their code.
+IO with their code. What follows below is my proto-typical code to implement
+monadic stacks in Python, but my implementation is strongly influenced by
+*OSlash*, e.g. the operator overloading.
 
 .. _OSlash: https://github.com/dbrattli/OSlash
 
@@ -360,11 +382,14 @@ the code:
 
 As can be seen from the examples the command sequence short-circuits in case
 one of the commands fails. The implementations for *EitherT* and *WriterT* are
-as close as possible to that of the Haskell counterparts. The implementation of
-`__or__` (`|`) corresponds to `(>>=)` in Haskell and that of `__rhift__` (`>>`)
-corresponds to Haskell's `(>>)`. As in Haskell we have to unwrap the wrapped
-`IO` action before we can run it. The helper function `runAction` does the job
-for us.
+as close as possible to that of Haskell's `WriterT`_ nad `EitherT`_. The
+implementation of `__or__` (`|`) corresponds to `(>>=)` in Haskell and that of
+`__rhift__` (`>>`) corresponds to Haskell's `(>>)`. As in Haskell we have to
+unwrap the wrapped `IO` action before we can run it. The helper function
+`runAction` does the job for us.
+
+.. _WriterT: https://hackage.haskell.org/package/transformers-0.5.5.0/docs/src/Control.Monad.Trans.Writer.Lazy.html#line-194
+.. _EitherT: https://hackage.haskell.org/package/either-4.4.1.1/docs/src/Control.Monad.Trans.Either.html#line-226
 
 There exist a few technical details that are necessary to make this code run
 under Python:
@@ -531,31 +556,64 @@ checked out to.
 
     $ cd example_git_repo
     $ python ../branching_example.py
-    Final result: Right None
+    Final result: Right 3
     == INFO ==
+    Command run: git branch
+    * master
+
     Command run: echo 'action for master'
     action for master
 
     Command run: echo 'command independent of previous commands'
     command independent of previous commands
+
+    Command run: echo master
+    master
+
+    Command run: git tag | wc -l
+    3
+
+    Command run: /bin/zsh -c 'for i in {1..3}; do; echo 'Branch!'; done'
+    Branch!
+    Branch!
+    Branch!
+
+    $ git tag newTag
     $ git checkout -b other_branch
     Switched to a new branch 'other_branch'
     $ python ../branching_example.py
-    Final result: Right None
+    Final result: Right 4
     == INFO ==
+    Command run: git branch
+      master
+    * other_branch
+
     Command run: echo 'Other action'
     Other action
 
     Command run: echo 'command independent of previous commands'
     command independent of previous commands
 
+    Command run: echo other_branch
+    other_branch
+
+    Command run: git tag | wc -l
+    4
+
+    Command run: /bin/zsh -c 'for i in {1..4}; do; echo 'Branch!'; done'
+    Branch!
+    Branch!
+    Branch!
+    Branch!
+
 As the example shows the monad's bind syntax can be used to change the code
-execution path easily and readable. If more sophisticated decision making is
+execution path easily and readable. The variables bound by lambdas will remain
+visible to all follow up actions! If more sophisticated decision making is
 required that can't be done with the limited lambda syntax in Python we can
 simply define a helper function to do the job.
 
-This kind of behavior is much harder to reproduce with our simple hand-written
-for-loop implementation and would drastically decrease readability.
+**Challenge:** Try to reproduce that kind of behavior with a hand-written
+solution!
 
 Summary
 =======
