@@ -606,14 +606,31 @@ checked out to.
     Branch!
     Branch!
 
+    $ cd /home
+    $ python branching_example.py
+    Final result: Left ''
+    == INFO ==
+    Command run: git branch
+    fatal: Not a git repository (or any parent up to mount point /home)
+    Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+
 As the example shows the monad's bind syntax can be used to change the code
-execution path easily and readable. The variables bound by lambdas will remain
+execution path easily and readable plus we still retain the nice and controlled
+behavior in case of an error. The variables bound by lambdas will remain
 visible to all follow up actions! If more sophisticated decision making is
 required that can't be done with the limited lambda syntax in Python we can
 simply define a helper function to do the job.
 
 **Challenge:** Try to reproduce that kind of behavior with a hand-written
 solution!
+
+Some people would argue the above code samples look ugly and that the used
+lambda function syntax is not very understandable and readable. I can't deny
+that, but keep in mind that this is due to the lack of proper syntactic sugar
+support in Python! Here is the same example written in Haskell:
+
+.. code-include:: code/post55/branching_example.hs
+    :lexer: python
 
 Summary
 =======
