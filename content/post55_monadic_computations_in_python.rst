@@ -630,7 +630,7 @@ that, but keep in mind that this is due to the lack of proper syntactic sugar
 support in Python! Here is the same example written in Haskell:
 
 .. code-include:: code/post55/branchingHs/app/Main.hs
-    :lexer: python
+    :lexer: haskell
 
 Summary
 =======
