@@ -19,10 +19,6 @@ shell cmd = do
   then EitherT $ writer (Right (stdout), ["Executing '" ++ cmd ++ "'", stdout])
   else EitherT $ writer (Left (stdout), ["Executing '" ++ cmd ++ "'", stdout, stderr])
 
-get_branch = shell "git branch"
-
-get_tag_count = shell "git tag | wc -l"
-
 act_on_branch b =
   if (b == "master")
   then shell "echo 'action for master'"
@@ -32,12 +28,12 @@ stackReturn value = return $ return $ return (Right value, [])
 
 main = do
   (res,info) <- runWriterT $ runEitherT $ do
-    bOut <- get_branch
+    bOut <- shell "git branch"
     let branch = last $ words bOut
     act_on_branch branch
     shell "echo 'command independent of previous commands'"
     shell $ "echo " ++ branch
-    cnt <- strip <$> get_tag_count
+    cnt <- strip <$> shell "git tag | wc -l"
     shell $ "for i in {1.." ++ cnt ++ "}; do; echo 'Branch!'; done"
   case res of
     Right _ -> putStrLn "SUCCESS"

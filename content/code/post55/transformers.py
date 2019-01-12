@@ -1,3 +1,4 @@
+from functools import reduce
 from subprocess import run, PIPE, STDOUT
 
 class Either():
@@ -141,11 +142,17 @@ class EitherT():
 # In Haskell it would have the signature
 # do_shell :: String -> IO (Either () (), [String])
 def do_shell(cmd):
-    process = run(cmd, stdout=PIPE, stderr=STDOUT, shell=True)
-    info = [f"Command run: {cmd}", process.stdout.decode('utf-8')]
+    process = run(cmd, stdout=PIPE, stderr=PIPE, shell=True)
+    stdout = process.stdout.decode('utf-8')
+    stderr = process.stderr.decode('utf-8')
+    info = [f"Command run: {cmd}"]
+    if stdout:
+        info.append(stdout)
+    if stderr:
+        info.append(stderr)
     if process.returncode > 0:
-        return (left(None), info)
-    return (right(None), info)
+        return (left(stderr), info)
+    return (right(stdout), info)
 
 # Helper function to construct the underlying data type
 def shell(cmd):
@@ -171,12 +178,10 @@ if __name__ == '__main__':
     res, info = runAction(full_action)
     print(f"Final result: {res}")
     print("== INFO ==")
-    for i in info:
-        print(i)
-    cmd4 = shell("echo 'Command failed'; exit 1")
+    print(reduce(lambda x, y: x + '\n' + y, info))
+    cmd4 = shell("echo 'Command failed' >&2; exit 1")
     full_action = cmd1 >> cmd4 >> cmd3
     res, info = runAction(full_action)
     print(f"Final result: {res}")
     print("== INFO ==")
-    for i in info:
-        print(i)
+    print(reduce(lambda x, y: x + '\n' + y, info))

@@ -353,15 +353,15 @@ Monad Transformers in Python
 
 As I mentioned above we want the functionality of *Either* and *Writer*. Thus
 we have to stack these atop our *IO* monad. Before I go into details, here is
-the code:
+the full code:
 
 .. code-include:: code/post55/transformers.py
     :lexer: python
 
 .. code::
 
-    $ python transformers.py
-    Final result: Right None
+    $ python3.6 transformers.py
+    Final result: Right 'Even better\n'
     == INFO ==
     Command run: echo 'OK'; exit 0
     OK
@@ -372,13 +372,14 @@ the code:
     Command run: echo 'Even better'; exit 0
     Even better
 
-    Final result: Left None
+    Final result: Left 'Command failed\n'
     == INFO ==
     Command run: echo 'OK'; exit 0
     OK
 
-    Command run: echo 'Command failed'; exit 1
+    Command run: echo 'Command failed' >&2; exit 1
     Command failed
+
 
 As can be seen from the examples the command sequence short-circuits in case
 one of the commands fails. The implementations for *EitherT* and *WriterT* are
