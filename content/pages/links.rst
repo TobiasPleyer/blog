@@ -43,6 +43,8 @@ Blogs
 * `Olivier Goffart's and Markus Goetz's blog`_
 * `Neil Mitchell's blog`_
 * `Avery Pennarun's blog`_
+* `Brent Yorgey's blog`_
+* `From Hask Till Dawn`_
 
 .. _Eli Bendersky's blog: http://eli.thegreenplace.net
 .. _Armin Ronacher's blog: http://lucumr.pocoo.org
@@ -75,6 +77,8 @@ Blogs
 .. _Olivier Goffart's and Markus Goetz's blog: https://woboq.com/
 .. _Neil Mitchell's blog: https://neilmitchell.blogspot.com/
 .. _Avery Pennarun's blog: https://apenwarr.ca/log/
+.. _Brent Yorgey's blog: https://byorgey.wordpress.com/
+.. _From Hask Till Dawn: https://alpmestan.com/
 
 Tutorials
 ---------
@@ -88,6 +92,9 @@ Tutorials
 * The `OSDev wiki`_ about developing operating systems
 * `Modern ClojureScript`_
 * `The Modern JavaScript Tutorial`_
+* `Brent Yorgey's Functional Programming Course`_
+* `Chris Allens' Functional Programming Course`_
+* `Mastering Git subtrees`_
 
 .. _AVR Tutorial: https://www.mikrocontroller.net/articles/AVR-Tutorial
 .. _regular expression tutorial: https://swtch.com/~rsc/regexp/
@@ -98,6 +105,9 @@ Tutorials
 .. _Parsing Log Files in Haskell: https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/text-manipulation/attoparsec
 .. _Modern ClojureScript: https://github.com/magomimmo/modern-cljs
 .. _The Modern JavaScript Tutorial: http://javascript.info/
+.. _Brent Yorgey's Functional Programming Course: https://www.seas.upenn.edu/~cis194/spring13/lectures.html
+.. _Chris Allens' Functional Programming Course: https://github.com/bitemyapp/fp-course
+.. _Mastering Git subtrees: https://medium.com/@porteneuve/mastering-git-subtrees-943d29a798ec
 
 Informational
 -------------
@@ -124,7 +134,8 @@ Informational
 * `Neil Mitchell's website`_
 * `GHC Commentary - The Compiler`_
 * `An epic treatise on scheduling, bug tracking, and triage`_
-* `Mastering Git subtrees`_
+* `Brian O'Sullivan's 2014 Haskell course`_
+* `Brian O'Sullivan's 2016 Haskell course`_
 
 .. _PEP index: https://www.python.org/dev/peps/
 .. _David Beazley's website: http://www.dabeaz.com/
@@ -152,7 +163,8 @@ Informational
 .. _Neil Mitchell's website: https://ndmitchell.com/
 .. _GHC Commentary - The Compiler: https://ghc.haskell.org/trac/ghc/wiki/Commentary/Compiler
 .. _An epic treatise on scheduling, bug tracking, and triage: https://apenwarr.ca/log/20171213
-.. _Mastering Git subtrees: https://medium.com/@porteneuve/mastering-git-subtrees-943d29a798ec
+.. _Brian O'Sullivan's 2014 Haskell course: http://www.scs.stanford.edu/14sp-cs240h/
+.. _Brian O'Sullivan's 2016 Haskell course: http://www.scs.stanford.edu/16wi-cs240h/
 
 Useful
 ------
@@ -175,9 +187,9 @@ Useful
 * `YoLinux Linux Tutorials`_
 * `PlantText UML Editor`_
 * `Coding Dojo Katas`_
-* `Patat - Presentations Atop The ANSI Terminal`_
 * `I want hue`_
 * `Solarized by Ethan Shoonover`_
+* `Collection of .gitignore files`_
 
 .. _Vim spf13: http://vim.spf13.com/
 .. _Open Wikibook for Haskell: https://en.wikibooks.org/wiki/Haskell
@@ -200,9 +212,9 @@ Useful
 .. _YoLinux Linux Tutorials: http://www.yolinux.com/TUTORIALS/
 .. _Coding Dojo Katas: http://codingdojo.org/KataCatalogue/
 .. _PlantText UML Editor: https://www.planttext.com/
-.. _Patat - Presentations Atop The ANSI Terminal: https://github.com/jaspervdj/patat
 .. _I want hue: http://tools.medialab.sciences-po.fr/iwanthue/
 .. _Solarized by Ethan Shoonover: https://ethanschoonover.com/solarized/
+.. _Collection of .gitignore files: https://github.com/github/gitignore
 
 Interesting Projects
 --------------------
@@ -225,6 +237,9 @@ Interesting Projects
 * `overloading.py`_ - Function overloading for Python
 * `Git subrepo`_
 * The `redo build system`_
+* `Patat - Presentations Atop The ANSI Terminal`_
+* `HTML Slidy`_
+* `Slideous`_
 
 .. _Meson: http://mesonbuild.com/
 .. _CMake: https://cmake.org/
@@ -244,6 +259,9 @@ Interesting Projects
 .. _overloading.py: https://github.com/bintoro/overloading.py
 .. _Git subrepo: https://github.com/ingydotnet/git-subrepo
 .. _redo build system: https://github.com/apenwarr/redo
+.. _Patat - Presentations Atop The ANSI Terminal: https://github.com/jaspervdj/patat
+.. _HTML Slidy: https://www.w3.org/Talks/Tools/Slidy2/Overview.html
+.. _Slideous: https://goessner.net/articles/slideous/
 
 My youtube favourites
 ---------------------
