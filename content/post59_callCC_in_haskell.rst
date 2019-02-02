@@ -5,7 +5,7 @@ callCC in Haskell
 :tags: haskell, continuation passing style, functional programming
 :category: Programming
 :authors: Tobias Pleyer
-:summary: A short investigation of the callCC functions and how it works
+:summary: A short investigation of the callCC function and how it works
 
 
 Intro
