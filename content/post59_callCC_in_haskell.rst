@@ -12,7 +12,7 @@ Intro
 =====
 
 Continuation passing style is a very interesting programming concept. In
-Haskell the we have the continuation monad `ContT`_ implemented in the
+Haskell we have the continuation monad `ContT`_, implemented in the
 `transformers package`_. An introduction to the topic can be found in the `open
 Haskell wiki book`_ and Gabriel Gonzalez wrote a `very nice article`_ about why
 continuation passing style matters.
