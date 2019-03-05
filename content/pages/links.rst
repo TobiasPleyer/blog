@@ -45,6 +45,7 @@ Blogs
 * `Avery Pennarun's blog`_
 * `Brent Yorgey's blog`_
 * `From Hask Till Dawn`_
+* `Dave Laing's blog`_
 
 .. _Eli Bendersky's blog: http://eli.thegreenplace.net
 .. _Armin Ronacher's blog: http://lucumr.pocoo.org
@@ -79,6 +80,7 @@ Blogs
 .. _Avery Pennarun's blog: https://apenwarr.ca/log/
 .. _Brent Yorgey's blog: https://byorgey.wordpress.com/
 .. _From Hask Till Dawn: https://alpmestan.com/
+.. _Dave Laing's blog: http://dlaing.org/
 
 Tutorials
 ---------
@@ -95,6 +97,8 @@ Tutorials
 * `Brent Yorgey's Functional Programming Course`_
 * `Chris Allens' Functional Programming Course`_
 * `Mastering Git subtrees`_
+* `A Beginner's Guide to LVM`_
+* `How to Move Home Directory to New Partition or Disk in Linux`
 
 .. _AVR Tutorial: https://www.mikrocontroller.net/articles/AVR-Tutorial
 .. _regular expression tutorial: https://swtch.com/~rsc/regexp/
@@ -108,6 +112,8 @@ Tutorials
 .. _Brent Yorgey's Functional Programming Course: https://www.seas.upenn.edu/~cis194/spring13/lectures.html
 .. _Chris Allens' Functional Programming Course: https://github.com/bitemyapp/fp-course
 .. _Mastering Git subtrees: https://medium.com/@porteneuve/mastering-git-subtrees-943d29a798ec
+.. _A Beginner's Guide to LVM: https://www.howtoforge.com/linux_lvm
+.. _How to Move Home Directory to New Partition or Disk in Linux: https://www.tecmint.com/move-home-directory-to-new-partition-disk-in-linux/
 
 Informational
 -------------
@@ -136,6 +142,8 @@ Informational
 * `An epic treatise on scheduling, bug tracking, and triage`_
 * `Brian O'Sullivan's 2014 Haskell course`_
 * `Brian O'Sullivan's 2016 Haskell course`_
+* `Why free monads matter`_ by Gabriel Gonzalez
+* `vimcasts.org`_
 
 .. _PEP index: https://www.python.org/dev/peps/
 .. _David Beazley's website: http://www.dabeaz.com/
@@ -165,6 +173,8 @@ Informational
 .. _An epic treatise on scheduling, bug tracking, and triage: https://apenwarr.ca/log/20171213
 .. _Brian O'Sullivan's 2014 Haskell course: http://www.scs.stanford.edu/14sp-cs240h/
 .. _Brian O'Sullivan's 2016 Haskell course: http://www.scs.stanford.edu/16wi-cs240h/
+.. _Why free monads matter: http://www.haskellforall.com/2012/06/you-could-have-invented-free-monads.html
+.. _vimcasts.org: http://vimcasts.org/episodes/
 
 Useful
 ------
@@ -190,6 +200,9 @@ Useful
 * `I want hue`_
 * `Solarized by Ethan Shoonover`_
 * `Collection of .gitignore files`_
+* The `godbolt compiler explorer`_
+* `httpbin.org`_
+* `Testing attoparsec parsers with hspec`_
 
 .. _Vim spf13: http://vim.spf13.com/
 .. _Open Wikibook for Haskell: https://en.wikibooks.org/wiki/Haskell
@@ -215,6 +228,9 @@ Useful
 .. _I want hue: http://tools.medialab.sciences-po.fr/iwanthue/
 .. _Solarized by Ethan Shoonover: https://ethanschoonover.com/solarized/
 .. _Collection of .gitignore files: https://github.com/github/gitignore
+.. _godbolt compiler explorer: https://godbolt.org/
+.. _httpbin.org: http://httpbin.org/
+.. _Testing attoparsec parsers with hspec: https://alpmestan.com/posts/2014-06-18-testing-attoparsec-parsers-with-hspec.html
 
 Interesting Projects
 --------------------
@@ -240,6 +256,8 @@ Interesting Projects
 * `Patat - Presentations Atop The ANSI Terminal`_
 * `HTML Slidy`_
 * `Slideous`_
+* `Anki`_
+* `Tuple`_
 
 .. _Meson: http://mesonbuild.com/
 .. _CMake: https://cmake.org/
@@ -262,6 +280,8 @@ Interesting Projects
 .. _Patat - Presentations Atop The ANSI Terminal: https://github.com/jaspervdj/patat
 .. _HTML Slidy: https://www.w3.org/Talks/Tools/Slidy2/Overview.html
 .. _Slideous: https://goessner.net/articles/slideous/
+.. _Anki: https://apps.ankiweb.net/
+.. _Tuple: https://screenheroreplacement.com/
 
 My youtube favourites
 ---------------------
