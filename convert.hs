@@ -15,6 +15,7 @@ import           Control.Monad (forM_)
 import qualified Data.Attoparsec.Text as P
 import           Data.Char (isAlpha, isSpace)
 import           Data.Either (fromRight, isLeft, isRight)
+import           Data.List (intersperse)
 import           Data.Maybe (fromJust)
 import qualified Data.Text as T
 import qualified Data.Text.IO as TIO
@@ -36,12 +37,14 @@ metadataParser = do
   value <- P.takeText
   return (key,T.strip value)
 
+notEmpty :: T.Text -> Bool
+notEmpty = T.any (not . isSpace)
+
 getFirstNonEmpty :: [T.Text] -> Maybe T.Text
 getFirstNonEmpty [] = Nothing
 getFirstNonEmpty (t:ts)
-  | nonEmpty t = Just t
+  | notEmpty t = Just t
   | otherwise  = getFirstNonEmpty ts
-  where nonEmpty = T.any (not . isSpace)
 
 sanitizeTitle :: T.Text -> String
 sanitizeTitle = T.unpack
@@ -55,6 +58,10 @@ sanitizeTitle = T.unpack
 
 quote :: T.Text -> T.Text
 quote t = "\"" <> t <> "\""
+
+joinToLastEntry :: [T.Text] -> [T.Text] -> [T.Text]
+joinToLastEntry [] ts' = [T.concat (intersperse " " (map T.strip ts'))]
+joinToLastEntry ts ts' = init ts ++ [T.concat (intersperse " " (last ts : map T.strip ts'))]
 
 replaceAssoc :: Eq a => a -> (b -> b) -> [(a,b)] -> [(a,b)]
 replaceAssoc k f = go k f []
@@ -75,10 +82,12 @@ main = do
     let
       ls = T.lines content
       (before,rest) = span (isLeft . P.parseOnly metadataParser) ls
-      (meta,after) = span (isRight . P.parseOnly metadataParser) rest
+      (metadataCandidate,afterCandidate) = span (isRight . P.parseOnly metadataParser) rest
+      (nonEmptyFollowUpLines, after') = span notEmpty afterCandidate
+      (metadata,after) = (joinToLastEntry metadataCandidate nonEmptyFollowUpLines, after')
       title = quote $ fromJust $ getFirstNonEmpty before
       kvs :: [(T.Text,T.Text)]
-      kvs = map (fromRight ("","") . P.parseOnly metadataParser) meta
+      kvs = map (fromRight ("","") . P.parseOnly metadataParser) metadata
       kvsWithTitle = ("title"," " <> title) : kvs
       kvsWithTitle' = replaceAssoc "summary" (quote . T.replace "\"" "\\\"") kvsWithTitle
       date = fromJust $ lookup "date" kvsWithTitle'
