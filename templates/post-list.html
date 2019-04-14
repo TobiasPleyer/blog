@@ -1,0 +1,17 @@
+<ol id="posts-list" class="hfeed">
+    $for(posts)$
+        <li>
+            <article class="hentry">
+                <h3>
+                    <a href="$url$">$title$</a>
+                </h3>
+                <abbr class="published">
+                    $date$
+                </abbr>
+                <div class="entry-content">
+                    $summary$
+                <div>
+            </article>
+        </li>
+    $endfor$
+</ol>

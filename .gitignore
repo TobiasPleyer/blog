@@ -1,8 +1,5 @@
 *.pyc
-output/*
-!output/README
-upload_all.sh
-Makefile.private
 sources/pyimport/*.png
-vagrant/.vagrant
-vagrant/playbooks/*.retry
+_cache
+_site
+.stack-work
