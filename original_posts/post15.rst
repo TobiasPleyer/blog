@@ -2,7 +2,7 @@ Patching the docutils rst parser
 ################################
 
 :date: 2017-06-22
-:tags: rst python docutils
+:tags: rst, python, docutils
 :category: Programming
 :authors: Tobias Pleyer
 :summary: Small rst parser tweak for HTML generation

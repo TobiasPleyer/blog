@@ -2,7 +2,7 @@ Recreate vmlinuz, initrd and friends
 ####################################
 
 :date: 2017-08-01
-:tags: linux boot initrd howto
+:tags: linux, boot, initrd, howto
 :category: Programming
 :authors: Tobias Pleyer
 :summary: Useful commands if you played to much with your Linux' */boot* folder

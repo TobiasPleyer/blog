@@ -2,7 +2,7 @@ Linking Rust libraries
 ######################
 
 :date: 2017-08-01
-:tags: linux rust linking x11
+:tags: linux, rust, linking, x11
 :category: Programming
 :authors: Tobias Pleyer
 :summary: I learned an interesting lesson when I tried to link a Rust program against X11

@@ -2,7 +2,7 @@ Python Optional Dependencies
 ############################
 
 :date: 2017-08-21
-:tags: linux python dependencies install
+:tags: linux, python, dependencies, install
 :category: Programming
 :authors: Tobias Pleyer
 :summary: A reminder to myself about the packages that should be installed before installing Python from source

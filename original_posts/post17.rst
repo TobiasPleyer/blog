@@ -2,7 +2,7 @@ Behaviour driven development with Python
 ########################################
 
 :date: 2017-07-14
-:tags: python bdd
+:tags: python, bdd
 :category: Programming
 :authors: Tobias Pleyer
 :summary: Behaviour driven developement is a very popular development style. Python's package index has a few options to support that

@@ -2,7 +2,7 @@ Links to Haskell FFI
 ####################
 
 :date: 2018-01-09
-:tags: haskell ffi
+:tags: haskell, ffi
 :category: Programming
 :authors: Tobias Pleyer
 :summary: A collection of useful links regarding Haskell and its FFI

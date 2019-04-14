@@ -2,7 +2,7 @@ How I currently use Vim
 #######################
 
 :date: 2017-09-10
-:tags: vim spf13
+:tags: vim, spf13
 :category: Programming
 :authors: Tobias Pleyer
 :summary: Vim is powerful right out of the box, but becomes even more powerful with the right configuration

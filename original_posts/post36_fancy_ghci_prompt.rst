@@ -2,7 +2,7 @@ Giving GHCi a fancy lamda prompt
 ################################
 
 :date: 2018-01-27
-:tags: haskell ghci
+:tags: haskell, ghci
 :category: Programming
 :authors: Tobias Pleyer
 :summary: How to set your GHCi REPL prompt to a literal lambda
