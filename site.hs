@@ -28,18 +28,13 @@ main = hakyll $ do
             >>= loadAndApplyTemplate "templates/default.html" blogCtx
             >>= relativizeUrls
 
+    tags <- buildTags "posts/*" (fromCapture "tags/*.html")
+
     match "posts/*" $ do
         route $ setExtension "html"
         compile $ do
-            -- body <- getResourceBody
-            -- pandoc <- readPandocWith defaultHakyllReaderOptions body
-            -- unsafeCompiler (do
-            --     writeFile ((flip replaceExtension "pandoc" . toFilePath . itemIdentifier) pandoc) (show (itemBody pandoc))
-            --     return pandoc)
-            -- makeItem "test.txt" :: Compiler (Item String)
             snippets <- toSnippetsMap <$> loadAll "code/**"
             pandocCompilerWithCodeInsertion snippets
-              -- >>= (\i -> unsafeCompiler (do writeFile ((flip replaceExtension "pandoc" . toFilePath . itemIdentifier) i) (show (itemBody i)); return i))
               >>= loadAndApplyTemplate "templates/post.html" postCtx
               >>= loadAndApplyTemplate "templates/default.html" postCtx
               >>= relativizeUrls
@@ -88,6 +83,9 @@ postCtx :: Context String
 postCtx =
     dateField "date" "%B %e, %Y" `mappend`
     blogCtx
+
+postCtxWithTags :: Tags -> Context String
+postCtxWithTags tags = tagsField "tags" tags `mappend` postCtx
 
 toSnippetsMap :: [Item String] -> M.Map FilePath String
 toSnippetsMap is = M.fromList kvs

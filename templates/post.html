@@ -5,10 +5,14 @@
                 <abbr class="published">
                     Published: $date$
                 </abbr>
-                $if(author)$
+                $if(authors)$
                 <address class="vcard author">
-                    by $author$
+                    by $authors$
                 </address>
+                $endif$
+                $if(tags)$
+                <div class="info">
+                Tags: $tags$
                 $endif$
             </footer>
         </div>
