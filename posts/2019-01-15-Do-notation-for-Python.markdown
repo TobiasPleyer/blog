@@ -59,7 +59,7 @@ Here is an example that makes use of all these cases:
 code/post58/do\_demo.hs
 :::
 
-``` {.sourceCode .}
+``` {.sourceCode .bash}
 $ sudo chmod +x do_demo.hs
 $ ./do_demo.hs
 How many gos do you want? 3

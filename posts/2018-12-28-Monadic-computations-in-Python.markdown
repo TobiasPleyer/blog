@@ -128,7 +128,7 @@ method is to simply put everything in a try/except block.
 code/post55/brute\_force.py
 :::
 
-``` {.sourceCode .}
+``` {.sourceCode .bash}
 $ python naive.py
 Now running: echo 'OK'; exit 0
 OK
@@ -251,7 +251,7 @@ result of the whole computation:
 code/post55/either\_demo.hs
 :::
 
-``` {.sourceCode .}
+``` {.sourceCode .bash}
 $ ./either_demo.hs
 Right 4
 Left "Something bad happened"
@@ -283,7 +283,7 @@ element accumulates the information value.
 code/post55/writer\_demo.hs
 :::
 
-``` {.sourceCode .}
+``` {.sourceCode .bash}
 $ ./writer_demo.hs
 (3,"Hello World!!!")
 ```
@@ -301,7 +301,7 @@ Haskell is famous for.
 code/post55/io\_demo.hs
 :::
 
-``` {.sourceCode .}
+``` {.sourceCode .bash}
 $ ./io_demo.hs
 hi
 HI!
@@ -325,7 +325,7 @@ overloading.
 code/post55/either\_demo.py
 :::
 
-``` {.sourceCode .}
+``` {.sourceCode .bash}
 $ python either_demo.py
 Right 4
 Left 'Something bad happened'
@@ -350,7 +350,7 @@ evaluation.
 code/post55/io\_demo.py
 :::
 
-``` {.sourceCode .}
+``` {.sourceCode .bash}
 $ python io_demo.py
 Doubling 1 -> 2
 ```
@@ -365,7 +365,7 @@ details, here is the full code:
 code/post55/transformers.py
 :::
 
-``` {.sourceCode .}
+``` {.sourceCode .bash}
 $ python3.6 transformers.py
 Final result: Right 'Even better\n'
 == INFO ==
@@ -468,7 +468,7 @@ and also print information about the commit:
 code/post55/git\_tagging\_example.py
 :::
 
-``` {.sourceCode .}
+``` {.sourceCode .bash}
 $ cd example_git_repo
 $ python ../git_tagging_example.py
 Final result: Left None
@@ -567,7 +567,7 @@ currently checked out to.
 code/post55/branching\_example.py
 :::
 
-``` {.sourceCode .}
+``` {.sourceCode .bash}
 $ cd example_git_repo
 $ python ../branching_example.py
 Final result: Right 3

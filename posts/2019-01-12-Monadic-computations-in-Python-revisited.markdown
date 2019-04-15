@@ -71,7 +71,7 @@ returns the final result directly instead of a function.
 We can verify now that different verbosity levels lead to different
 output:
 
-``` {.sourceCode .}
+``` {.sourceCode .bash}
 $ python full_example.py 1
 Final result: Right 'Even better\n'
 == INFO ==
@@ -125,7 +125,7 @@ Command failed
 
 However the example is too simple to guard against misuse:
 
-``` {.sourceCode .}
+``` {.sourceCode .bash}
 $ python full_example.py 0
 Final result: Right 'Even better\n'
 == INFO ==

@@ -60,7 +60,7 @@ hand-written if-statement.
 code/post56/hand\_written.py
 :::
 
-``` {.sourceCode .}
+``` {.sourceCode .bash}
 $ python hand_written.py
 {'first': 'John', 'last': 'Doe', 'age': 42}
 {'first': 'John', 'last': 'Doe', 'age': 42}
@@ -77,7 +77,7 @@ developer mindlessly renames one of the functions?
 code/post56/hand\_written\_error.py
 :::
 
-``` {.sourceCode .}
+``` {.sourceCode .bash}
 $ python hand_written_error.py
 Traceback (most recent call last):
   File "hand_written_error.py", line 19, in <module>
@@ -99,7 +99,7 @@ object:
 code/post56/annotate.py
 :::
 
-``` {.sourceCode .}
+``` {.sourceCode .bash}
 $ python annotate.py
 hihihi
 {'x': <class 'int'>, 'y': <class 'str'>, 'return': <class 'str'>}
@@ -116,7 +116,7 @@ concept implementation for simple function overloading.
 code/post56/overload.py
 :::
 
-``` {.sourceCode .}
+``` {.sourceCode .bash}
 $ python overload.py
 44
 1.0

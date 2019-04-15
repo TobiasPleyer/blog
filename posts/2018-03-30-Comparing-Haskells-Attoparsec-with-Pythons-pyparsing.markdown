@@ -51,7 +51,7 @@ but I modified the code slightly:
 code/post46/log\_parser.hs
 :::
 
-``` {.sourceCode .}
+``` {.sourceCode .bash}
 $ ./log_parser.hs
 LogEntry {entryTime = 2013-06-29 11:16:23, entryIP = IP 124 67 34 60, entryProduct = Keyboard}
 LogEntry {entryTime = 2013-06-29 11:32:12, entryIP = IP 212 141 23 67, entryProduct = Mouse}
@@ -68,7 +68,7 @@ Python
 code/post46/log\_parser.py
 :::
 
-``` {.sourceCode .}
+``` {.sourceCode .bash}
 $ python3 log_parser.py
 [datetime.datetime(2013, 6, 29, 11, 16, 23), IP(124.67.34.60), Product(keyboard)]
 [datetime.datetime(2013, 6, 29, 11, 32, 12), IP(212.141.23.67), Product(mouse)]
