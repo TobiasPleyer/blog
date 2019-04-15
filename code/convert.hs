@@ -83,8 +83,8 @@ main = do
       ls = T.lines content
       (before,rest) = span (isLeft . P.parseOnly metadataParser) ls
       (metadataCandidate,afterCandidate) = span (isRight . P.parseOnly metadataParser) rest
-      (nonEmptyFollowUpLines, after') = span notEmpty afterCandidate
-      (metadata,after) = (joinToLastEntry metadataCandidate nonEmptyFollowUpLines, after')
+      (nonEmptyFollowUpLines, after) = span notEmpty afterCandidate
+      metadata = joinToLastEntry metadataCandidate nonEmptyFollowUpLines
       title = quote $ fromJust $ getFirstNonEmpty before
       kvs :: [(T.Text,T.Text)]
       kvs = map (fromRight ("","") . P.parseOnly metadataParser) metadata
