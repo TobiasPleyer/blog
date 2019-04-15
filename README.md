@@ -11,7 +11,7 @@ repository.
 ## Generating the sources
 
 If you just want the HTML files the following commands will generate them and
-then put them under the folder **output**:
+then put them under the folder **\_site**:
 
 ```
 ~$ git clone https://github.com/TobiasPleyer/blog.git
