@@ -30,13 +30,28 @@ main = hakyll $ do
 
     tags <- buildTags "posts/*" (fromCapture "tags/*.html")
 
+    tagsRules tags $ \tag pattern -> do
+        let title = "Posts tagged \"" ++ tag ++ "\""
+        route idRoute
+        compile $ do
+            posts <- recentFirst =<< loadAll pattern
+            let tagCtx =
+                    constField "title" title `mappend`
+                    listField "posts" postCtx (return posts) `mappend`
+                    blogCtx
+
+            makeItem ""
+                >>= loadAndApplyTemplate "templates/tags.html" tagCtx
+                >>= loadAndApplyTemplate "templates/default.html" tagCtx
+                >>= relativizeUrls
+
     match "posts/*" $ do
         route $ setExtension "html"
         compile $ do
             snippets <- toSnippetsMap <$> loadAll "code/**"
             pandocCompilerWithCodeInsertion snippets
-              >>= loadAndApplyTemplate "templates/post.html" postCtx
-              >>= loadAndApplyTemplate "templates/default.html" postCtx
+              >>= loadAndApplyTemplate "templates/post.html" (postCtxWithTags tags)
+              >>= loadAndApplyTemplate "templates/default.html" (postCtxWithTags tags)
               >>= relativizeUrls
 
     create ["archive.html"] $ do
@@ -44,13 +59,26 @@ main = hakyll $ do
         compile $ do
             posts <- recentFirst =<< loadAll "posts/*"
             let archiveCtx =
+                    constField "title" "Archives" `mappend`
                     listField "posts" postCtx (return posts) `mappend`
-                    constField "title" "Archives"            `mappend`
                     blogCtx
 
             makeItem ""
                 >>= loadAndApplyTemplate "templates/archive.html" archiveCtx
                 >>= loadAndApplyTemplate "templates/default.html" archiveCtx
+                >>= relativizeUrls
+
+    create ["tags.html"] $ do
+        route idRoute
+        compile $ do
+            let tagsCtx =
+                    constField "title" "Tags collection" `mappend`
+                    listField "tags" postCtx (traverse (makeItem . fst) (tagsMap tags)) `mappend`
+                    blogCtx
+
+            makeItem ""
+                >>= loadAndApplyTemplate "templates/tag-list.html" tagsCtx
+                >>= loadAndApplyTemplate "templates/default.html" tagsCtx
                 >>= relativizeUrls
 
     match "index.html" $ do
