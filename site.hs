@@ -95,7 +95,9 @@ main = hakyll $ do
                 >>= loadAndApplyTemplate "templates/default.html" indexCtx
                 >>= relativizeUrls
 
-    match "code/**" $ compile getResourceString
+    match "code/**" $ do
+        route idRoute
+        compile getResourceString
 
     match "templates/*" $ compile templateBodyCompiler
 
