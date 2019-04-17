@@ -248,6 +248,8 @@ My youtube favourites
     ](https://www.youtube.com/watch?v=v9QGWbGppis)
 -   [Functional Design Patterns
     ](https://www.youtube.com/watch?v=srQt1NAHYC0)
+-   [Functional programming in 40 minutes
+    ](https://www.youtube.com/watch?v=0if71HOyVjY)
 
 Book Wishlist
 -------------
