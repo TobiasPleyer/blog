@@ -220,33 +220,34 @@ Interesting Projects
 My youtube favourites
 ---------------------
 
--   [Beautiful Parallelism - Harnessing Multicores with
-    Haskell](https://www.youtube.com/watch?v=MOv71gAOP6M)
--   [Why Functional Programming
-    Matters](https://www.youtube.com/watch?v=XrNdvWqxBvA)
--   [Haxl A Big Hammer for
-    Concurrency](https://www.youtube.com/watch?v=sT6VJkkhy0o)
--   [Lexical Scanning in
-    Go](https://www.youtube.com/watch?v=HxaD_trXwRE)
--   [Low-level Haskell - An Interactive Tour Through the
-    STG](https://www.youtube.com/watch?v=-MFk7PIKYsg)
--   [Python 3
-    Metaprogramming](https://www.youtube.com/watch?v=sPiWg5jSoZI)
--   [Haskell Amuse-Bouche](https://www.youtube.com/watch?v=b9FagOVqxmI)
--   [Stewardship the Sobering
-    Parts](https://www.youtube.com/watch?v=2y5Pv4yN0b0)
--   [Build your own Excel 365 in an hour with F\# - Tomas
-    Petricek](https://www.youtube.com/watch?v=Bnm71YEt_lI)
--   [Let's Get Lazy---The Real Power of Functional
-    Programming](https://www.youtube.com/watch?v=ntWdmlrCheY)
+-   [Beautiful Parallelism - Harnessing Multicores with Haskell
+    ](https://www.youtube.com/watch?v=MOv71gAOP6M)
+-   [Why Functional Programming Matters
+    ](https://www.youtube.com/watch?v=XrNdvWqxBvA)
+-   [Haxl A Big Hammer for Concurrency
+    ](https://www.youtube.com/watch?v=sT6VJkkhy0o)
+-   [Lexical Scanning in Go
+    ](https://www.youtube.com/watch?v=HxaD_trXwRE)
+-   [Low-level Haskell - An Interactive Tour Through the STG
+    ](https://www.youtube.com/watch?v=-MFk7PIKYsg)
+-   [Python 3 Metaprogramming
+    ](https://www.youtube.com/watch?v=sPiWg5jSoZI)
+-   [Haskell Amuse-Bouche
+    ](https://www.youtube.com/watch?v=b9FagOVqxmI)
+-   [Stewardship the Sobering Parts
+    ](https://www.youtube.com/watch?v=2y5Pv4yN0b0)
+-   [Build your own Excel 365 in an hour with F\# - Tomas Petricek
+    ](https://www.youtube.com/watch?v=Bnm71YEt_lI)
+-   [Let's Get Lazy---The Real Power of Functional Programming
+    ](https://www.youtube.com/watch?v=ntWdmlrCheY)
 -   [Fear and Awaiting in Async - A Savage Journey to the Heart of the
     Coroutine Dream](https://www.youtube.com/watch?v=E-1Y4kSsAFc)
--   [Party REPL --- A multi-player REPL built for
-    pair-programming](https://www.youtube.com/watch?v=AJING0Vigpg)
--   [Functional Programming Patterns for Mere
-    Mortals](https://www.youtube.com/watch?v=v9QGWbGppis)
--   [Functional Design
-    Patterns](https://www.youtube.com/watch?v=srQt1NAHYC0)
+-   [Party REPL --- A multi-player REPL built for pair-programming
+    ](https://www.youtube.com/watch?v=AJING0Vigpg)
+-   [Functional Programming Patterns for Mere Mortals
+    ](https://www.youtube.com/watch?v=v9QGWbGppis)
+-   [Functional Design Patterns
+    ](https://www.youtube.com/watch?v=srQt1NAHYC0)
 
 Book Wishlist
 -------------
