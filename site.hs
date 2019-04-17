@@ -48,7 +48,7 @@ main = hakyll $ do
     match "posts/*" $ do
         route $ setExtension "html"
         compile $ do
-            snippets <- toSnippetsMap <$> loadAll "code/**"
+            snippets <- toSnippetsMap <$> loadAll ("code/**" .||. "site.hs")
             pandocCompilerWithCodeInsertion snippets
               >>= loadAndApplyTemplate "templates/post.html" (postCtxWithTags tags)
               >>= loadAndApplyTemplate "templates/default.html" (postCtxWithTags tags)
@@ -97,6 +97,9 @@ main = hakyll $ do
 
     match "code/**" $ do
         route idRoute
+        compile getResourceString
+
+    match "site.hs" $ do
         compile getResourceString
 
     match "templates/*" $ compile templateBodyCompiler
