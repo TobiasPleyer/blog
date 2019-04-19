@@ -13,7 +13,7 @@ import           Hakyll
 
 --------------------------------------------------------------------------------
 main :: IO ()
-main = hakyll $ do
+main = hakyllWith config $ do
     match "images/**" $ do
         route   idRoute
         compile copyFileCompiler
@@ -106,6 +106,11 @@ main = hakyll $ do
 
 
 --------------------------------------------------------------------------------
+config :: Configuration
+config = defaultConfiguration
+    { deployCommand = "rsync --size-only -ave 'ssh -p 22' _site/ tpleyer.de@ssh.strato.de:.blog/"
+    }
+
 blogCtx :: Context String
 blogCtx =
     constField "blog_title" "Tobi's blog" `mappend`
