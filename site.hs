@@ -48,8 +48,8 @@ main = hakyllWith config $ do
     match "posts/*" $ do
         route $ setExtension "html"
         compile $ do
-            snippets <- toSnippetsMap <$> loadAll ("code/**" .||. "site.hs")
-            pandocCompilerWithCodeInsertion snippets
+            snippetMap <- oSnippetsMap <$> loadAll ("code/**" .||. "site.hs")
+            pandocCompilerWithCodeInsertion snippetMap
               >>= loadAndApplyTemplate "templates/post.html" (postCtxWithTags tags)
               >>= loadAndApplyTemplate "templates/default.html" (postCtxWithTags tags)
               >>= relativizeUrls
@@ -125,28 +125,28 @@ postCtx =
 postCtxWithTags :: Tags -> Context String
 postCtxWithTags tags = tagsField "tags" tags `mappend` postCtx
 
-toSnippetsMap :: [Item String] -> M.Map FilePath String
-toSnippetsMap is = M.fromList kvs
+oSnippetsMap :: [Item String] -> M.Map FilePath String
+oSnippetsMap is = M.fromList kvs
   where kvs = map ((toFilePath . itemIdentifier) &&& itemBody) is
 
 pandocCompilerWithCodeInsertion :: M.Map FilePath String -> Compiler (Item String)
-pandocCompilerWithCodeInsertion snippets =
-  pandocCompilerWithTransform defaultHakyllReaderOptions defaultHakyllWriterOptions (codeInclude snippets)
+pandocCompilerWithCodeInsertion snippetMap =
+  pandocCompilerWithTransform defaultHakyllReaderOptions defaultHakyllWriterOptions (codeInclude snippetMap)
 
 codeInclude :: M.Map FilePath String -> Pandoc -> Pandoc
-codeInclude snippets = walk $ \block -> case block of
+codeInclude snippetMap = walk $ \block -> case block of
   div@(Div (ident,cs,kvs) bs) -> if "code-include" `elem` cs
-                                 then codeBlockFromDiv snippets div
+                                 then codeBlockFromDiv snippetMap div
                                  else block
   _ -> block
 
-fromPara (Para is) = is
-fromStr (Str s) = s
-
-codeBlockFromDiv snippets div@(Div (ident,cs,kvs) bs) =
+codeBlockFromDiv snippetMap div@(Div (ident,cs,kvs) bs) =
   let mLexer = lookup "lexer" kvs
       css = maybeToList mLexer
       path = (fromStr . head . fromPara . head) bs
-      content = M.lookup path snippets
+      content = M.lookup path snippetMap
   in maybe Null (CodeBlock ("",css,[])) content
 codeBlockFromDiv _ _ = Null
+
+fromPara (Para is) = is
+fromStr (Str s) = s
