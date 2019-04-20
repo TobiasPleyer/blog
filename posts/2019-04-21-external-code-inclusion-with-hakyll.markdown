@@ -223,7 +223,8 @@ match "posts/*" $ do
 ```
 
 Below is my complete `site.hs` file to generate my blog. Have a look at the
-[raw markdown source](placeholder) to see that it is included via a fenced div:
+[raw markdown source](https://raw.githubusercontent.com/TobiasPleyer/blog/master/posts/2019-04-21-external-code-inclusion-with-hakyll.markdown)
+to see that it is included via a fenced div:
 
 ::: {.code-include lexer="haskell"}
 code/site_2019-04-21.hs
