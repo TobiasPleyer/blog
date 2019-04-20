@@ -222,9 +222,21 @@ match "posts/*" $ do
           >>= relativizeUrls
 ```
 
-Below is my complete `site.hs` file to generate my blog. Have a look at the
+We are done! With these changes we are from now on able to include external
+code with the following syntax:
+
+```markdown
+::: {.code-include lexer="haskell"}
+path/to/file
+:::
+```
+
+I like this solution because it does not interfere with Hakyll's template
+mechanism, but uses conventional markdown syntax to achieve the desired
+behavior. For reference, below is my complete `site.hs` file to generate my
+blog. Have a look at the
 [raw markdown source](https://raw.githubusercontent.com/TobiasPleyer/blog/master/posts/2019-04-21-external-code-inclusion-with-hakyll.markdown)
-to see that it is included via a fenced div:
+to convince yourself that it is included via a fenced div:
 
 ::: {.code-include lexer="haskell"}
 code/site_2019-04-21.hs
