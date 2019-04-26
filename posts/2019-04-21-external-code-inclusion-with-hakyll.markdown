@@ -148,7 +148,7 @@ intervene between Pandoc's reader (parser) and writer (compiler) process to
 rewrite the respective `Div` into a `CodeBlock`, which will subsequently be
 properly syntax highlighted.
 
-For this two work we only need two things:
+For this to work we only need two things:
 
 1. A snippet map that maps a file's name to its content
 2. A modified Pandoc compiler that will rewrite Divs to CodeBlocks
