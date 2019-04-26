@@ -17,10 +17,8 @@ repository](https://github.com/python/cpython.git).
 A simple example
 ----------------
 
-::: {.code-include lexer="python"}
-code/asyncio\_hello\_world\_naive.py
+::: {.code-include lexer="python" file="code/asyncio_hello_world_naive.py"}
 :::
-
 And run it:
 
     $> python3.6 asyncio_hello_world_naive.py
@@ -45,17 +43,13 @@ Let's first have a look at code that has the desrired effect and then
 dive deeper into the implementation. This code snippet is almost
 identical to an example that can be found in asyncio's documentation
 
-::: {.code-include lexer="python"}
-code/asyncio\_hello\_world.py
+::: {.code-include lexer="python" file="code/asyncio_hello_world.py"}
 :::
-
 What is happening here? What does *asyncio.sleep* actually do? Let's
 have a look at the source code:
 
-::: {.code-include lexer="python"}
-code/asyncio\_sleep.py
+::: {.code-include lexer="python" file="code/asyncio_sleep.py"}
 :::
-
 Ok. So a [future
 object](https://docs.python.org/3/library/asyncio-task.html#future) is
 created and the function that is going to set the future's result is
@@ -63,20 +57,16 @@ scheduled for the desired delay of the *sleep* function. Sounds
 reasonable so far, but then we yield the future. What does that do?
 Again let's have a look at the source code:
 
-::: {.code-include lexer="python"}
-code/asyncio\_future.py
+::: {.code-include lexer="python" file="code/asyncio_future.py"}
 :::
-
 So in the begining, when the future is usually not done yet, the future
 will yield itself. One line below the yield you can see the assert that
 came back on us in the naive example. It is caused because when we used
 *coro.send(None)* the second time, we reach the assert but the future is
 not done at that point. We could cheat and set the result ourselves
 
-::: {.code-include lexer="python"}
-code/asyncio\_hello\_world\_naive2.py
+::: {.code-include lexer="python" file="code/asyncio_hello_world_naive2.py"}
 :::
-
 And run it:
 
     $> python3.6 asyncio_hello_world_naive2.py
@@ -130,10 +120,8 @@ speak.
 Without further ado here come the most interesting bits of the *Task*
 class
 
-::: {.code-include lexer="python"}
-code/asyncio\_task.py
+::: {.code-include lexer="python" file="code/asyncio_task.py"}
 :::
-
 The key function is the *\_step* function. As can be seen in the
 definition, it also performs:
 

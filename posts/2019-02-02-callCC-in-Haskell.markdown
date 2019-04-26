@@ -41,66 +41,48 @@ from the wiki book article.
 
 Here is the full example we will evaluate:
 
-::: {.code-include lexer="haskell"}
-code/post59/bar.hs
+::: {.code-include lexer="haskell" file="code/post59/bar.hs"}
 :::
-
 We will transform the bar computation. Desugaring the outer do-notation
 yields
 
-::: {.code-include lexer="haskell"}
-code/post59/bar2.hs
+::: {.code-include lexer="haskell" file="code/post59/bar2.hs"}
 :::
-
 Using the definition of the ContT monad's bind (\>\>=) function and
 giving the anonymous function to callCC a name yields
 
-::: {.code-include lexer="haskell"}
-code/post59/bar3.hs
+::: {.code-include lexer="haskell" file="code/post59/bar3.hs"}
 :::
-
 Now we use [the definition of
 callCC](https://hackage.haskell.org/package/transformers-0.5.5.0/docs/src/Control.Monad.Trans.Cont.html#callCC)
 
-::: {.code-include lexer="haskell"}
-code/post59/bar4.hs
+::: {.code-include lexer="haskell" file="code/post59/bar4.hs"}
 :::
-
 Now we can also desugar the inner do computation, which yields
 
-::: {.code-include lexer="haskell"}
-code/post59/bar5.hs
+::: {.code-include lexer="haskell" file="code/post59/bar5.hs"}
 :::
-
 Now we can fill in the definition of check, unpack the delayed
 continuation with [runContT]{.title-ref} and then apply the continuation
 to it
 
-::: {.code-include lexer="haskell"}
-code/post59/bar6.hs
+::: {.code-include lexer="haskell" file="code/post59/bar6.hs"}
 :::
-
 Now we can substitute f by its definition and write the lengthy line in
 several lines
 
-::: {.code-include lexer="haskell"}
-code/post59/bar7.hs
+::: {.code-include lexer="haskell" file="code/post59/bar7.hs"}
 :::
-
 Once again using the definition ContT monad's bind (\>\>=) function we
 end up with
 
-::: {.code-include lexer="haskell"}
-code/post59/bar8.hs
+::: {.code-include lexer="haskell" file="code/post59/bar8.hs"}
 :::
-
 Unwrapping the inner [runContT ContT \...]{.title-ref} layer and
 substituting for [when\_f]{.title-ref} yields
 
-::: {.code-include lexer="haskell"}
-code/post59/bar9.hs
+::: {.code-include lexer="haskell" file="code/post59/bar9.hs"}
 :::
-
 Now we are able to discuss the possible outcomes of the computation.
 
 ### Calling bar with 'hello'
@@ -110,31 +92,23 @@ case the predicate function of [when]{.title-ref} returns
 [True]{.title-ref} and [when]{.title-ref} will simply evaluate to its
 second argument and we end up with
 
-::: {.code-include lexer="haskell"}
-code/post59/bar10.hs
+::: {.code-include lexer="haskell" file="code/post59/bar10.hs"}
 :::
-
 Which we can simplify to
 
-::: {.code-include lexer="haskell"}
-code/post59/bar11.hs
+::: {.code-include lexer="haskell" file="code/post59/bar11.hs"}
 :::
-
 If we cheat a bit we can rewrite it a bit further. The following won't
 compile, because we are using variables out of scope, but it helps to
 see things a bit better
 
-::: {.code-include lexer="haskell"}
-code/post59/bar12.hs
+::: {.code-include lexer="haskell" file="code/post59/bar12.hs"}
 :::
-
 Now we can run the [main]{.title-ref} function (again in a sort of
 pseudo code)
 
-::: {.code-include lexer="haskell"}
-code/post59/bar13.hs
+::: {.code-include lexer="haskell" file="code/post59/bar13.hs"}
 :::
-
 They key point to note here is that [f]{.title-ref} ignored its
 argument, thus it was completely irrelevant what the actual value of
 [k]{.title-ref} was. That is exactly the "early return" behavior that
@@ -150,22 +124,16 @@ this case the predicate function of [when]{.title-ref} returns
 ()]{.title-ref}, which in the case of the continuation monad equals
 [ContT (\$ ())]{.title-ref}.
 
-::: {.code-include lexer="haskell"}
-code/post59/bar14.hs
+::: {.code-include lexer="haskell" file="code/post59/bar14.hs"}
 :::
-
 Which we can simplify to
 
-::: {.code-include lexer="haskell"}
-code/post59/bar15.hs
+::: {.code-include lexer="haskell" file="code/post59/bar15.hs"}
 :::
-
 And now the main function can be evaluated
 
-::: {.code-include lexer="haskell"}
-code/post59/bar16.hs
+::: {.code-include lexer="haskell" file="code/post59/bar16.hs"}
 :::
-
 As can be seen we evaluated the inner compuatation of *callCC*'s
 argument to the end and did not make any use of the early return.
 

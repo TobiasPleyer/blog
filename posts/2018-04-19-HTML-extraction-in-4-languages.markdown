@@ -28,31 +28,23 @@ name or URL can't be extracted we skip this article.
 Haskell
 -------
 
-::: {.code-include lexer="haskell"}
-code/post50/nyt.hs
+::: {.code-include lexer="haskell" file="code/post50/nyt.hs"}
 :::
-
 Clojure
 -------
 
-::: {.code-include lexer="clojure"}
-code/post50/nyt.clj
+::: {.code-include lexer="clojure" file="code/post50/nyt.clj"}
 :::
-
 Python
 ------
 
-::: {.code-include lexer="python"}
-code/post50/nyt.py
+::: {.code-include lexer="python" file="code/post50/nyt.py"}
 :::
-
 Go
 --
 
-::: {.code-include lexer="go"}
-code/post50/nyt.go
+::: {.code-include lexer="go" file="code/post50/nyt.go"}
 :::
-
 Remarks
 -------
 

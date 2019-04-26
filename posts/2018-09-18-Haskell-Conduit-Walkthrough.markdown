@@ -26,10 +26,8 @@ In this post I want to provide a walkthrough of code very similar to the
 original post. The following code snippet is identical in look and
 behavior of the original:
 
-::: {.code-include lexer="haskell"}
-code/post54/Main1.hs
+::: {.code-include lexer="haskell" file="code/post54/Main1.hs"}
 :::
-
 This piece of code will serve as the basis of the following
 transformations.
 
@@ -63,270 +61,181 @@ Evaluation in 45 steps
 
 The code above equals...
 
-::: {.code-include lexer="haskell"}
-code/post54/Main2.hs
+::: {.code-include lexer="haskell" file="code/post54/Main2.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/post54/Main3.hs
+::: {.code-include lexer="haskell" file="code/post54/Main3.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/post54/Main4.hs
+::: {.code-include lexer="haskell" file="code/post54/Main4.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/post54/Main5.hs
+::: {.code-include lexer="haskell" file="code/post54/Main5.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/post54/Main6.hs
+::: {.code-include lexer="haskell" file="code/post54/Main6.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/post54/Main7.hs
+::: {.code-include lexer="haskell" file="code/post54/Main7.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/post54/Main8.hs
+::: {.code-include lexer="haskell" file="code/post54/Main8.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/post54/Main9.hs
+::: {.code-include lexer="haskell" file="code/post54/Main9.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/post54/Main10.hs
+::: {.code-include lexer="haskell" file="code/post54/Main10.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/post54/Main11.hs
+::: {.code-include lexer="haskell" file="code/post54/Main11.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/post54/Main12.hs
+::: {.code-include lexer="haskell" file="code/post54/Main12.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/post54/Main13.hs
+::: {.code-include lexer="haskell" file="code/post54/Main13.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/post54/Main14.hs
+::: {.code-include lexer="haskell" file="code/post54/Main14.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/post54/Main15.hs
+::: {.code-include lexer="haskell" file="code/post54/Main15.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/post54/Main16.hs
+::: {.code-include lexer="haskell" file="code/post54/Main16.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/post54/Main17.hs
+::: {.code-include lexer="haskell" file="code/post54/Main17.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/post54/Main18.hs
+::: {.code-include lexer="haskell" file="code/post54/Main18.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/post54/Main19.hs
+::: {.code-include lexer="haskell" file="code/post54/Main19.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/post54/Main20.hs
+::: {.code-include lexer="haskell" file="code/post54/Main20.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/post54/Main21.hs
+::: {.code-include lexer="haskell" file="code/post54/Main21.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/post54/Main22.hs
+::: {.code-include lexer="haskell" file="code/post54/Main22.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/post54/Main23.hs
+::: {.code-include lexer="haskell" file="code/post54/Main23.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/post54/Main24.hs
+::: {.code-include lexer="haskell" file="code/post54/Main24.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/post54/Main25.hs
+::: {.code-include lexer="haskell" file="code/post54/Main25.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/post54/Main26.hs
+::: {.code-include lexer="haskell" file="code/post54/Main26.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/post54/Main27.hs
+::: {.code-include lexer="haskell" file="code/post54/Main27.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/post54/Main28.hs
+::: {.code-include lexer="haskell" file="code/post54/Main28.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/post54/Main29.hs
+::: {.code-include lexer="haskell" file="code/post54/Main29.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/post54/Main30.hs
+::: {.code-include lexer="haskell" file="code/post54/Main30.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/post54/Main31.hs
+::: {.code-include lexer="haskell" file="code/post54/Main31.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/post54/Main32.hs
+::: {.code-include lexer="haskell" file="code/post54/Main32.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/post54/Main33.hs
+::: {.code-include lexer="haskell" file="code/post54/Main33.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/post54/Main34.hs
+::: {.code-include lexer="haskell" file="code/post54/Main34.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/post54/Main35.hs
+::: {.code-include lexer="haskell" file="code/post54/Main35.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/post54/Main36.hs
+::: {.code-include lexer="haskell" file="code/post54/Main36.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/post54/Main37.hs
+::: {.code-include lexer="haskell" file="code/post54/Main37.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/post54/Main38.hs
+::: {.code-include lexer="haskell" file="code/post54/Main38.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/post54/Main39.hs
+::: {.code-include lexer="haskell" file="code/post54/Main39.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/post54/Main40.hs
+::: {.code-include lexer="haskell" file="code/post54/Main40.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/post54/Main41.hs
+::: {.code-include lexer="haskell" file="code/post54/Main41.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/post54/Main42.hs
+::: {.code-include lexer="haskell" file="code/post54/Main42.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/post54/Main43.hs
+::: {.code-include lexer="haskell" file="code/post54/Main43.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/post54/Main44.hs
+::: {.code-include lexer="haskell" file="code/post54/Main44.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/post54/Main45.hs
+::: {.code-include lexer="haskell" file="code/post54/Main45.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/post54/Main46.hs
+::: {.code-include lexer="haskell" file="code/post54/Main46.hs"}
 :::

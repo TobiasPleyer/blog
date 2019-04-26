@@ -55,10 +55,8 @@ In total we have to deal with 4 cases:
 
 Here is an example that makes use of all these cases:
 
-::: {.code-include lexer="haskell"}
-code/post58/do\_demo.hs
+::: {.code-include lexer="haskell" file="code/post58/do_demo.hs"}
 :::
-
 ``` {.sourceCode .bash}
 $ sudo chmod +x do_demo.hs
 $ ./do_demo.hs
@@ -68,10 +66,8 @@ gogogo!
 
 And here is the de-sugared (rewritten) version
 
-::: {.code-include lexer="haskell"}
-code/post58/do\_demo\_desugared.hs
+::: {.code-include lexer="haskell" file="code/post58/do_demo_desugared.hs"}
 :::
-
 A lot harder to read, right? That's the reason do-notation was
 introduced: To make monadic code nicer to write and read.
 
@@ -92,10 +88,8 @@ Test-Driven-Development, **TDD** in short.
 Here is our Python script, with an empty do-function and the test case
 to test it:
 
-::: {.code-include lexer="python"}
-code/post58/do\_initial.py
+::: {.code-include lexer="python" file="code/post58/do_initial.py"}
 :::
-
 As can be seen from the expectations, the output of [do]{.title-ref}
 will be overly parenthesized. This doesn't hurt the reader/programmer,
 because they will never see that code, but makes deterministic rewriting
@@ -148,10 +142,8 @@ to build up parsers. I already compared pyparsing with attoparsec in
 The following class will be used to represent a basic do-line and check
 off points 1 and 2.
 
-::: {.code-include lexer="python"}
-code/post58/do\_line.py
+::: {.code-include lexer="python" file="code/post58/do_line.py"}
 :::
-
 As you can see the rewrite rules are very simple. Once we known the type
 of the do-line and its components all we have to do is wrap the
 components in parentheses and use the correct monadic function ((\>\>)
@@ -162,16 +154,12 @@ or (\>\>=)).
 We will now work on points 3-6 of the above checklist. Here is our empty
 test skeleton:
 
-::: {.code-include lexer="python"}
-code/post58/parsers\_initial.py
+::: {.code-include lexer="python" file="code/post58/parsers_initial.py"}
 :::
-
 Since the parsers are line based they are rather straight forward:
 
-::: {.code-include lexer="python"}
-code/post58/parsers\_final.py
+::: {.code-include lexer="python" file="code/post58/parsers_final.py"}
 :::
-
 #### The implementation of the do-function
 
 Now we can write the do-function. If again included the
@@ -182,18 +170,14 @@ these functions and a few simple helper functions we can basically
 directly translate every bulletin point into a function composed
 together to form the overall do-function:
 
-::: {.code-include lexer="python"}
-code/post58/do\_impl.py
+::: {.code-include lexer="python" file="code/post58/do_impl.py"}
 :::
-
 ### The complete code
 
 Here is the final version of our **do** implementation:
 
-::: {.code-include lexer="python"}
-code/post58/do\_final.py
+::: {.code-include lexer="python" file="code/post58/do_final.py"}
 :::
-
 Using the do-function
 ---------------------
 
@@ -202,10 +186,8 @@ post](./2018-12-28-Monadic-computations-in-Python.html) post
 using our newly won do-function. Compare it with the equivalent Haskell
 code that was also given.
 
-::: {.code-include lexer="python"}
-code/post58/branching\_example.py
+::: {.code-include lexer="python" file="code/post58/branching_example.py"}
 :::
-
 There it is - **do** in Python. That's a big gain in readability! Note
 that we have to use [eval]{.title-ref} to evaluate the code. We have
 created our own little

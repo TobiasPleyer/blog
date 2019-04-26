@@ -38,192 +38,129 @@ of it in which I explicitly export these definitions.
 Evaluation in 32 steps
 ----------------------
 
-::: {.code-include lexer="haskell"}
-code/pipes\_evaluation/pipes\_evaluation1.hs
+::: {.code-include lexer="haskell" file="code/pipes_evaluation/pipes_evaluation1.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/pipes\_evaluation/pipes\_evaluation2.hs
+::: {.code-include lexer="haskell" file="code/pipes_evaluation/pipes_evaluation2.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/pipes\_evaluation/pipes\_evaluation3.hs
+::: {.code-include lexer="haskell" file="code/pipes_evaluation/pipes_evaluation3.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/pipes\_evaluation/pipes\_evaluation4.hs
+::: {.code-include lexer="haskell" file="code/pipes_evaluation/pipes_evaluation4.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/pipes\_evaluation/pipes\_evaluation5.hs
+::: {.code-include lexer="haskell" file="code/pipes_evaluation/pipes_evaluation5.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/pipes\_evaluation/pipes\_evaluation6.hs
+::: {.code-include lexer="haskell" file="code/pipes_evaluation/pipes_evaluation6.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/pipes\_evaluation/pipes\_evaluation7.hs
+::: {.code-include lexer="haskell" file="code/pipes_evaluation/pipes_evaluation7.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/pipes\_evaluation/pipes\_evaluation8.hs
+::: {.code-include lexer="haskell" file="code/pipes_evaluation/pipes_evaluation8.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/pipes\_evaluation/pipes\_evaluation9.hs
+::: {.code-include lexer="haskell" file="code/pipes_evaluation/pipes_evaluation9.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/pipes\_evaluation/pipes\_evaluation10.hs
+::: {.code-include lexer="haskell" file="code/pipes_evaluation/pipes_evaluation10.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/pipes\_evaluation/pipes\_evaluation11.hs
+::: {.code-include lexer="haskell" file="code/pipes_evaluation/pipes_evaluation11.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/pipes\_evaluation/pipes\_evaluation12.hs
+::: {.code-include lexer="haskell" file="code/pipes_evaluation/pipes_evaluation12.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/pipes\_evaluation/pipes\_evaluation13.hs
+::: {.code-include lexer="haskell" file="code/pipes_evaluation/pipes_evaluation13.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/pipes\_evaluation/pipes\_evaluation14.hs
+::: {.code-include lexer="haskell" file="code/pipes_evaluation/pipes_evaluation14.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/pipes\_evaluation/pipes\_evaluation15.hs
+::: {.code-include lexer="haskell" file="code/pipes_evaluation/pipes_evaluation15.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/pipes\_evaluation/pipes\_evaluation16.hs
+::: {.code-include lexer="haskell" file="code/pipes_evaluation/pipes_evaluation16.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/pipes\_evaluation/pipes\_evaluation17.hs
+::: {.code-include lexer="haskell" file="code/pipes_evaluation/pipes_evaluation17.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/pipes\_evaluation/pipes\_evaluation18.hs
+::: {.code-include lexer="haskell" file="code/pipes_evaluation/pipes_evaluation18.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/pipes\_evaluation/pipes\_evaluation19.hs
+::: {.code-include lexer="haskell" file="code/pipes_evaluation/pipes_evaluation19.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/pipes\_evaluation/pipes\_evaluation20.hs
+::: {.code-include lexer="haskell" file="code/pipes_evaluation/pipes_evaluation20.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/pipes\_evaluation/pipes\_evaluation21.hs
+::: {.code-include lexer="haskell" file="code/pipes_evaluation/pipes_evaluation21.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/pipes\_evaluation/pipes\_evaluation22.hs
+::: {.code-include lexer="haskell" file="code/pipes_evaluation/pipes_evaluation22.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/pipes\_evaluation/pipes\_evaluation23.hs
+::: {.code-include lexer="haskell" file="code/pipes_evaluation/pipes_evaluation23.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/pipes\_evaluation/pipes\_evaluation24.hs
+::: {.code-include lexer="haskell" file="code/pipes_evaluation/pipes_evaluation24.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/pipes\_evaluation/pipes\_evaluation25.hs
+::: {.code-include lexer="haskell" file="code/pipes_evaluation/pipes_evaluation25.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/pipes\_evaluation/pipes\_evaluation26.hs
+::: {.code-include lexer="haskell" file="code/pipes_evaluation/pipes_evaluation26.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/pipes\_evaluation/pipes\_evaluation27.hs
+::: {.code-include lexer="haskell" file="code/pipes_evaluation/pipes_evaluation27.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/pipes\_evaluation/pipes\_evaluation28.hs
+::: {.code-include lexer="haskell" file="code/pipes_evaluation/pipes_evaluation28.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/pipes\_evaluation/pipes\_evaluation29.hs
+::: {.code-include lexer="haskell" file="code/pipes_evaluation/pipes_evaluation29.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/pipes\_evaluation/pipes\_evaluation30.hs
+::: {.code-include lexer="haskell" file="code/pipes_evaluation/pipes_evaluation30.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/pipes\_evaluation/pipes\_evaluation31.hs
+::: {.code-include lexer="haskell" file="code/pipes_evaluation/pipes_evaluation31.hs"}
 :::
-
 equals...
 
-::: {.code-include lexer="haskell"}
-code/pipes\_evaluation/pipes\_evaluation32.hs
+::: {.code-include lexer="haskell" file="code/pipes_evaluation/pipes_evaluation32.hs"}
 :::

@@ -27,17 +27,13 @@ between. The original version of docutils was 0.13.1. I applied this
 patch directly to the docutils package of my systems' Python
 installation.
 
-::: {.code-include lexer="diff"}
-code/docutils\_bigimage.diff
+::: {.code-include lexer="diff" file="code/docutils_bigimage.diff"}
 :::
-
 From now on when I mark an image as "*scrollable*" the HTML *img* tag is
 enclosed by a *div* tag like so
 
-::: {.code-include lexer="text"}
-code/html\_desired
+::: {.code-include lexer="text" file="code/html_desired"}
 :::
-
 If the image's width does not fit the blog's width, a vertical scrollbar
 appears.
 

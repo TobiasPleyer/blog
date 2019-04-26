@@ -275,10 +275,8 @@ directory and does the following for every file:
 
 Here is the full script:
 
-::: {.code-include lexer="haskell"}
-code/convert.hs
+::: {.code-include lexer="haskell" file="code/convert.hs"}
 :::
-
 The script is not amazingly pretty, but if it does the right thing it is only
 needed once and then never again, so no point of over engineering it. I want to
 point out how nice it is that Pandoc is written in Haskell. Instead of running
@@ -366,10 +364,8 @@ which Pandoc translates to
 ```markdown
 ...some text
 
-::: {.code-include lexer="haskell"}
-code/path/to/file.hs
+::: {.code-include lexer="haskell" file="code/path/to/file.hs"}
 :::
-
 more text...
 ```
 
@@ -386,10 +382,8 @@ blocks.  I will devote a separate blog post to this topic.
 
 For completeness here is the full script that runs my Hakyll based blog:
 
-::: {.code-include lexer="haskell"}
-code/site_2019-04-19.hs
+::: {.code-include lexer="haskell" file="code/site_2019-04-19.hs"}
 :::
-
 Summary
 -------
 

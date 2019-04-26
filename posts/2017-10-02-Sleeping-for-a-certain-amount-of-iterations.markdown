@@ -45,6 +45,5 @@ knowledge the patch should be easy to understand:
 
 Here is a small sample script to test the new functionality:
 
-::: {.code-include lexer="python"}
-code/asyncio\_iteration\_sleep\_test.py
+::: {.code-include lexer="python" file="code/asyncio_iteration_sleep_test.py"}
 :::

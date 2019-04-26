@@ -38,10 +38,8 @@ The HTMLTranslator class translates the my documents to valid HTML and
 returns that to the Pelican runtime. Pelican then inserts that HTML into
 its [Jinja](http://jinja.pocoo.org/) templates:
 
-::: {.code-include lexer="text"}
-code/article\_template
+::: {.code-include lexer="text" file="code/article_template"}
 :::
-
 The *article.content* part comes from docutils. That is more or less the
 problem. The possibilities to manipulate the content are relatively
 limited. I narrowed it down to more or less these options:
@@ -63,16 +61,12 @@ I don't have a solution yet, but I already know how the end result
 should look like. The relevant part of the current version of the
 generated HTML file looks like this:
 
-::: {.code-include lexer="text"}
-code/html\_current
+::: {.code-include lexer="text" file="code/html_current"}
 :::
-
 But it should look like this
 
-::: {.code-include lexer="text"}
-code/html\_desired
+::: {.code-include lexer="text" file="code/html_desired"}
 :::
-
 This will result in the picture having scroll bars at the sides. The
 current workaround I use is to assign the above style attributes to the
 *entry-content* style class in my *main.css*. This causes the whole

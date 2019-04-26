@@ -42,31 +42,23 @@ Scalpel
 
 ### Example 1
 
-::: {.code-include lexer="haskell"}
-code/post47/with\_scalpel.hs
+::: {.code-include lexer="haskell" file="code/post47/with_scalpel.hs"}
 :::
-
 ### Example 2
 
-::: {.code-include lexer="haskell"}
-code/post47/with\_scalpel2.hs
+::: {.code-include lexer="haskell" file="code/post47/with_scalpel2.hs"}
 :::
-
 Parsec Tagsoup
 --------------
 
 ### Example 1
 
-::: {.code-include lexer="haskell"}
-code/post47/with\_tparsec.hs
+::: {.code-include lexer="haskell" file="code/post47/with_tparsec.hs"}
 :::
-
 ### Example 2
 
-::: {.code-include lexer="haskell"}
-code/post47/with\_tparsec2.hs
+::: {.code-include lexer="haskell" file="code/post47/with_tparsec2.hs"}
 :::
-
 Conclusion
 ----------
 

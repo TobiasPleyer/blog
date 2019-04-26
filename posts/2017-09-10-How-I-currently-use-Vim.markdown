@@ -49,16 +49,12 @@ file and my *vimrc.local* file.
 
 ### vimrc.bundles.local
 
-::: {.code-include lexer="vim"}
-code/bundles\_local
+::: {.code-include lexer="vim" file="code/bundles_local"}
 :::
-
 ### vimrc.local
 
-::: {.code-include lexer="vim"}
-code/vimrc\_local
+::: {.code-include lexer="vim" file="code/vimrc_local"}
 :::
-
 Conclusion
 ----------
 

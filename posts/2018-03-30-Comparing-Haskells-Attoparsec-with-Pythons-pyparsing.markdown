@@ -28,10 +28,8 @@ data. One line contains exactly one log entry and all entries follow the
 same pattern. I took this example from a nice post on
 [schoolofhaskell](https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/text-manipulation/attoparsec).
 
-::: {.code-include lexer="text"}
-code/post46/yesterday.log
+::: {.code-include lexer="text" file="code/post46/yesterday.log"}
 :::
-
 Haskell
 -------
 
@@ -47,10 +45,8 @@ but I modified the code slightly:
 > -   The main method has been altered a bit. The parser result is now
 >     printed more readable, with one parsed log per line
 
-::: {.code-include lexer="haskell"}
-code/post46/log\_parser.hs
+::: {.code-include lexer="haskell" file="code/post46/log_parser.hs"}
 :::
-
 ``` {.sourceCode .bash}
 $ ./log_parser.hs
 LogEntry {entryTime = 2013-06-29 11:16:23, entryIP = IP 124 67 34 60, entryProduct = Keyboard}
@@ -64,10 +60,8 @@ LogEntry {entryTime = 2013-06-29 13:10:45, entryIP = IP 103 29 60 13, entryProdu
 Python
 ------
 
-::: {.code-include lexer="python"}
-code/post46/log\_parser.py
+::: {.code-include lexer="python" file="code/post46/log_parser.py"}
 :::
-
 ``` {.sourceCode .bash}
 $ python3 log_parser.py
 [datetime.datetime(2013, 6, 29, 11, 16, 23), IP(124.67.34.60), Product(keyboard)]

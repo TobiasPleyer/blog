@@ -95,16 +95,12 @@ unusual enough that I can fund the text again later.
 
 Here is the full plugin code:
 
-::: {.code-include lexer="python"}
-code/post60/plugin.py
+::: {.code-include lexer="python" file="code/post60/plugin.py"}
 :::
-
 And here are the relevant bits of my *init.vim* file:
 
-::: {.code-include lexer="python"}
-code/post60/init.vim
+::: {.code-include lexer="python" file="code/post60/init.vim"}
 :::
-
 Summary
 -------
 

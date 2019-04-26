@@ -25,10 +25,8 @@ job, uses Python's new [pathlib
 library](https://docs.python.org/3/library/pathlib.html) and was hacked
 in under 10 minutes.
 
-::: {.code-include lexer="python"}
-code/pic\_rename.py
+::: {.code-include lexer="python" file="code/pic_rename.py"}
 :::
-
 ``` {.sourceCode .bash}
 # Example usage
 $ python3 path/to/picture/folder 'CAM_*' 'my_better_name'

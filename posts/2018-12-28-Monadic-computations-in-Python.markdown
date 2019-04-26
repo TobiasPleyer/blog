@@ -124,10 +124,8 @@ takes a [check]{.title-ref} parameter. If this is set to
 exception is thrown in case it signals error. Thus the probably simplest
 method is to simply put everything in a try/except block.
 
-::: {.code-include lexer="python"}
-code/post55/brute\_force.py
+::: {.code-include lexer="python" file="code/post55/brute_force.py"}
 :::
-
 ``` {.sourceCode .bash}
 $ python naive.py
 Now running: echo 'OK'; exit 0
@@ -152,18 +150,14 @@ As the next iteration to the problem the shell function will return a
 boolean signaling sucess/failure and the main code will check every
 single invocation.
 
-::: {.code-include lexer="python"}
-code/post55/naive.py
+::: {.code-include lexer="python" file="code/post55/naive.py"}
 :::
-
 Notice how repetitive this feels and looks. What's even worse: It's hard
 to see what is the program actually trying to do! Sometimes you also see
 something like this:
 
-::: {.code-include lexer="python"}
-code/post55/naive2.py
+::: {.code-include lexer="python" file="code/post55/naive2.py"}
 :::
-
 This is slightly more readable, but the constantly growing indentation
 depth scales badly and notice that the error message is now baked into
 the shell function, which cuts down on reusability.
@@ -175,10 +169,8 @@ we can feed our list of functions (note we do not execute them at that
 point!) to a driver function. The driver then executes the functions one
 after another until either one of them fails or the end is reached.
 
-::: {.code-include lexer="python"}
-code/post55/better.py
+::: {.code-include lexer="python" file="code/post55/better.py"}
 :::
-
 This solution is a lot more readable and avoids code duplication. The
 [shell]{.title-ref} function produces a delayed computation (aka thunk)
 of the desired shell invocation using a lambda function. The underlying
@@ -201,10 +193,8 @@ list of them. This gives maximum control over the contents and allows
 things like filtering or verbosity to be handled in the main function
 instead of the low level code.
 
-::: {.code-include lexer="python"}
-code/post55/better2.py
+::: {.code-include lexer="python" file="code/post55/better2.py"}
 :::
-
 Most people don't realize that this final solution is basically a
 hand-written monadic computation. We will see more of this in the coming
 sections.
@@ -247,10 +237,8 @@ In short: Whenever we see a *Left* value in the chain we ignore
 everything following that and instead return the *Left* value as the
 result of the whole computation:
 
-::: {.code-include lexer="haskell"}
-code/post55/either\_demo.hs
+::: {.code-include lexer="haskell" file="code/post55/either_demo.hs"}
 :::
-
 ``` {.sourceCode .bash}
 $ ./either_demo.hs
 Right 4
@@ -279,10 +267,8 @@ In short: The first element of the tuple is used to drive the
 computation as the input to the rest of the computation while the second
 element accumulates the information value.
 
-::: {.code-include lexer="haskell"}
-code/post55/writer\_demo.hs
+::: {.code-include lexer="haskell" file="code/post55/writer_demo.hs"}
 :::
-
 ``` {.sourceCode .bash}
 $ ./writer_demo.hs
 (3,"Hello World!!!")
@@ -297,10 +283,8 @@ IO values except from within the IO monad. This ensures the
 encapsulation and the partition between pure and impure code that
 Haskell is famous for.
 
-::: {.code-include lexer="haskell"}
-code/post55/io\_demo.hs
+::: {.code-include lexer="haskell" file="code/post55/io_demo.hs"}
 :::
-
 ``` {.sourceCode .bash}
 $ ./io_demo.hs
 hi
@@ -321,10 +305,8 @@ overloading.
 
 #### Either in Python
 
-::: {.code-include lexer="python"}
-code/post55/either\_demo.py
+::: {.code-include lexer="python" file="code/post55/either_demo.py"}
 :::
-
 ``` {.sourceCode .bash}
 $ python either_demo.py
 Right 4
@@ -346,10 +328,8 @@ IO. Like in Haskell we don't want IO actions to do anything until they
 are actually required (run). This mimics the behavior of lazy
 evaluation.
 
-::: {.code-include lexer="python"}
-code/post55/io\_demo.py
+::: {.code-include lexer="python" file="code/post55/io_demo.py"}
 :::
-
 ``` {.sourceCode .bash}
 $ python io_demo.py
 Doubling 1 -> 2
@@ -361,10 +341,8 @@ As I mentioned above we want the functionality of *Either* and *Writer*.
 Thus we have to stack these atop our *IO* monad. Before I go into
 details, here is the full code:
 
-::: {.code-include lexer="python"}
-code/post55/transformers.py
+::: {.code-include lexer="python" file="code/post55/transformers.py"}
 :::
-
 ``` {.sourceCode .bash}
 $ python3.6 transformers.py
 Final result: Right 'Even better\n'
@@ -464,10 +442,8 @@ smaller 'unit' command blocks.
 We want to retrospectively tag a bunch of commits in a git repository
 and also print information about the commit:
 
-::: {.code-include lexer="python"}
-code/post55/git\_tagging\_example.py
+::: {.code-include lexer="python" file="code/post55/git_tagging_example.py"}
 :::
-
 ``` {.sourceCode .bash}
 $ cd example_git_repo
 $ python ../git_tagging_example.py
@@ -536,10 +512,8 @@ But this can also be achieved in the hand-written solution. If we define
 an action as the list of shell command lambdas then composition can be
 done via list addition:
 
-::: {.code-include lexer="python"}
-code/post55/git\_tagging\_example2.py
+::: {.code-include lexer="python" file="code/post55/git_tagging_example2.py"}
 :::
-
 But once again: This shouldn't surprise us because as I mentioned above
 the logic in [run\_in\_sequence]{.title-ref} is basically identical to
 our monadic code in case we are simple sequencing computations.
@@ -563,10 +537,8 @@ the [(\>\>=)]{.title-ref} function, in our Python code we use the
 We want to execute different commands depending on the branch we are
 currently checked out to.
 
-::: {.code-include lexer="python"}
-code/post55/branching\_example.py
+::: {.code-include lexer="python" file="code/post55/branching_example.py"}
 :::
-
 ``` {.sourceCode .bash}
 $ cd example_git_repo
 $ python ../branching_example.py
@@ -646,10 +618,8 @@ can't deny that, but keep in mind that this is due to the lack of proper
 syntactic sugar support in Python! Here is the same example written in
 Haskell:
 
-::: {.code-include lexer="haskell"}
-code/post55/branchingHs/app/Main.hs
+::: {.code-include lexer="haskell" file="code/post55/branchingHs/app/Main.hs"}
 :::
-
 Summary
 -------
 

@@ -46,10 +46,8 @@ implementation and walk through it I want to give a few remarks
 
 With these assumptions in place let's "run" some code:
 
-::: {.code-include lexer="haskell"}
-code/post48/mapConcurrently.hs
+::: {.code-include lexer="haskell" file="code/post48/mapConcurrently.hs"}
 :::
-
 Comments
 --------
 

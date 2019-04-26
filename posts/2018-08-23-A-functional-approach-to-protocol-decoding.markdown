@@ -116,20 +116,16 @@ some default behavior is invoked.
 
 Here is a possible implementation:
 
-::: {.code-include lexer="python"}
-code/post52/fp\_decode.py
+::: {.code-include lexer="python" file="code/post52/fp_decode.py"}
 :::
-
 **Note:** In order to execute this code Python3.6 or higher is required
 because I use [literal string
 interpolation](https://www.python.org/dev/peps/pep-0498/).
 
 Given the following input
 
-::: {.code-include lexer="text"}
-code/post52/input.txt
+::: {.code-include lexer="text" file="code/post52/input.txt"}
 :::
-
 this yields the following output
 
 ``` {.sourceCode .text}
@@ -208,10 +204,8 @@ Unknown ID 41 with status 6
 
 With the following "bad input":
 
-::: {.code-include lexer="text"}
-code/post52/bad\_input.txt
+::: {.code-include lexer="text" file="code/post52/bad_input.txt"}
 :::
-
 Of course this can be fixed, but is not of importance for this post.
 
 We also have to see that the generic loop over all available
@@ -227,10 +221,8 @@ In the intro I promised to provide a Haskell solution as well. We can
 more or less copy/paste the Python version, all we need is a bunch of
 type definitions.
 
-::: {.code-include lexer="haskell"}
-code/post52/fp\_decode.hs
+::: {.code-include lexer="haskell" file="code/post52/fp_decode.hs"}
 :::
-
 The Haskell version provides the same output as the Python version.
 Additionally it also handles the case of status lookup failure:
 

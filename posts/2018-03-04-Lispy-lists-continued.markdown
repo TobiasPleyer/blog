@@ -24,20 +24,16 @@ Closure even is a real Lisp dialect.
 Haskell
 -------
 
-::: {.code-include lexer="haskell"}
-code/post41/post41.hs
+::: {.code-include lexer="haskell" file="code/post41/post41.hs"}
 :::
-
 As was the case in the original Python post, there exists an alternative
 representation of the program. Haskell also does have support for list
 comprehensions, very similar to those in Python. I am not sure, but I
 think I even read somewhere that Python lend the list comprehension idea
 from Haskell.
 
-::: {.code-include lexer="haskell"}
-code/post41/post41\_alternative.hs
+::: {.code-include lexer="haskell" file="code/post41/post41_alternative.hs"}
 :::
-
 **Note:** In my first draft [mkDouble]{.title-ref} was called
 [mkFloat]{.title-ref} and I used [Float]{.title-ref} instead of
 [Double]{.title-ref}. It turned out that this precision was not enough
@@ -51,6 +47,5 @@ presented in this and the previous post.
 Clojure
 -------
 
-::: {.code-include lexer="clojure"}
-code/post41/post41-clojure/src/post41\_clojure/core.clj
+::: {.code-include lexer="clojure" file="code/post41/post41-clojure/src/post41_clojure/core.clj"}
 :::

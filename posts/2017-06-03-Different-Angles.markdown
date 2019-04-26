@@ -42,28 +42,20 @@ Solutions
 
 ### Python
 
-::: {.code-include lexer="python"}
-code/unstage.py
+::: {.code-include lexer="python" file="code/unstage.py"}
 :::
-
 ### C-Code
 
-::: {.code-include lexer="c"}
-code/unstage.c
+::: {.code-include lexer="c" file="code/unstage.c"}
 :::
-
 ### Rust
 
-::: {.code-include lexer="rust"}
-code/unstage.rs
+::: {.code-include lexer="rust" file="code/unstage.rs"}
 :::
-
 ### Haskell
 
-::: {.code-include lexer="haskell"}
-code/unstage.hs
+::: {.code-include lexer="haskell" file="code/unstage.hs"}
 :::
-
 Conclusion
 ----------
 

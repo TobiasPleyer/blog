@@ -74,10 +74,8 @@ is on getting the program right, not to optimise the hell out of it.
 That said we will make heavy use of lists and generators, generating new
 lists out of existing ones in the process.
 
-::: {.code-include lexer="python"}
-code/post38\_version1.py
+::: {.code-include lexer="python" file="code/post38_version1.py"}
 :::
-
 Each step reduces the list of available indices. The most critical point
 is the [enumerate]{.title-ref} in the calculation in *time\_diffs*. This
 enables us to keep track of the indices of the *valid\_rows* list.
@@ -103,6 +101,5 @@ advantages
 
 Below is the same program as above, but with list comprehensions instead
 
-::: {.code-include lexer="python"}
-code/post38\_version2.py
+::: {.code-include lexer="python" file="code/post38_version2.py"}
 :::

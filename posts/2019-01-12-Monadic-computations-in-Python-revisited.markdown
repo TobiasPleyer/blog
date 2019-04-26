@@ -42,24 +42,18 @@ the importance, i.e. it is inverse propertional to the verbosity level.
 The only changes we have to make to our library code are in the
 [do\_shell]{.title-ref} function:
 
-::: {.code-include lexer="python"}
-code/post57/new\_shell.py
+::: {.code-include lexer="python" file="code/post57/new_shell.py"}
 :::
-
 The main code can remain almost unchanged. All we have to do is read the
 verbosity level from our command line and filter the log based on the
 log level:
 
-::: {.code-include lexer="python"}
-code/post57/app.py
+::: {.code-include lexer="python" file="code/post57/app.py"}
 :::
-
 Here is the full code for the example.
 
-::: {.code-include lexer="python"}
-code/post57/full\_example.py
+::: {.code-include lexer="python" file="code/post57/full_example.py"}
 :::
-
 I also provided a definition for the very useful helper function
 [compose]{.title-ref} and [sequence]{.title-ref}. They are not strictly
 necessary for the example, but it is very neat to be able to write

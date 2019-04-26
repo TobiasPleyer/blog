@@ -235,10 +235,8 @@ my_parser = do
 
 And now let's *'run'* it with the input "axczzz"
 
-::: {.code-include lexer="haskell"}
-code/readP\_parser\_run\_example.hs
+::: {.code-include lexer="haskell" file="code/readP_parser_run_example.hs"}
 :::
-
 Notice how the very first continuation, [x -\> Result x
 Fail]{.title-ref}, remained untouched throughout the whole
 transformation process. The actions were performed sequentially within

@@ -56,10 +56,8 @@ Obviously at some point we have to decide which version of a function we
 need to invoke, so the simplest possible implementation is a
 hand-written if-statement.
 
-::: {.code-include lexer="python"}
-code/post56/hand\_written.py
+::: {.code-include lexer="python" file="code/post56/hand_written.py"}
 :::
-
 ``` {.sourceCode .bash}
 $ python hand_written.py
 {'first': 'John', 'last': 'Doe', 'age': 42}
@@ -73,10 +71,8 @@ If the actual variants of the function are scattered throughout the
 source code it is very easy to miss one. Or what happens if another
 developer mindlessly renames one of the functions?
 
-::: {.code-include lexer="python"}
-code/post56/hand\_written\_error.py
+::: {.code-include lexer="python" file="code/post56/hand_written_error.py"}
 :::
-
 ``` {.sourceCode .bash}
 $ python hand_written_error.py
 Traceback (most recent call last):
@@ -95,10 +91,8 @@ interpreter but can be used by third party tools for their analysis. If
 a function is annotated with types these are part of the function
 object:
 
-::: {.code-include lexer="python"}
-code/post56/annotate.py
+::: {.code-include lexer="python" file="code/post56/annotate.py"}
 :::
-
 ``` {.sourceCode .bash}
 $ python annotate.py
 hihihi
@@ -112,10 +106,8 @@ overloads via function decorators. Once a function has been decorated no
 manual maintenance is required anymore. Below follows my proof of
 concept implementation for simple function overloading.
 
-::: {.code-include lexer="python"}
-code/post56/overload.py
+::: {.code-include lexer="python" file="code/post56/overload.py"}
 :::
-
 ``` {.sourceCode .bash}
 $ python overload.py
 44
