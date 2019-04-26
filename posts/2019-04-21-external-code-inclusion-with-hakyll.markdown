@@ -4,7 +4,7 @@ date: 2019-04-21
 tags: blog, hakyll
 category: Programming
 authors: Tobias Pleyer
-summary: "I present to possible solutions to include external code snippets in Hakyll generated blog posts"
+summary: "I present two possible solutions to include external code snippets in Hakyll generated blog posts"
 ---
 
 External code inclusion with Hakyll
