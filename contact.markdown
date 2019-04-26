@@ -2,5 +2,6 @@
 title: Contact
 ---
 
-I live in a small hut in the mountains of Kumano Kodō on Kii Hantō and would not
-like to be contacted.
+If you want to get in contact with me you can either send me an email to
+**tobi.pleyer@gmail.com** or checkout
+[my github](https://github.com/TobiasPleyer).
