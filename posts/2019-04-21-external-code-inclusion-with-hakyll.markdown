@@ -21,7 +21,7 @@ bunch of niceties:
 - You can share code between several blog posts
 
 In this blog post I want to present two solutions how to achieve code inclusion
-for Hakyll.
+for [Hakyll](https://jaspervdj.be/hakyll/).
 
 Template based solution
 -----------------------
