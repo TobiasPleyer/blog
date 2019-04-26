@@ -134,6 +134,9 @@ rendered results.
 Solution based on fenced divs
 -----------------------------
 
+**Edit on 2019-04-26:** Made the function `codeBlockFromDiv` more concise, and
+made the file path a keyword of the *Div*.
+
 [Fenced divs](https://pandoc.org/MANUAL.html#extension-fenced_divs) is a nice
 extension of Pandoc that allows to embed custom generic blocks within your
 markup code. These blocks are then represented as
@@ -179,7 +182,7 @@ This function takes as its third parameter a function that transforms a
 transformation function we are done.
 
 Conveniently we do not have to work too hard to write such a function, because
-the Pandoc class is an isntance of the
+the Pandoc class is an instance of the
 [Walkable](https://hackage.haskell.org/package/pandoc-types-1.19/docs/Text-Pandoc-Walk.html#t:Walkable)
 type class, which exposes the `walk` function. The `walk` function takes a per
 `Block` element transformation function and applies it over the complete AST of
@@ -192,21 +195,16 @@ pandocCompilerWithCodeInsertion snippetMap =
 
 codeInclude :: M.Map FilePath String -> Pandoc -> Pandoc
 codeInclude snippetMap = walk $ \block -> case block of
-  div@(Div (ident,cs,kvs) bs) -> if "code-include" `elem` cs
-                                 then codeBlockFromDiv snippetMap div
-                                 else block
+  div@(Div (_,cs,_) _) -> if "code-include" `elem` cs
+                          then codeBlockFromDiv snippetMap div
+                          else block
   _ -> block
 
-codeBlockFromDiv snippetMap div@(Div (ident,cs,kvs) bs) =
-  let mLexer = lookup "lexer" kvs
-      css = maybeToList mLexer
-      path = (fromStr . head . fromPara . head) bs
-      content = M.lookup path snippetMap
-  in maybe Null (CodeBlock ("",css,[])) content
+codeBlockFromDiv snippetMap div@(Div (_,_,kvs) _) =
+  let classes = maybeToList $ lookup "lexer" kvs
+      content = lookup "file" kvs >>= (`M.lookup` snippetMap)
+  in maybe Null (CodeBlock ("",classes,[])) content
 codeBlockFromDiv _ _ = Null
-
-fromPara (Para is) = is
-fromStr (Str s) = s
 ```
 
 Now we are able to write our `Rule` to create our posts:
@@ -226,8 +224,7 @@ We are done! With these changes we are from now on able to include external
 code with the following syntax:
 
 ```markdown
-::: {.code-include lexer="haskell"}
-path/to/file
+::: {.code-include lexer="haskell" file="path/to/file"}
 :::
 ```
 
@@ -238,6 +235,5 @@ blog. Have a look at the
 [raw markdown source](https://raw.githubusercontent.com/TobiasPleyer/blog/master/posts/2019-04-21-external-code-inclusion-with-hakyll.markdown)
 to convince yourself that it is included via a fenced div:
 
-::: {.code-include lexer="haskell"}
-code/site_2019-04-21.hs
+::: {.code-include lexer="haskell" file="code/site_2019-04-26.hs"}
 :::
