@@ -4,7 +4,7 @@ date: 2019-04-21
 tags: blog, hakyll
 category: Programming
 authors: Tobias Pleyer
-summary: "I present to possible solutions to include external code snippets in your blog"
+summary: "I present to possible solutions to include external code snippets in Hakyll generated blog posts"
 ---
 
 External code inclusion with Hakyll
@@ -154,7 +154,7 @@ For this to work we only need two things:
 2. A modified Pandoc compiler that will rewrite Divs to CodeBlocks
 
 I keep all my code snippets in a folder named *code*, so to make the snippets
-known to Hakyll we need the following `Rule`:
+known to Hakyll I need the following `Rule`:
 
 ```haskell
 match "code/**" $ do
