@@ -81,7 +81,9 @@ Tutorials
     subtrees](https://medium.com/@porteneuve/mastering-git-subtrees-943d29a798ec)
 -   [A Beginner\'s Guide to LVM](https://www.howtoforge.com/linux_lvm)
 -   [How to Move Home Directory to New Partition or Disk in
-    Linux]{.title-ref}
+    Linux](https://www.tecmint.com/move-home-directory-to-new-partition-disk-in-linux/)
+-   [Michael Snoyman's Rust Crash
+    Course](https://www.snoyman.com/blog/2018/10/introducing-rust-crash-course)
 
 Informational
 -------------
@@ -135,6 +137,7 @@ Informational
     course](http://www.scs.stanford.edu/14sp-cs240h/)
 -   [Brian O\'Sullivan\'s 2016 Haskell
     course](http://www.scs.stanford.edu/16wi-cs240h/)
+-   [FP Course ITMO](https://github.com/jagajaga/FP-Course-ITMO)
 -   [Why free monads
     matter](http://www.haskellforall.com/2012/06/you-could-have-invented-free-monads.html)
     by Gabriel Gonzalez
