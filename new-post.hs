@@ -37,7 +37,7 @@ main = do
   tmpl <- TIO.readFile "templates/new-post.markdown"
   (y,m,d) <- getDate
   let date = T.pack $ mkDateString y m d
-      content = T.replace "date: X" ("date: " <> date) $
-                T.replace "title: X" ("title: " <> title) tmpl
-      filepath = T.unpack $ "posts/" <> date <> "-" <> title <> ".markdown"
+      content = T.replace "DATE" date $
+                T.replace "TITLE" title tmpl
+      filepath = T.unpack $ "posts/" <> date <> "-" <> (T.replace " " "-" title) <> ".markdown"
   TIO.writeFile filepath content

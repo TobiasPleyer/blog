@@ -1,19 +1,17 @@
 ---
-title: X
-date: X
+title: TITLE
+date: DATE
 tags: 
 category: Programming
 authors: Tobias Pleyer
 summary: 
 ---
 
-Title
-=====
+# TITLE
 
 Text
 
-Subtitle
---------
+## Subtitle
 
 [link](www.example.com)
 
