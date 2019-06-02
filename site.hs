@@ -99,6 +99,10 @@ main = hakyllWith config $ do
         route idRoute
         compile getResourceString
 
+    match "sources/**" $ do
+        route idRoute
+        compile copyFileCompiler
+
     match "site.hs" $ do
         compile getResourceString
 
