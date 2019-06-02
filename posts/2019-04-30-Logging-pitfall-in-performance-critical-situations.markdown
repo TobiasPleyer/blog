@@ -1,7 +1,7 @@
 ---
 title: Logging pitfall in performance critical situations
 date: 2019-04-30
-tags: 
+tags: python, logging
 category: Programming
 authors: Tobias Pleyer
 summary: "Often people think logging does not impact performance when the logging level is high, but this is a misconception!"
