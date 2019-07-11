@@ -1,0 +1,145 @@
+{
+    "/nix/store/gnry81f0fx07jn8yqwsa53hhwz9m0y8h-ghc-8.6.3-with-packages.drv": {
+        "args": [
+            "-e",
+            "/nix/store/9krlzvny65gdc8s7kpb6lkx8cd02c25b-default-builder.sh"
+        ],
+        "builder": "/nix/store/53wi068kjrqfr2j0hzcxhbw2xaa990jr-bash-4.4-p23/bin/bash",
+        "env": {
+            "allowSubstitutes": "",
+            "buildCommand": "mkdir -p $out\nfor i in $paths; do\n  /nix/store/n9x3d54nkv819ifbxla3aqj5bxzrvrkz-lndir-1.0.3/bin/lndir -silent $i $out\ndone\n. /nix/store/l1d26c47xx8z46cgp9spy2x868bkl0r9-hook/nix-support/setup-hook\n\n# wrap compiler executables with correct env variables\n\nfor prg in ghc ghci ghc-8.6.3 ghci-8.6.3; do\n  if [[ -x \"/nix/store/7874h075nf8yikvr47642xqrwqwyv99s-ghc-8.6.3/bin/$prg\" ]]; then\n    rm -f $out/bin/$prg\n    makeWrapper /nix/store/7874h075nf8yikvr47642xqrwqwyv99s-ghc-8.6.3/bin/$prg $out/bin/$prg                           \\\n      --add-flags '\"-B$NIX_GHC_LIBDIR\"'                   \\\n      --set \"NIX_GHC\"        \"$out/bin/ghc\"     \\\n      --set \"NIX_GHCPKG\"     \"$out/bin/ghc-pkg\" \\\n      --set \"NIX_GHC_DOCDIR\" \"$out/share/doc/ghc/html\"                  \\\n      --set \"NIX_GHC_LIBDIR\" \"$out/lib/ghc-8.6.3\"                  \\\n       \\\n      \n  fi\ndone\n\nfor prg in runghc runhaskell; do\n  if [[ -x \"/nix/store/7874h075nf8yikvr47642xqrwqwyv99s-ghc-8.6.3/bin/$prg\" ]]; then\n    rm -f $out/bin/$prg\n    makeWrapper /nix/store/7874h075nf8yikvr47642xqrwqwyv99s-ghc-8.6.3/bin/$prg $out/bin/$prg                           \\\n      --add-flags \"-f $out/bin/ghc\"                           \\\n      --set \"NIX_GHC\"        \"$out/bin/ghc\"     \\\n      --set \"NIX_GHCPKG\"     \"$out/bin/ghc-pkg\" \\\n      --set \"NIX_GHC_DOCDIR\" \"$out/share/doc/ghc/html\"                  \\\n      --set \"NIX_GHC_LIBDIR\" \"$out/lib/ghc-8.6.3\"\n  fi\ndone\n\nfor prg in ghc-pkg ghc-pkg-8.6.3; do\n  if [[ -x \"/nix/store/7874h075nf8yikvr47642xqrwqwyv99s-ghc-8.6.3/bin/$prg\" ]]; then\n    rm -f $out/bin/$prg\n    makeWrapper /nix/store/7874h075nf8yikvr47642xqrwqwyv99s-ghc-8.6.3/bin/$prg $out/bin/$prg --add-flags \"--global-package-db=$out/lib/ghc-8.6.3/package.conf.d\"\n  fi\ndone\n\n# haddock was referring to the base ghc, https://github.com/NixOS/nixpkgs/issues/36976\nif [[ -x \"/nix/store/7874h075nf8yikvr47642xqrwqwyv99s-ghc-8.6.3/bin/haddock\" ]]; then\n  rm -f $out/bin/haddock\n  makeWrapper /nix/store/7874h075nf8yikvr47642xqrwqwyv99s-ghc-8.6.3/bin/haddock $out/bin/haddock    \\\n    --add-flags '\"-B$NIX_GHC_LIBDIR\"'  \\\n    --set \"NIX_GHC_LIBDIR\" \"$out/lib/ghc-8.6.3\"\nfi\n\n$out/bin/ghc-pkg recache\n\n$out/bin/ghc-pkg check\n\n",
+            "buildInputs": "",
+            "builder": "/nix/store/53wi068kjrqfr2j0hzcxhbw2xaa990jr-bash-4.4-p23/bin/bash",
+            "configureFlags": "",
+            "depsBuildBuild": "",
+            "depsBuildBuildPropagated": "",
+            "depsBuildTarget": "",
+            "depsBuildTargetPropagated": "",
+            "depsHostHost": "",
+            "depsHostHostPropagated": "",
+            "depsTargetTarget": "",
+            "depsTargetTargetPropagated": "",
+            "doCheck": "",
+            "doInstallCheck": "",
+            "name": "ghc-8.6.3-with-packages",
+            "nativeBuildInputs": "",
+            "out": "/nix/store/llplrrsi5dqbvsl9j6kfhadfvf94yg4v-ghc-8.6.3-with-packages",
+            "outputs": "out",
+            "passAsFile": "buildCommand",
+            "paths": "/nix/store/qx8c8021dwyrlvzns78xxlf9mg48pj8p-primitive-0.6.4.0 /nix/store/51c1jlizakl193m0k0mx7yxxkgb2kvx5-vector-0.12.0.2 /nix/store/ks3yg9gs1p09jk171l9qlcvmb8kbh9fz-reflection-2.1.4 /nix/store/gv9vshcsnjsickqp7zpk4q6bhsp78hha-parallel-3.2.2.0 /nix/store/mn4ryfpyvsh9mjydy9a2yq3783rrrlnd-invariant-0.5.1 /nix/store/s9hnj889y3bhg5h9x472g259b6agi856-void-0.7.2 /nix/store/lx861rrh3xrdj8hhvga2m0jqn3949bjl-adjunctions-4.4 /nix/store/15g3rh81f3jaw24i7l9fly520l32j7cf-kan-extensions-5.2 /nix/store/499cfyhsssrjxrf400j5p8nm6fa0g0g8-transformers-base-0.4.5.2 /nix/store/8v4wzwqav56x2psq6n575yb6jjlg3n46-unordered-containers-0.2.9.0 /nix/store/fk8wbkfj2mkfgp613h7r586p3q3fqi5f-hashable-1.2.7.0 /nix/store/wbhbvs9gqx7mds1ssn2j36pbrr6jyvld-semigroupoids-5.3.2 /nix/store/yqx3rh1fl362p364xmqfqzc3ycqi72wx-profunctors-5.3 /nix/store/dvjkbcvv8g3cdigb12gpyqaf6fp1b0bg-free-5.1 /nix/store/n4a04c8qwqnjf8bgbwb6bh97ridwiwrs-exceptions-0.10.0 /nix/store/600xynkv215dw7biwxywz5cqy6zir081-call-stack-0.1.0 /nix/store/i5maa8zqi8j9qr9gg9g9c3cwwpmzyrfr-th-abstraction-0.2.10.0 /nix/store/ydm0mzgjfaqbgx2ghx107d1xawpy25lv-transformers-compat-0.6.2 /nix/store/qx31v7ccah2a6zvkcnmnk2162mhsd2px-semigroups-0.18.5 /nix/store/sphwxjz334v98m91fva59rnpbykws59w-tagged-0.8.6 /nix/store/sfjxk3hxc9c6yyjzpam28xhzjkmaayj6-distributive-0.6 /nix/store/ghh99q758idi878cfnp9wwp6cn5l33d7-StateVar-1.1.1.1 /nix/store/flyj4sy2c689np1r9r4d0fc4kaz3h9bm-contravariant-1.5 /nix/store/mnkijbnig4yaz7jwnsf0qmw59pjhcsxw-comonad-5.0.4 /nix/store/b7cg4xzcl3wz6j7a9wxpq1rajr7k6537-bifunctors-5.5.3 /nix/store/c9jzyrl1dcrk7hs24z5246jbvlsfggax-base-orphans-0.8 /nix/store/zxk67vza4pa0drq79yv900nvq6nsjhhs-lens-4.17 /nix/store/7874h075nf8yikvr47642xqrwqwyv99s-ghc-8.6.3",
+            "preferLocalBuild": "1",
+            "propagatedBuildInputs": "",
+            "propagatedNativeBuildInputs": "",
+            "stdenv": "/nix/store/3lg181dr5pydwn8mqz9xm4w2jc8liraq-stdenv-linux",
+            "strictDeps": "",
+            "system": "x86_64-linux"
+        },
+        "inputDrvs": {
+            "/nix/store/12gyh3c7d0ddgiv3c0xwsy755z12ihlf-hook.drv": [
+                "out"
+            ],
+            "/nix/store/381zfimsd8hhzgshwhafl37izi0h1iqf-void-0.7.2.drv": [
+                "out"
+            ],
+            "/nix/store/3w9h06fgk6pw88i47gp1qilgvlczyx1h-primitive-0.6.4.0.drv": [
+                "out"
+            ],
+            "/nix/store/5g5vwr3fvhvxbifsfwxlkmxzk5y8zbic-bifunctors-5.5.3.drv": [
+                "out"
+            ],
+            "/nix/store/5h786j7n208szqa48y165i4nzm35h08z-comonad-5.0.4.drv": [
+                "out"
+            ],
+            "/nix/store/729sc8mbqcxxvhg5yy76dhx3yil21bkc-base-orphans-0.8.drv": [
+                "out"
+            ],
+            "/nix/store/84by0c5a0d00w3frd8wvq2zfs8dgl6l7-profunctors-5.3.drv": [
+                "out"
+            ],
+            "/nix/store/9mmf07zi8vx6a06jzmdkbvxmwwjk0y4g-unordered-containers-0.2.9.0.drv": [
+                "out"
+            ],
+            "/nix/store/bjzqjxzha16pjlb9kkns9dv77w649bsv-free-5.1.drv": [
+                "out"
+            ],
+            "/nix/store/c57fqmdvh04748dp4hi4mzvr9mn49vkb-th-abstraction-0.2.10.0.drv": [
+                "out"
+            ],
+            "/nix/store/ca55ghbsagacvn3irdsa8v9ry5hcdli0-stdenv-linux.drv": [
+                "out"
+            ],
+            "/nix/store/gh6hkhyl7rnkpnilwcwjwiq93yk8s8jc-lndir-1.0.3.drv": [
+                "out"
+            ],
+            "/nix/store/giy8bq0a06qw9yz4ax3s83630vww0bps-kan-extensions-5.2.drv": [
+                "out"
+            ],
+            "/nix/store/hvy5f310d4jrpm16hdrx4dzn23wlyxdf-adjunctions-4.4.drv": [
+                "out"
+            ],
+            "/nix/store/hyzca3hf9g6vzy7x7amd44iyq4jfkykn-lens-4.17.drv": [
+                "out"
+            ],
+            "/nix/store/i93xj3xpg7j89dp679537sw6aw9i87hw-semigroupoids-5.3.2.drv": [
+                "out"
+            ],
+            "/nix/store/irafg40g0nn60k6wj1135wlfr5c49pc3-ghc-8.6.3.drv": [
+                "out"
+            ],
+            "/nix/store/j2ga18ls4xyb78mbi5whzj5vli23vxw6-parallel-3.2.2.0.drv": [
+                "out"
+            ],
+            "/nix/store/jhah0y9qrg0kl0h14da137a451wz8ssm-transformers-base-0.4.5.2.drv": [
+                "out"
+            ],
+            "/nix/store/ji9izf2qxwgwzrv016gqv5d70bhq0gjp-reflection-2.1.4.drv": [
+                "out"
+            ],
+            "/nix/store/jjbkc7drlkvim3vyrdxpa79qnl0pbsw5-exceptions-0.10.0.drv": [
+                "out"
+            ],
+            "/nix/store/m1a1gqar6jmha09bp611fcp4ypn59x87-StateVar-1.1.1.1.drv": [
+                "out"
+            ],
+            "/nix/store/mldrp2p7cw2nfk6im7blhhdnyj0pvjli-call-stack-0.1.0.drv": [
+                "out"
+            ],
+            "/nix/store/p5r6akkq1qyhbfp9m47557hm9dl00gk9-tagged-0.8.6.drv": [
+                "out"
+            ],
+            "/nix/store/pww1j6bpnblfcs7h8nkdgnfs5npirq6m-contravariant-1.5.drv": [
+                "out"
+            ],
+            "/nix/store/rc2c7xlak579xl8564rq396qjdxrs1cw-transformers-compat-0.6.2.drv": [
+                "out"
+            ],
+            "/nix/store/rdhj9rf6pvgv7rvqlqhj4q78gdck5pbl-invariant-0.5.1.drv": [
+                "out"
+            ],
+            "/nix/store/xjjmsdz36qg9psawr72a5i2nghrr2a3w-semigroups-0.18.5.drv": [
+                "out"
+            ],
+            "/nix/store/y5raa3zj6b2xh6zjv07ajfk7g3rhn8ik-distributive-0.6.drv": [
+                "out"
+            ],
+            "/nix/store/yq18hqx69mgi6pff2k5127c1jvwl5xaf-hashable-1.2.7.0.drv": [
+                "out"
+            ],
+            "/nix/store/zaxp1jn5z4mb75r06h0yi25av9rhksds-vector-0.12.0.2.drv": [
+                "out"
+            ],
+            "/nix/store/zvy7mbpxqlplqpflqn5xk9szx25s4mhg-bash-4.4-p23.drv": [
+                "out"
+            ]
+        },
+        "inputSrcs": [
+            "/nix/store/9krlzvny65gdc8s7kpb6lkx8cd02c25b-default-builder.sh"
+        ],
+        "outputs": {
+            "out": {
+                "path": "/nix/store/llplrrsi5dqbvsl9j6kfhadfvf94yg4v-ghc-8.6.3-with-packages"
+            }
+        },
+        "platform": "x86_64-linux"
+    }
+}
