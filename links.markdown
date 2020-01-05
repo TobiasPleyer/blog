@@ -50,6 +50,7 @@ Blogs
 -   [Brent Yorgey\'s blog](https://byorgey.wordpress.com/)
 -   [From Hask Till Dawn](https://alpmestan.com/)
 -   [Dave Laing\'s blog](http://dlaing.org/)
+-   [Serokell\'s blog](https://serokell.io/blog)
 
 Tutorials
 ---------
@@ -84,6 +85,8 @@ Tutorials
     Linux](https://www.tecmint.com/move-home-directory-to-new-partition-disk-in-linux/)
 -   [Michael Snoyman's Rust Crash
     Course](https://www.snoyman.com/blog/2018/10/introducing-rust-crash-course)
+-   [Nix and Haskell in production](https://github.com/Gabriel439/haskell-nix)
+    by Gabriel Gonzalez
 
 Informational
 -------------
@@ -142,6 +145,8 @@ Informational
     matter](http://www.haskellforall.com/2012/06/you-could-have-invented-free-monads.html)
     by Gabriel Gonzalez
 -   [vimcasts.org](http://vimcasts.org/episodes/)
+-   [The media library of the Chaos Computer Club](https://media.ccc.de/) 
+    (content mostly in German)
 
 Useful
 ------
@@ -219,6 +224,10 @@ Interesting Projects
 -   [Slideous](https://goessner.net/articles/slideous/)
 -   [Anki](https://apps.ankiweb.net/)
 -   [Tuple](https://screenheroreplacement.com/)
+-   [CouchDB](https://couchdb.apache.org/)
+-   [PouchDB](https://pouchdb.com/)
+-   [Reflex-FRP](https://github.com/reflex-frp/reflex) - A Functional Reactive
+    Programming library for Haskell
 
 My youtube favourites
 ---------------------
