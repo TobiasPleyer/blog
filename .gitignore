@@ -5,3 +5,4 @@ _site
 site
 .stack-work
 dist*
+cabal.project.local*
