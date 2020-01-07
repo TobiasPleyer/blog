@@ -268,6 +268,11 @@ Book Wishlist
 
 -   *Structure and Interpretation of Computer Programs*
 -   *Blink: The Power of Thinking without Thinking*
+-   *Defensive Design for the Web: How to improve error messages, help, forms, and other crisis points*, New Riders Press, 2004 ISBN 0-7357-1410-X
+-   *Getting Real: The Smarter, Faster, Easier Way to Build a Successful Web Application*, 37signals, 2006, ISBN 0-578-0128-12
+-   *Rework*, 2010, ISBN 978-0-307-46374-6
+-   *Remote : office not required*, October 29, 2013, ISBN 978-0804137508
+-   *It Doesn't Have to Be Crazy at Work*, October 2, 2018, ISBN 978-0062874788
 
 Bonsai
 ------
