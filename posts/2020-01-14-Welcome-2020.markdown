@@ -1,0 +1,24 @@
+---
+title: Welcome 2020
+date: 2020-01-14
+tags: 
+category: Miscellaneous
+authors: Tobias Pleyer
+summary: 
+---
+
+# Welcome 2020
+
+2020 is here! For half a year I haven't posted anything new on this blog. The
+last 6 months were pretty exciting a new for me.
+
+**I became a father**. My wonderful daughter Joanna was born on 14th of October
+2019. I am happy happy to have her and to see her grow up. Today on the day she
+it's been 3 month that she saw the light of the day. I wish her all the best
+for her journey through life, most of all health.
+
+I also switched my job. Since January this year I am a full stack web developer
+in Haskell! There are many new things to learn and I am motivated to get to
+know this fascinating technology stack.
+
+I hope I will be able to post more regularily again this year.
