@@ -1,6 +1,6 @@
 ---
 title: It is always good to know what you are doing
-date: 2020-01-14
+date: 2020-01-15
 tags: nix
 category: Programming
 authors: Tobias Pleyer
