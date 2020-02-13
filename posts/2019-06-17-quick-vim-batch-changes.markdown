@@ -118,7 +118,7 @@ We have these options:
   containing it (`:h @`). This is ok for small functions but can get messy soon
 - Write the function in an unnamed buffer in Vim and load the contents of the
   buffer via the command sequence:
-  `let @s=joinlet @s = join(getbufline(<bufnr>, 1, '$'), "\n") | @s | call HelperFunc()`
+  `let @s = join(getbufline(<bufnr>, 1, '$'), "\n") | @s | call HelperFunc()`
   You must know the buffer number for this. Use the *ls* command (`:h ls`)
 - Write the function to a file and source it (`:h source`)
 
