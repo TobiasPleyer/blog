@@ -62,7 +62,7 @@ documentation...
 " The argument cnt determines how often you want to execute the macro,
 " typically as often as there are lines in block 2
 function! Interleave(cnt)
-    let @m="'bj:m 'ajma"
+    let @m="'bj:m 'a^Mjma"
     execute "normal " . a:cnt . "@m"
 endfunction
 
@@ -72,7 +72,7 @@ endfunction
 " use the line before the current selection as the mark b and then run the
 " macro for every line in the selection.
 function! InterleaveR() range
-    let @m="'bj:m 'ajma"
+    let @m="'bj:m 'a^Mjma"
     if a:firstline == 1
         normal ggO
     endif
@@ -105,7 +105,7 @@ endfunction
 " typically as often as there are lines in block 2
 function! ZipWith(text, cnt)
     let @t=a:text
-    let @m="'bj:m 'ak$\"tpgJjma"
+    let @m="'bj:m 'a^Mk$\"tpgJjma"
     execute "normal " . a:cnt . "@m"
 endfunction
 
@@ -116,7 +116,7 @@ endfunction
 " line in the selection.
 function! ZipWithR(text) range
     let @t=a:text
-    let @m="'bj:m 'ak$\"tpgJjma"
+    let @m="'bj:m 'a^M$\"tpgJjma"
     if a:firstline == 1
         normal ggO
     endif
@@ -126,6 +126,13 @@ function! ZipWithR(text) range
     execute "normal " . cnt . "@m"
 endfunction
 ```
+
+**Note:** The `^M` above is actually one character an represents pressing the
+enter key. If you record the macro yourself this will be handled automatically,
+if you try to copy the macro from me you have to escape the key by pressing
+CTRL-V+Enter. Read this
+[stackoverflow post](https://stackoverflow.com/questions/2943555/how-to-save-a-vim-macro-that-contains-escape-key-presses)
+for more info.
 
 ## Usage example
 

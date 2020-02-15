@@ -55,20 +55,27 @@ block 2, here is how you do it:
 - Jump/go to line 2 and set the mark a, keystrokes `ma` in Vim normal mode
 - Jump/go to line 6 and set the mark b, keystrokes `mb` in Vim normal mode
 - Now we can record the macro. Make the following keystrokes: `qa'bj:m
-  'ajmaq` In words: *q*, *a*, *single quote*, *b*, *j*, *colon*, *space*,
+  'a^Mmaq` In words: *q*, *a*, *single quote*, *b*, *j*, *colon*, *space*,
   *single quote*, *a*, *enter*, *j*, *m*, *a*, *q*
 
 `qa` starts to record a macro into register *a* (see :h q). Now every keystroke
 will be recorded until pressing *q* again, which stops the recording.
 
-**Note:** We are using the *move* command to move (see :h :m) one line after
+**Note:** The `^M` above is actually one character an represents pressing the
+enter key. If you record the macro yourself this will be handled automatically,
+if you try to copy the macro from me you have to escape the key by pressing
+CTRL-V+Enter. Read this
+[stackoverflow post](https://stackoverflow.com/questions/2943555/how-to-save-a-vim-macro-that-contains-escape-key-presses)
+for more info.
+
+**Note2:** We are using the *move* command to move (see :h :m) one line after
 the other from block 2 to block 1. If you want to copy them instead use `:t`.
 
-**Note2:** You don't even have to type these keystrokes yourself. You can
+**Note3:** You don't even have to type these keystrokes yourself. You can
 actually just copy mine! Just copy them in some register with the following two
 options:
 
-- Vim normal mode command `:let @a="'bj:m 'ajma"` will copy the string
+- Vim normal mode command `:let @a="'bj:m 'a^Mjma"` will copy the string
   content into register *a*.
 - Selecting everything in visual mode and pressing `"ay` will yank it into
   register *a*
